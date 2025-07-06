@@ -18,6 +18,8 @@ A full-stack healthcare management platform. It allows patients to:
 
 
 
+
+
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repo
@@ -101,6 +103,7 @@ App runs on: [http://localhost:3000](http://localhost:3000)
 * Choose doctor + surgery type
 * Upload prescription (PDF/image)
 * Stores file + data in MongoDB
+* Note: Create an uploads folder to view uploaded documents
 
 
 
