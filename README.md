@@ -36,7 +36,7 @@ MidCity_Hospital/
 ### 1. Clone the Repo
 
 
-git clone https://github.com/samarsajad/midcity-hospital.git
+git clone https://github.com/samarsajad/Hospital_Management_Website.git
 cd MidCity_Hospital
 
 
