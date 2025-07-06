@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Paracetamol",
+    "brand": "Crocin",
+    "manufacturer": "GlaxoSmithKline",
+    "composition": "Paracetamol 500mg",
+    "type": "Tablet",
+    "price": 20,
+    "packSize": "10 tablets",
+    "image": "https://example.com/images/paracetamol.jpg"
+  },
+  {
+    "name": "Amoxicillin",
+    "brand": "Amoxil",
+    "manufacturer": "Pfizer",
+    "composition": "Amoxicillin 250mg",
+    "type": "Capsule",
+    "price": 75,
+    "packSize": "6 capsules",
+    "image": "https://example.com/images/paracetamol.jpg"
+  },
+  {
+    "name": "Cough Syrup",
+    "brand": "Benadryl",
+    "manufacturer": "Johnson & Johnson",
+    "composition": "Diphenhydramine, Ammonium Chloride",
+    "type": "Syrup",
+    "price": 110,
+    "packSize": "100ml",
+    "image": "https://example.com/images/paracetamol.jpg"
+  },
+  {
+    "name": "Azithromycin",
+    "brand": "Zithromax",
+    "manufacturer": "Pfizer",
+    "composition": "Azithromycin 500mg",
+    "type": "Tablet",
+    "price": 120,
+    "packSize": "3 tablets",
+    "image": "https://example.com/images/paracetamol.jpg"
+  },
+  {
+    "name": "Ibuprofen",
+    "brand": "Brufen",
+    "manufacturer": "Abbott",
+    "composition": "Ibuprofen 400mg",
+    "type": "Tablet",
+    "price": 30,
+    "packSize": "10 tablets",
+    "image": "https://example.com/images/paracetamol.jpg"
+  }
+]
