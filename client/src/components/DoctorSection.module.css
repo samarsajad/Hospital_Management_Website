@@ -1,0 +1,108 @@
+.doctorsSection {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctorsSection h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
+  border-radius: 10px;
+  height: 100px;
+  text-align: center;
+  padding-top: 30px;
+  width: 80%;
+  margin: 5px auto;
+}
+
+.doctorsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.doctorCard {
+  width: 250px;
+  height: 380px;
+  perspective: 1000px;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.doctorCard:hover .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.cardFront {
+  z-index: 2;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.cardFront img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.cardFront h2 {
+  font-size: 1.5em;
+  margin: 10px 0 5px;
+}
+
+.cardFront p {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.socialIcons a {
+  color: #555;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}

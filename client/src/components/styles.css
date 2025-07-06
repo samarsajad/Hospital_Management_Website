@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  opacity: 0.9;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+}
+
+
+.img {
+  flex: 1;
+}
+
+#rd-logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.nav_menu {
+  flex: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.nav_link {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+
+}
+
+.nav_link li {
+  display: inline;
+}
+
+.nav_link a {
+  text-decoration: none;
+  color: #203394;
+  font-size: 25px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.nav_link a i {
+  margin-right: 5px;
+}
+
+.nav_link li a:hover {
+    color: #13b33b;
+    text-decoration: none;
+}
+

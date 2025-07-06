@@ -1,0 +1,61 @@
+.pharmacyContainer {
+  padding: 40px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.pharmacyTitle {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #1d3557;
+}
+
+.medicineGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.medicineCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  
+}
+
+.medicineImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.medicineDetails {
+  padding: 20px;
+}
+
+.medicineDetails h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #2a9d8f;
+}
+
+.medicineDetails p {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.orderButton {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #13b33b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+

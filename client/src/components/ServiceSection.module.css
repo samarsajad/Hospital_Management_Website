@@ -1,0 +1,100 @@
+.serviceSection {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.serviceSection h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(95, 228, 128, 0.708);
+  border-radius: 10px 10px;
+  height: 100px;
+  margin-top: 5px;
+  text-align: center;
+  padding-top: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.serviceContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  background-color: white;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s forwards;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  flex: 1;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.readMore {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.description {
+  padding: 10px;
+  text-align: justify;
+  font-size: 0.9rem;
+  color: #333;
+}
+.scalpelIcon {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  
+}
+
+
+/* Optional fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

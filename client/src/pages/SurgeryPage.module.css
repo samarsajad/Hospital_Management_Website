@@ -1,0 +1,52 @@
+.surgeryContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.surgeryContainer h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.surgeryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.surgeryForm input[type="text"],
+.surgeryForm input[type="email"],
+.surgeryForm input[type="tel"],
+.surgeryForm input[type="date"],
+.surgeryForm input[type="file"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.surgeryForm input:focus {
+  border-color: #3498db;
+}
+
+.surgeryForm button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.surgeryForm button:hover {
+  background-color: #2980b9;
+}

@@ -1,0 +1,77 @@
+.contactUs {
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.contactContainer {
+  max-width: 800px;
+  margin: auto;
+}
+
+.contactContainer h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
+  border-radius: 10px;
+  height: 100px;
+  margin-top: 5px;
+  text-align: center;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.contactContainer p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.contactInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.contactDetails {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contactDetails h2 {
+  font-size: 1.5em;
+  color: #444;
+  margin-bottom: 10px;
+  background-color: #13b33b;
+  border-radius: 0px 10px 10px 0px; 
+  margin-left: 0%;
+  width: 75%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactDetails p {
+  font-size: 1.1em;
+  color: #ffffff;
+  line-height: 1.6;
+  background-color: #0056b3;
+  border-radius: 10px 0px 10px 0px;
+  padding: 10px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+}
