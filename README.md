@@ -18,19 +18,6 @@ A full-stack healthcare management platform. It allows patients to:
 
 
 
-
-## 📁 Folder Structure
-
-
-MidCity_Hospital/
-│
-├── client/               # React frontend
-├── server/               # Express backend
-├── .env                  # Environment variables
-├── README.md             # You're here
-└── package.json
-
-
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repo
