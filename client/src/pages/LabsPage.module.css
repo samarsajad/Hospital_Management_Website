@@ -1,0 +1,64 @@
+.labsContainer {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .labsContainer h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.8rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .form input,
+  .form select {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form input:focus,
+  .form select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .labsContainer {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .labsContainer h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

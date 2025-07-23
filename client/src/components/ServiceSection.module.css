@@ -1,16 +1,19 @@
 .serviceSection {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 60px 40px;
+  background-color: #FDFDFD;
+  box-shadow: 0 8px 24px rgba(26, 75, 76, 0.08);
+  margin: 30px auto;
+  border-radius: 12px;
+  max-width: 1400px;
 }
 
 .serviceSection h1 {
+  border: 2px solid #2C7A7B;
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: #333;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(95, 228, 128, 0.708);
+  color: #1A4B4C;
+  background: linear-gradient(135deg, #E6F7F1, #FDFDFD);
+  box-shadow: 0 0 10px rgba(7, 52, 18, 0.708);
   border-radius: 10px 10px;
   height: 100px;
   margin-top: 5px;
@@ -33,6 +36,7 @@
   display: flex;
   flex-direction: column;
   width: 23%;
+
   background-color: white;
   border: 1px solid #ddd;
   overflow: hidden;
@@ -87,7 +91,7 @@
 }
 
 
-/* Optional fadeIn animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;

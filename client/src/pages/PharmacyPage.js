@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styles from './PharmacyPage.module.css'; // Import the module correctly
+import styles from './PharmacyPage.module.css'; 
 
 function PharmacyPage() {
   const [medicines, setMedicines] = useState([]);
