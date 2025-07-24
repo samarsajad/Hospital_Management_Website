@@ -8,10 +8,10 @@
 .doctorsSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  border: 2px solid #2C7A7B;
-  color: #1A4B4C;
+  border: 2px solid #f6f9f9;
+  color: #000707;
   background: (135deg, #E6F7F1, #FDFDFD);
-  box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
+  box-shadow: 0 0 10px rgba(0, 17, 18, 0.708);
   border-radius: 10px;
   height: 100px;
   text-align: center;

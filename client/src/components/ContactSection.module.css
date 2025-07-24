@@ -2,7 +2,7 @@
 .contactUs {
   padding: 60px 40px;
   background-color: #FDFDFD;
-  box-shadow: 0 8px 24px rgba(26, 75, 76, 0.08);
+  box-shadow: 0 8px 24px rgba(22, 7, 187, 0.08);
   margin: 30px auto;
   border-radius: 12px;
   max-width: 1400px;
@@ -10,15 +10,16 @@
 
 .contactContainer {
   max-width: 1000px;
+ 
   margin: auto;
 }
 
 .contactContainer h1 {
   font-size: 2.8em;
   margin-bottom: 30px;
-  color: #1A4B4C;
-  background: linear-gradient(135deg, #E6F7F1, #FDFDFD);
-  border: 2px solid #2C7A7B;
+   color:#f2f4f8;
+  background-color: #203394;
+  border: 2px solid #f5f9f9;
   border-radius: 12px;
   height: 120px;
   text-align: center;
@@ -68,7 +69,7 @@
   font-size: 1.6em;
   color: #FDFDFD;
   margin: 0 0 20px 0;
-  background: linear-gradient(135deg, #1A4B4C, #2C7A7B);
+  background: linear-gradient(135deg, #7eb1e4, #203394);
   border-radius: 0;
   padding: 20px 25px;
   display: flex;
@@ -80,9 +81,10 @@
 
 .contactDetails p {
   font-size: 1.1em;
+  min-height: 100px;
   color: #FDFDFD;
   line-height: 1.7;
-  background: linear-gradient(135deg, #2C7A7B, #1A4B4C);
+  background: linear-gradient(135deg, #7eb1e4, #203394);
   border-radius: 0;
   padding: 20px 25px;
   margin: 0;

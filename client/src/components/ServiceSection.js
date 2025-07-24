@@ -59,17 +59,25 @@ function ServiceSection() {
 
         {/* Service 4 */}
         <div className={`${styles.box} ${styles.fadeIn}`}>
-          <div className={styles.image}>
-            <img src={images.surgery} alt="Surgery" />
-          </div>
-          <div className={styles.text}>
-            Surgery <GiScalpel style={{ marginLeft: '8px', fontSize: '20px' }} />
-          </div>
-          <p className={styles.description}>
-            At MidCity Hospital, our surgical department is equipped with state-of-the-art technology and staffed by a team of highly skilled surgeons. We offer a wide range of surgical procedures with a focus on patient safety and successful outcomes.
-          </p>
-          <Link to="/services/surgery" className={styles.bookButton}>Book Now</Link>
-        </div>
+  <div className={styles.image}>
+    <img src={images.surgery} alt="Surgery" />
+  </div>
+
+  <div className={styles.textWithIcon}>
+  <span>Surgery</span>
+  <img src={images.surgery} alt="Surgery Icon" className={styles.iconSmall} />
+</div>
+
+
+  <p className={styles.description}>
+    At MidCity Hospital, our surgical department is equipped with state-of-the-art technology and staffed by a team of highly skilled surgeons. We offer a wide range of surgical procedures with a focus on patient safety and successful outcomes.
+  </p>
+
+  <Link to="/services/surgery" className={styles.bookButton}>Book Now</Link>
+</div>
+
+
+
       </div>
     </section>
   );

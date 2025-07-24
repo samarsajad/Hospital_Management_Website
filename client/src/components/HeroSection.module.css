@@ -1,62 +1,70 @@
 .heroSection {
-  padding: 2rem 1rem;
-  max-width: 1110px;
-  margin: 0 auto;
+  background-color: #0f4613; 
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
+  gap: 40px;
 }
 
-.contentBlock {
+.heroContainer,
+.messageContainer {
   display: flex;
-  gap: 2rem;
+  flex-direction: row;
   align-items: center;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
-}
-
-.imageWrapper {
-  flex-shrink: 0;
-  width: 180px;        
-  border-radius: 12px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 30px;
+  padding: 30px;
 }
 
-.imageWrapper img {
+.heroContainer:hover,
+.messageContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.heroImage img,
+.messageImage img {
   width: 100%;
-  height: 100%;          
-  display: block;
-  object-fit: cover;     
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
   border-radius: 12px;
-  image-rendering: auto; 
 }
 
 
-.textWrapper {
+.heroText,
+.messageText {
   flex: 1;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.textWrapper strong {
-  color: #00703c; 
+.heroText p,
+.messageText p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-  .contentBlock {
+
+@media (max-width: 1024px) {
+  .heroContainer,
+  .messageContainer {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
   }
 
-  .imageWrapper {
-    width: 100%;
-  }
-
-  .textWrapper {
-    font-size: 1rem;
+  .heroImage img,
+  .messageImage img {
+    max-width: 100%;
   }
 }
