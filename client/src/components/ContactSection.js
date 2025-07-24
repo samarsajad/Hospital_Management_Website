@@ -25,7 +25,6 @@ const ContactSection = () => {
     e.preventDefault();
     setStatus('sending');
     try {
-      // 👉 replace '/api/contact' with your own endpoint if different
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,17 +33,17 @@ const ContactSection = () => {
       if (!res.ok) throw new Error();
       setStatus('sent');
       setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5000);
+      setTimeout(() => setStatus('idle'), 5_000);
     } catch {
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
+      setTimeout(() => setStatus('idle'), 5_000);
     }
   };
 
   return (
     <section className={styles.contact} id="contact">
       <div className={styles.card}>
-        {/* ─────────── Left column : contact info ─────────── */}
+        {/* ───────── Left column ───────── */}
         <aside className={styles.info}>
           <h2>Contact&nbsp;Us</h2>
           <p className={styles.tagline}>
@@ -55,7 +54,7 @@ const ContactSection = () => {
             <FaMapMarkerAlt className={styles.icon} />
             <div>
               <h4>Visit&nbsp;us</h4>
-              <address>XYZ Road, ABCD 192101,<br />India</address>
+              <address>XYZ Road, ABCD&nbsp;192101,<br />India</address>
             </div>
           </div>
 
@@ -63,7 +62,7 @@ const ContactSection = () => {
             <FaPhoneAlt className={styles.icon} />
             <div>
               <h4>Call&nbsp;us</h4>
-              <p>General +91 0123456789<br />Emergency +91 1234567890</p>
+              <p>General +1&nbsp;245&nbsp;678&nbsp;91<br />Emergency +1&nbsp;237&nbsp;894&nbsp;60</p>
             </div>
           </div>
 
@@ -76,7 +75,7 @@ const ContactSection = () => {
           </div>
         </aside>
 
-        {/* ─────────── Right column : form ─────────── */}
+        {/* ───────── Right column ───────── */}
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
           {['name', 'email', 'subject'].map(field => (
             <div className={styles.group} key={field}>
@@ -108,7 +107,6 @@ const ContactSection = () => {
             <label htmlFor="message">Message</label>
           </div>
 
-          {/* ✔ button sits immediately after the inputs */}
           <button
             type="submit"
             className={styles.submit}

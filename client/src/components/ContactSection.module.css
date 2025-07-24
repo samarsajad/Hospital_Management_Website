@@ -1,30 +1,30 @@
-/* ======== Design tokens ======== */
+/* ===== Tokens (light theme) ===== */
 :root {
-  --accent:       #ffcc00;      /* bold yellow */
-  --accent-dark:  #ffb000;
-  --bg-section:   #111;         /* deep charcoal (matches your dark-theme preference) */
-  --bg-card:      #1a1a1a;
-  --bg-input:     #222;
-  --text-primary: #fff;
-  --text-muted:   #aaa;
-  --border:       #333;
+  --accent:       #007bff;
+  --accent-light: #3da0ff;
+  --bg-section:   #f7f9fc;
+  --bg-card:      #ffffff;
+  --bg-input:     #ffffff;
+  --text-primary: #333333;
+  --text-muted:   #666666;
+  --border:       #e3e6ee;
 }
 
-/* ======== Section wrapper ======== */
+/* ===== Section wrapper ===== */
 .contact {
   padding: 80px 24px;
   background: var(--bg-section);
   color: var(--text-primary);
 }
 
-/* Card gives nice elevation & keeps everything together */
+/* Elevated white card */
 .card {
   max-width: 1100px;
   margin: 0 auto;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0,0,0,.4);
+  box-shadow: 0 12px 24px rgba(0,0,0,.08);
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 64px;
@@ -32,22 +32,12 @@
 }
 
 @media (max-width: 880px) {
-  .card {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  .card { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* ======== Left column (info) ======== */
-.info h2 {
-  font-size: 2.4rem;
-  margin-bottom: 6px;
-}
-
-.tagline {
-  color: var(--text-muted);
-  margin-bottom: 32px;
-}
+/* ===== Info column ===== */
+.info h2 { font-size: 2.2rem; margin-bottom: 6px; }
+.tagline { color: var(--text-muted); margin-bottom: 32px; }
 
 .row {
   display: flex;
@@ -55,26 +45,13 @@
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
 }
-
 .row:last-of-type { border: none; }
+.icon { font-size: 24px; color: var(--accent); margin-top: 4px; }
 
-.icon {
-  font-size: 24px;
-  color: var(--accent);
-  margin-top: 4px;
-}
+/* ===== Form column ===== */
+.form { display: grid; grid-auto-rows: min-content; gap: 28px; }
 
-/* ======== Right column (form) ======== */
-.form {
-  display: grid;
-  grid-auto-rows: min-content;    /* ← ensures button follows inputs */
-  gap: 28px;
-}
-
-/* Floating-label fields */
-.group {
-  position: relative;
-}
+.group { position: relative; }
 
 .group input,
 .group textarea {
@@ -84,7 +61,6 @@
   border-radius: 12px;
   background: var(--bg-input);
   font-size: 1rem;
-  color: var(--text-primary);
   transition: border-color .25s, box-shadow .25s;
 }
 
@@ -92,7 +68,7 @@
 .group textarea:focus {
   border-color: var(--accent);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255,204,0,.25);
+  box-shadow: 0 0 0 3px rgba(0,123,255,.25);
 }
 
 .group label {
@@ -112,12 +88,12 @@
 .group textarea:focus + label {
   transform: translateY(-28px);
   font-size: .8rem;
-  color: var(--accent-dark);
+  color: var(--accent);
 }
 
-/* ======== Send Message button ======== */
+/* ===== Submit button ===== */
 .submit {
-  justify-self: start;           /* ← stays right under the textarea */
+  justify-self: start;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -125,8 +101,8 @@
   padding: 16px 36px;
   border: none;
   border-radius: 999px;
-  background: linear-gradient(135deg,var(--accent) 0%,var(--accent-dark) 100%);
-  color: #000;
+  background: linear-gradient(135deg,var(--accent) 0%,var(--accent-light) 100%);
+  color: #fff;
   font-weight: 600;
   font-size: 1rem;
 
@@ -134,57 +110,42 @@
   overflow: hidden;
   position: relative;
 
-  box-shadow: 0 6px 20px rgba(255,204,0,.35);
+  box-shadow: 0 6px 18px rgba(0,123,255,.25);
   transition: transform .18s, box-shadow .18s;
 }
 
 .submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255,204,0,.45);
+  box-shadow: 0 10px 26px rgba(0,123,255,.35);
 }
 
-.submit:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-}
+.submit:disabled { opacity: .6; cursor: not-allowed; }
 
-/* Plane icon effect */
 .plane { transition: transform .35s ease; }
 .submit:hover .plane { transform: translateX(6px) rotate(20deg); }
 
-/* Click ripple */
+/* Ripple feedback */
 .submit:active::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,.25);
+  background: rgba(255,255,255,.3);
   animation: ripple .6s ease;
 }
+@keyframes ripple { 0%{opacity:.6;} 80%,100%{opacity:0;transform:scale(2);} }
 
-@keyframes ripple {
-  0%   { opacity: .6; }
-  80%  { opacity: 0; transform: scale(2); }
-  100% { opacity: 0; transform: scale(2); }
-}
-
-/* Loader spinner */
+/* Loader */
 .loader {
   width: 22px;
   height: 22px;
-  border: 3px solid #000;
+  border: 3px solid #fff;
   border-top-color: transparent;
   border-radius: 50%;
   animation: spin .8s linear infinite;
 }
-
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ======== Status feedback ======== */
-.success,
-.error {
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-.success { color: #4caf50; }
-.error   { color: #f44336; }
+/* Status */
+.success, .error { font-weight: 600; margin-top: 4px; }
+.success { color: #28a745; }
+.error   { color: #dc3545; }
