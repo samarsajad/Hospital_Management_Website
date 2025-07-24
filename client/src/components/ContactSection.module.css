@@ -1,77 +1,190 @@
-.contactUs {
-  padding: 50px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 20px;
-  border-radius: 8px;
+/* ======== Design tokens ======== */
+:root {
+  --accent:       #ffcc00;      /* bold yellow */
+  --accent-dark:  #ffb000;
+  --bg-section:   #111;         /* deep charcoal (matches your dark-theme preference) */
+  --bg-card:      #1a1a1a;
+  --bg-input:     #222;
+  --text-primary: #fff;
+  --text-muted:   #aaa;
+  --border:       #333;
 }
 
-.contactContainer {
-  max-width: 800px;
-  margin: auto;
+/* ======== Section wrapper ======== */
+.contact {
+  padding: 80px 24px;
+  background: var(--bg-section);
+  color: var(--text-primary);
 }
 
-.contactContainer h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #333;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
-  border-radius: 10px;
-  height: 100px;
-  margin-top: 5px;
-  text-align: center;
-  padding-top: 30px;
-  width: 100%;
+/* Card gives nice elevation & keeps everything together */
+.card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.4);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 64px;
+  padding: 48px 40px;
 }
 
-.contactContainer p {
-  font-size: 1.1em;
-  color: #555;
-  line-height: 1.6;
-  text-align: left;
+@media (max-width: 880px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
-.contactInfo {
+/* ======== Left column (info) ======== */
+.info h2 {
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+}
+
+.tagline {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.row {
   display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  gap: 30px;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.contactDetails {
-  flex: 1;
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.contactDetails h2 {
-  font-size: 1.5em;
-  color: #444;
-  margin-bottom: 10px;
-  background-color: #13b33b;
-  border-radius: 0px 10px 10px 0px; 
-  margin-left: 0%;
-  width: 75%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contactDetails p {
-  font-size: 1.1em;
-  color: #ffffff;
-  line-height: 1.6;
-  background-color: #0056b3;
-  border-radius: 10px 0px 10px 0px;
-  padding: 10px;
-}
+.row:last-of-type { border: none; }
 
 .icon {
-  width: 45px;
-  height: 45px;
-  padding: 10px;
+  font-size: 24px;
+  color: var(--accent);
+  margin-top: 4px;
 }
+
+/* ======== Right column (form) ======== */
+.form {
+  display: grid;
+  grid-auto-rows: min-content;    /* ← ensures button follows inputs */
+  gap: 28px;
+}
+
+/* Floating-label fields */
+.group {
+  position: relative;
+}
+
+.group input,
+.group textarea {
+  width: 100%;
+  padding: 22px 18px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-input);
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: border-color .25s, box-shadow .25s;
+}
+
+.group input:focus,
+.group textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,204,0,.25);
+}
+
+.group label {
+  position: absolute;
+  top: 22px;
+  left: 18px;
+  padding: 0 4px;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: transform .25s, font-size .25s, color .25s;
+}
+
+.group input:not(:placeholder-shown) + label,
+.group input:focus + label,
+.group textarea:not(:placeholder-shown) + label,
+.group textarea:focus + label {
+  transform: translateY(-28px);
+  font-size: .8rem;
+  color: var(--accent-dark);
+}
+
+/* ======== Send Message button ======== */
+.submit {
+  justify-self: start;           /* ← stays right under the textarea */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 16px 36px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg,var(--accent) 0%,var(--accent-dark) 100%);
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  box-shadow: 0 6px 20px rgba(255,204,0,.35);
+  transition: transform .18s, box-shadow .18s;
+}
+
+.submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,204,0,.45);
+}
+
+.submit:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* Plane icon effect */
+.plane { transition: transform .35s ease; }
+.submit:hover .plane { transform: translateX(6px) rotate(20deg); }
+
+/* Click ripple */
+.submit:active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.25);
+  animation: ripple .6s ease;
+}
+
+@keyframes ripple {
+  0%   { opacity: .6; }
+  80%  { opacity: 0; transform: scale(2); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+/* Loader spinner */
+.loader {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #000;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ======== Status feedback ======== */
+.success,
+.error {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.success { color: #4caf50; }
+.error   { color: #f44336; }
