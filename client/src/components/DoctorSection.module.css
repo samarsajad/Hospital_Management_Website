@@ -1,22 +1,22 @@
 .doctorsSection {
   text-align: center;
-  padding: 50px 0;
+  padding: 20px 0;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .doctorsSection h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 20px;
   color: #333;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
   border-radius: 10px;
-  height: 100px;
+  height: auto;
   text-align: center;
-  padding-top: 30px;
-  width: 80%;
-  margin: 5px auto;
+  padding: 20px;
+  width: 90%;
+  margin: 10px auto;
 }
 
 .doctorsContainer {
@@ -79,7 +79,7 @@
 }
 
 .cardFront h2 {
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin: 10px 0 5px;
 }
 
@@ -105,4 +105,45 @@
 .socialIcons a:hover {
   transform: scale(1.2);
   color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .doctorCard {
+    width: 45%;
+    height: 360px;
+  }
+
+  .doctorsSection h1 {
+    font-size: 1.5em;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctorsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doctorCard {
+    width: 90%;
+    height: 350px;
+  }
+
+  .cardFront img {
+    height: 220px;
+  }
+
+  .cardFront h2 {
+    font-size: 1.2em;
+  }
+
+  .cardFront p {
+    font-size: 0.95em;
+  }
+
+  .cardBack {
+    font-size: 16px;
+    padding: 10px;
+  }
 }

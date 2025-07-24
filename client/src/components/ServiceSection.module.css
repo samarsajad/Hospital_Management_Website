@@ -1,6 +1,6 @@
 .serviceSection {
   text-align: center;
-  padding: 50px 0;
+  padding: 20px 0;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -11,11 +11,11 @@
   color: #333;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(95, 228, 128, 0.708);
-  border-radius: 10px 10px;
-  height: 100px;
+  border-radius: 10px;
+  height: auto;
   margin-top: 5px;
   text-align: center;
-  padding-top: 30px;
+  padding: 20px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -23,8 +23,8 @@
 
 .serviceContainer {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
 }
@@ -33,12 +33,15 @@
   display: flex;
   flex-direction: column;
   width: 23%;
+  min-width: 250px;
+  max-width: 320px;
   background-color: white;
   border: 1px solid #ddd;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s forwards;
   transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
 .box:hover {
@@ -46,7 +49,9 @@
 }
 
 .image {
-  flex: 1;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
 }
 
 .image img {
@@ -56,38 +61,46 @@
 }
 
 .text {
-  flex: 1;
   padding: 10px;
   text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.readMore {
-  color: #007bff;
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 0.9rem;
+  gap: 8px;
 }
 
 .description {
-  padding: 10px;
+  padding: 0 15px 15px;
   text-align: justify;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #333;
 }
+
+.bookButton {
+  margin: 10px auto 15px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: fit-content;
+}
+
+.bookButton:hover {
+  background-color: #388e3c;
+}
+
 .scalpelIcon {
   width: 25px;
   height: 25px;
   margin-left: 10px;
-  
 }
 
-
-/* Optional fadeIn animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -96,5 +109,40 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .box {
+    width: 45%;
+  }
+
+  .serviceSection h1 {
+    font-size: 2rem;
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+    width: 100%;
+  }
+
+  .serviceSection h1 {
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .bookButton {
+    font-size: 0.9rem;
+    padding: 6px 12px;
   }
 }
