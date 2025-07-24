@@ -1,36 +1,35 @@
 .aboutUs {
-  padding: 50px;
+  padding: 40px 20px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  margin: 20px auto;
   border-radius: 8px;
+  max-width: 1200px;
 }
 
 .aboutContainer {
-  max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .aboutContainer h1 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   color: #333;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   box-shadow: 0 0 10px rgba(95, 228, 128, 0.708);
   border-radius: 10px;
-  height: 100px;
-  padding-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 15px 20px;
+  background-color: #fff;
 }
 
 .text {
-  font-size: 1.1em;
+  font-size: 1.05em;
   color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 30px;
   text-align: justify;
+  padding: 0 10px;
 }
 
 .readMore {
@@ -43,30 +42,29 @@
 
 .historyVisionMission {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  padding: 20px 0 100px;
+  margin-bottom: 50px;
+  padding: 10px;
 }
 
 .history,
 .vision,
 .mission {
-  flex: 1;
+  flex: 1 1 300px;
   background-color: #f1f1f1;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-width: 300px;
 }
 
 .history h2,
 .vision h2,
 .mission h2 {
-  font-size: 1.5em;
-  color: #ffffff;
-  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: #fff;
+  margin-bottom: 12px;
   padding: 10px;
   background-color: #13b33b;
   border-radius: 0px 10px 10px 0px;
@@ -78,42 +76,38 @@
 .history p,
 .vision p,
 .mission p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #555;
   line-height: 1.6;
-  margin-bottom: 10px;
   text-align: justify;
 }
 
 .specialtiesHeading {
   text-align: center;
-  font-size: 2.5em;
-  margin: 40px auto 20px;
+  font-size: 2em;
+  margin: 30px auto;
   color: #333;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
   border-radius: 10px;
-  height: 100px;
-  padding-top: 30px;
-  width: 80%;
+  padding: 20px;
+  width: 90%;
 }
 
 .specialties {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .specialty {
-  flex: 1;
+  flex: 1 1 300px;
   background-color: #f1f1f1;
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-width: 300px;
 }
 
 .specialty img {
@@ -124,8 +118,8 @@
 }
 
 .specialty h3 {
-  font-size: 1.5em;
-  color: #ffffff;
+  font-size: 1.4em;
+  color: #fff;
   margin: 15px 0;
   background-color: #13b33b;
   padding: 10px;
@@ -140,4 +134,67 @@
   font-size: 1em;
   color: #666;
   text-align: justify;
+}
+
+@media (max-width: 992px) {
+  .aboutContainer h1,
+  .specialtiesHeading {
+    font-size: 1.8em;
+    padding: 15px;
+  }
+
+  .text {
+    font-size: 1em;
+    padding: 0;
+  }
+
+  .specialty img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .history,
+  .vision,
+  .mission,
+  .specialty {
+    flex: 1 1 100%;
+  }
+
+  .aboutUs {
+    padding: 30px 15px;
+  }
+
+  .specialties {
+    flex-direction: column;
+  }
+
+  .specialtiesHeading {
+    font-size: 1.6em;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutContainer h1,
+  .specialtiesHeading {
+    font-size: 1.4em;
+    padding: 10px;
+  }
+
+  .text,
+  .specialty p,
+  .history p,
+  .vision p,
+  .mission p {
+    font-size: 0.95em;
+  }
+
+  .specialty img {
+    height: 160px;
+  }
+
+  .specialty h3 {
+    font-size: 1.2em;
+  }
 }

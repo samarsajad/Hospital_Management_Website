@@ -10,12 +10,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  gap: 20px;
 }
 
 .quickLinks,
 .legalInfo {
-  flex: 1;
-  min-width: 200px;
+  flex: 1 1 200px;
   margin: 10px;
 }
 
@@ -73,4 +73,60 @@ hr {
 
 .socialIcons a:hover {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+
+  .quickLinks,
+  .legalInfo {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .quickLinks h2,
+  .legalInfo h2 {
+    font-size: 1.3rem;
+  }
+
+  .socialIcons a {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .siteFooter {
+    padding: 30px 15px 0;
+  }
+
+  .quickLinks h2,
+  .legalInfo h2 {
+    font-size: 1.1rem;
+  }
+
+  .quickLinks li,
+  .legalInfo li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .socialIcons a {
+    font-size: 18px;
+    margin: 0 6px;
+  }
+
+  .copyright {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
 }

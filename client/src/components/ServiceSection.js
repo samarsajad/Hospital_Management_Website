@@ -5,8 +5,6 @@ import pic1 from '../assets/pic5.webp';
 import scalpel from '../assets/scalpel.png';
 import { GiScalpel } from 'react-icons/gi';
 
-
-
 import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';
 import { FaPrescriptionBottleMedical } from 'react-icons/fa6';
 

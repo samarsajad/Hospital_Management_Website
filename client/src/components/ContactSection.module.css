@@ -1,46 +1,47 @@
 .contactUs {
-  padding: 50px;
+  padding: 40px 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 20px;
+  margin: 20px auto;
   border-radius: 8px;
 }
 
 .contactContainer {
-  max-width: 800px;
+  max-width: 70%;
   margin: auto;
 }
 
 .contactContainer h1 {
-  font-size: 2.5em;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(95, 206, 228, 0.708);
   border-radius: 10px;
-  height: 100px;
+  height: auto;
   margin-top: 5px;
   text-align: center;
-  padding-top: 30px;
-  width: 100%;
+  padding: 20px;
 }
 
 .contactContainer p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #555;
   line-height: 1.6;
-  text-align: left;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .contactInfo {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
   margin-top: 40px;
-  gap: 30px;
 }
 
 .contactDetails {
-  flex: 1;
+  flex: 1 1 300px;
   background-color: #f1f1f1;
   padding: 20px;
   border-radius: 8px;
@@ -48,13 +49,10 @@
 }
 
 .contactDetails h2 {
-  font-size: 1.5em;
-  color: #444;
-  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #fff;
   background-color: #13b33b;
-  border-radius: 0px 10px 10px 0px; 
-  margin-left: 0%;
-  width: 75%;
+  border-radius: 0px 10px 10px 0px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -62,16 +60,56 @@
 }
 
 .contactDetails p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #ffffff;
   line-height: 1.6;
   background-color: #0056b3;
   border-radius: 10px 0px 10px 0px;
   padding: 10px;
+  margin-top: 10px;
 }
 
 .icon {
-  width: 45px;
-  height: 45px;
-  padding: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .contactContainer h1 {
+    font-size: 1.7rem;
+    padding: 15px;
+  }
+
+  .contactDetails h2 {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+
+  .contactDetails p {
+    font-size: 0.95rem;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactInfo {
+    align-items: center;
+  }
+
+  .contactDetails {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .contactContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .contactContainer p {
+    font-size: 0.95rem;
+  }
 }
