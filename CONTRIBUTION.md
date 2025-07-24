@@ -36,8 +36,8 @@ Be respectful, helpful, and open to learning. This is a beginner-friendly projec
 
 ## 🏷 Labels You’ll See on Issues
 
-| Label             | Description                             |
-|------------------|-----------------------------------------|
+| Label              | Description                             |
+|--------------------|-----------------------------------------|
 | `good first issue` | Perfect for beginners                   |
 | `frontend`         | HTML, CSS, JavaScript related           |
 | `bug`              | Something broken or incorrect           |
