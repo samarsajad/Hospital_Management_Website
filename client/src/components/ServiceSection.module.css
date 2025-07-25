@@ -1,52 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .serviceSection {
-  text-align: center;
+  font-family: "Poppins", sans-serif;
   padding: 50px 0;
   background-color: #fff;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .serviceSection h1 {
   font-size: 2.5em;
-  margin-bottom: 20px;
   color: #333;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(95, 228, 128, 0.708);
-  border-radius: 10px 10px;
-  height: 100px;
-  margin-top: 5px;
-  text-align: center;
-  padding-top: 30px;
+  box-shadow: 0 0 10px rgba(95, 228, 128, 0.7);
+  border-radius: 10px;
+  padding: 8px;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 30px;
 }
 
 .serviceContainer {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .box {
   display: flex;
   flex-direction: column;
-  width: 23%;
-  background-color: white;
-  border: 1px solid #ddd;
+  max-width: 220px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s forwards;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
 }
 
 .box:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .image {
-  flex: 1;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .image img {
@@ -56,45 +59,47 @@
 }
 
 .text {
-  flex: 1;
-  padding: 10px;
-  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.readMore {
-  color: #007bff;
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 0.9rem;
+  gap: 8px;
 }
 
 .description {
-  padding: 10px;
+  padding: 10px 0;
   text-align: justify;
   font-size: 0.9rem;
   color: #333;
-}
-.scalpelIcon {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
-  
+  min-height: 80px;
 }
 
+.bookButton {
+  color: white;
+  background-color: #007bff;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: auto;
+  text-decoration: none;
+}
 
-/* Optional fadeIn animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.fadeIn {
+  animation: fadeIn 0.8s ease-in-out forwards;
 }
