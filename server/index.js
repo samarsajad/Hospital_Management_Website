@@ -9,6 +9,8 @@ const CheckupAppointment = require("./models/checkup");
 const multer = require("multer");
 const path = require("path");
 const Surgery = require("./models/surgery");
+const authRoutes = require("./routes/authRoutes");
+const medicineRoutes = require("./routes/medicineRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -32,16 +34,8 @@ mongoose
   .catch((err) => console.error(" MongoDB Error:", err));
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-app.get("/api/medicines", async (req, res) => {
-  try {
-    const meds = await Medicine.find();
-    res.json(meds);
-  } catch (err) {
-    console.error(" Failed to fetch medicines:", err);
-    res.status(500).json({ error: "Server error" });
-  }
-});
+app.use("/api/auth", authRoutes);
+app.use("/api/admin/medicines", medicineRoutes);
 
 app.get("/api/doctors", async (req, res) => {
   try {

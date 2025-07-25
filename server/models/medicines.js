@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 
 const medicineSchema = new mongoose.Schema({
-  name: String,
-  brand: String,
-  manufacturer: String,
-  composition: String,
-  type: String,
-  price: Number,
-  packSize: String
-});
+  name: { type: String, required: true },
+  brand: { type: String, required: true },
+  composition: { type: String, required: true },
+  price: { type: Number, required: true },
+  imageUrl: { type: String, required: true }
+}, { timestamps: true });
 
-const Medicine = mongoose.model('Medicine', medicineSchema);
-
-module.exports = Medicine;
+module.exports = mongoose.model('Medicine', medicineSchema);
