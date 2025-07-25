@@ -109,7 +109,7 @@ We appreciate any code contributions that enhance the functionality or improve t
         </tr>
         <tr>
             <td>
-                This project is part of GirlScript Summer of Code. We enthusiastically welcome community contributions to enhance OpSo.
+                This project is part of GirlScript Summer of Code. We enthusiastically welcome community contributions to enhance the website.
             </td>
         </tr>
     </table>
