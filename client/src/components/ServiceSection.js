@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ServiceSection.module.css';
-import pic1 from '../assets/pic5.webp';
-import scalpel from '../assets/scalpel.png';
+import { images } from '../assets/images';
+
 import { GiScalpel } from 'react-icons/gi';
-
-
-
 import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';
 import { FaPrescriptionBottleMedical } from 'react-icons/fa6';
 
@@ -21,7 +18,7 @@ function ServiceSection() {
         {/* Service 1 */}
         <div className={`${styles.box} ${styles.fadeIn}`}>
           <div className={styles.image}>
-            <img src={pic1} alt="Pharmacy" />
+            <img src={images.pic5} alt="Pharmacy" />
           </div>
           <div className={styles.text}>
             Pharmacy <FaPrescriptionBottleMedical />
@@ -35,7 +32,7 @@ function ServiceSection() {
         {/* Service 2 */}
         <div className={`${styles.box} ${styles.fadeIn}`}>
           <div className={styles.image}>
-            <img src={pic1} alt="Labs and Diagnostics" />
+            <img src={images.labscWebp} alt="Labs and Diagnostics" />
           </div>
           <div className={styles.text}>
             Labs and Diagnostics <FaVials />
@@ -49,7 +46,7 @@ function ServiceSection() {
         {/* Service 3 */}
         <div className={`${styles.box} ${styles.fadeIn}`}>
           <div className={styles.image}>
-            <img src={pic1} alt="Health Check" />
+            <img src={images.home} alt="Health Check" />
           </div>
           <div className={styles.text}>
             Health Check Up <FaStethoscope />
@@ -63,16 +60,18 @@ function ServiceSection() {
         {/* Service 4 */}
         <div className={`${styles.box} ${styles.fadeIn}`}>
           <div className={styles.image}>
-            <img src={pic1} alt="Surgery" />
+            <img src={images.surgery} alt="Surgery" />
           </div>
-          <div className={styles.text}>Surgery <GiScalpel style={{ marginLeft: '8px', fontSize: '20px' }} />
+          <div className={styles.textWithIcon}>
+            <span>Surgery</span>
+            <img src={images.surgery} alt="Surgery Icon" className={styles.iconSmall} />
           </div>
           <p className={styles.description}>
             At MidCity Hospital, our surgical department is equipped with state-of-the-art technology and staffed by a team of highly skilled surgeons. We offer a wide range of surgical procedures with a focus on patient safety and successful outcomes.
           </p>
           <Link to="/services/surgery" className={styles.bookButton}>Book Now</Link>
-          </div>
         </div>
+      </div>
     </section>
   );
 }

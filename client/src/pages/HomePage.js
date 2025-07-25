@@ -1,4 +1,3 @@
-// src/pages/Homepage.js
 import React from "react";
 
 // Import all home page sections
