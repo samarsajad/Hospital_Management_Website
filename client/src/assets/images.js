@@ -3,7 +3,7 @@ import pic1 from './pic1.jpg'
 import pic2 from './pic2.jpg';
 import pic3 from './pic3.jpg';
 import pic4 from './pic4.jpg';
-import pic5 from './pic5.webp';
+import pic5 from './pic5.png';
 import pic from './pic.webp';
 import image from './image.png';
 
@@ -21,6 +21,7 @@ import history from './history.png';
 // Medical Images
 import scalpel from './scalpel.png';
 import surgery from './surgery.png';
+import surgeryIcon from './surgery-icon.png';
 import gyanaecology from './gyanaecology.png';
 import urology from './urology.png';
 import labscWebp from './labsc.webp';
@@ -30,7 +31,7 @@ import labscJpg from './labsc.jpg';
 import branchLeaves from './branch-leaves.png';
 
 export const images = {
-  // General
+  // General / Slider section
   pic1,
   pic2,
   pic3,
@@ -53,6 +54,7 @@ export const images = {
   // Medical
   scalpel,
   surgery,
+  surgeryIcon,
   gyanaecology,
   urology,
   labscWebp,
