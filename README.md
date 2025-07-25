@@ -1,27 +1,29 @@
 <div align="center">
-  <h1>🩺 Hospital Management Website</h1>
+  <h1> Hospital Management Website</h1>
   <p>A modern full-stack healthcare management platform that streamlines key hospital services online.</p>
 </div>
 
----
+
 
 <div align="left">
-  <h2>✨ Features Overview</h2>
-  <p>View and order medicines 💊</p>
-  <p>Book lab test appointments 🧪</p>
-  <p>Schedule checkups with doctors 👨‍⚕️</p>
-  <p>Book surgeries with prescription upload 🏥</p>
-  <p>Admin Panel: Manage appointments and listings via MongoDB</p>
+  <h2> Features Overview</h2>
+  <p>View and order medicines</p>
+  <p>Book lab test appointments </p>
+  <p>Schedule checkups with doctors </p>
+  <p>Book surgeries with prescription upload </p>
+  <p>Admin panel for managing appointments and listings</p>
   
 </div>
 <div align="left">
-  <h2>🚀 Tech Stack</h2>
+  <h2>Tech Stack</h2>
   <p>Frontend: React, CSS Modules</p>
   <p>Backend: Node.js, Express</p>
   <p>Database: MongoDB (with Mongoose)</p>
 </div>
 
-### Getting Started
+<div>
+  <h2>Getting Started</h2>
+</div>
 
 To run the website app locally, follow these steps:
 
@@ -49,7 +51,7 @@ npm install
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
-📝 Use your own MongoDB URI. You can get it from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+NOTE: Use your own MongoDB URI. You can get it from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 5. Start the backend server:
 
@@ -76,7 +78,9 @@ npm start
 ```
 The server runs on [http://localhost:3000](http://localhost:3000)  
 
-### Code Contributions
+<div>
+  <h2>Code Contributions</h2>
+</div>
 
 We appreciate any code contributions that enhance the functionality or improve the user experience of the website. To contribute code, follow these steps:
 
@@ -117,7 +121,8 @@ We appreciate any code contributions that enhance the functionality or improve t
 <div>
 <h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
 </div>
-By contributing to this website, you agree to our [Code of Conduct](./Code_of_Conduct.md).  
+By contributing to this website, you agree to our [Code of Conduct](./CODE_OF_CONDUCT.md)
+).  
 We expect everyone to foster an open, respectful, and welcoming environment. 
 <div>
 <!-- License -->
