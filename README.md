@@ -5,21 +5,20 @@
 
 ---
 
-<div align="center">
+<div align="left">
   <h2>✨ Features Overview</h2>
-  <p>* View and order medicines 💊</p>
-  <p>* Book lab test appointments 🧪</p>
-  <p>* Schedule checkups with doctors 👨‍⚕️</p>
-  <p>* Book surgeries with prescription upload 🏥</p>
-  <p>* Admin Panel: Manage appointments and listings via MongoDB</p>
+  <p>View and order medicines 💊</p>
+  <p>Book lab test appointments 🧪</p>
+  <p>Schedule checkups with doctors 👨‍⚕️</p>
+  <p>Book surgeries with prescription upload 🏥</p>
+  <p>Admin Panel: Manage appointments and listings via MongoDB</p>
   
 </div>
-<div align="center">
+<div align="left">
   <h2>🚀 Tech Stack</h2>
-  <p>**Frontend**: React, CSS Modules</p>
-  <p>**Backend**: Node.js, Express</p>
-  <p>**Database**: MongoDB (with Mongoose)</p>
-  <p>**File Uploads**: Multer</p>
+  <p>Frontend: React, CSS Modules</p>
+  <p>Backend: Node.js, Express</p>
+  <p>Database: MongoDB (with Mongoose)</p>
 </div>
 
 ### Getting Started
@@ -76,6 +75,7 @@ npm install
 npm start
 ```
 The server runs on [http://localhost:3000](http://localhost:3000)  
+
 ### Code Contributions
 
 We appreciate any code contributions that enhance the functionality or improve the user experience of the website. To contribute code, follow these steps:
