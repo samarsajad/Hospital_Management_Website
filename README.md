@@ -121,7 +121,7 @@ We appreciate any code contributions that enhance the functionality or improve t
 <div>
 <h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
 </div>
-By contributing to this website, you agree to our [Code of Conduct](./CODE_OF_CONDUCT.md)
+By contributing to this website, you agree to our [Code of Conduct](CODE_OF_CONDUCT.md)
 ).  
 We expect everyone to foster an open, respectful, and welcoming environment. 
 <div>
