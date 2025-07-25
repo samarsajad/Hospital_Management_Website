@@ -5,10 +5,9 @@ import pic1 from "../assets/pic5.webp";
 function HeroSection() {
   return (
     <section className={styles.heroSection}>
-      {/* Hero Block */}
-      <div className={styles.heroContainer}>
+      <div className={styles.heroContent}>
         <div className={styles.heroImage}>
-          <img src={pic1} alt="Doctor consulting patient" />
+          <img src={pic1} alt="Hospital" />
         </div>
         <div className={styles.heroText}>
           <p>
@@ -21,11 +20,7 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Message Block */}
-      <div className={styles.messageContainer}>
-        <div className={styles.messageImage}>
-          <img src={pic1} alt="Hospital environment" />
-        </div>
+      <div className={styles.messageSection}>
         <div className={styles.messageText}>
           <p>
             Thank you for choosing us as your healthcare partner. At MidCity, we

@@ -1,27 +1,17 @@
 .serviceSection {
-  /* text-align: center;
-  padding: 60px 20px;
-  background-color: #f9f9f9; */
   text-align: center;
-  padding: 50px 0;
-  background: linear-gradient(to bottom, #ffff, #203394);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  background-color: #f9f9f9;
 }
 
-.h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #fafcfb;
-  background-color: #203394;
-  box-shadow: 0 4px 24px #13b33b;
-  border-radius: 10px 10px;
-  height: 100px;
-  margin-top: 5px;
-  text-align: center;
-  padding-top: 30px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+.sectionTitle {
+  font-size: 2.8rem;
+  color: #222;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
 .cogIcon {
@@ -43,10 +33,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* gap: 10px; */
-  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 310px;
 }
 
 .box:hover {
@@ -74,16 +61,13 @@
 .description {
   font-size: 0.95rem;
   color: #555;
-  padding: 0 16px;
+  padding: 0 16px 20px;
   text-align: justify;
   line-height: 1.5;
-  margin-bottom: 12px;
-  /* Add this instead of flex-grow */
 }
 
-
 .bookButton {
-  background-color: #203394;
+  background-color: #28a745;
   color: white;
   padding: 10px 16px;
   margin: 0 16px 20px;

@@ -1,7 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; 
 }
 
 .header_container {
@@ -16,18 +17,27 @@ body {
   opacity: 0.9;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
-
 
 .img {
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #rd-logo {
   width: 100px;
   height: 100px;
-  margin-left: 10px;
-  margin-top: 10px;
+}
+
+.navbar__title {
+  font-size: 28px;
+  color: #203394;
+  font-weight: bold;
 }
 
 .nav_menu {
@@ -40,7 +50,8 @@ body {
   list-style-type: none;
   display: flex;
   gap: 20px;
-
+  margin: 0;
+  padding: 0;
 }
 
 .nav_link li {
@@ -54,14 +65,53 @@ body {
   padding: 5px 10px;
   display: flex;
   align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
 }
 
-.nav_link a i {
-  margin-right: 5px;
+.nav_link a:hover {
+  color: #13b33b;
+  text-decoration: none;
 }
 
-.nav_link li a:hover {
-    color: #13b33b;
-    text-decoration: none;
+
+
+.navbar__toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #203394;
 }
 
+
+@media (max-width: 768px) {
+  .nav_menu {
+    position: fixed;
+    top: 100px; 
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    z-index: 999;
+  }
+
+  .nav_menu.active {
+    max-height: 300px; 
+  }
+
+  .nav_link {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+}
