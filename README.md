@@ -104,7 +104,7 @@ We appreciate any code contributions that enhance the functionality or improve t
                 <img src="https://github.com/Meetjain1/wanderlust/assets/133582566/21b2bc42-bdd5-487a-a083-1b262c2f6d9b" alt="GSSOC Logo" width="100" height="55">
             </td>
             <td>
-                <strong>GSSOC 2024</strong>
+                <strong>GSSOC 2025</strong>
             </td>
         </tr>
         <tr>
