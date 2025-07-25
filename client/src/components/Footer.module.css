@@ -1,19 +1,19 @@
-
 .siteFooter {
-  background-color: rgb(93, 0, 255);
-  padding: 40px 20px 0;
-  color: #FDFDFD;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 50px;
+  background-color: #203394;
+  color: #13b33b;
+  box-shadow: 0 4px 24px #13b33b;
+
 }
 
 .footerInner {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 30px;
-  max-width: 1200px;
   margin: 0 auto 30px;
+  max-width: 1200px;
+  padding: 20px;
+
+  
 }
 
 .quickLinks,
@@ -21,20 +21,22 @@
   flex: 1;
   min-width: 200px;
   margin: 10px;
+
 }
 
 .quickLinks h2,
 .legalInfo h2 {
   margin-bottom: 20px;
   font-size: 1.5rem;
-  color: #E6F7F1;
   font-weight: 600;
+  color: #13b33b;
 }
 
 .quickLinks ul,
 .legalInfo ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .quickLinks li,
@@ -48,25 +50,26 @@
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 1.1em;
+  color: #13b33b;
 }
 
 .quickLinks a:hover,
 .legalInfo a:hover {
   color: #E6F7F1;
   text-decoration: underline;
+  color: #13b33b;
 }
 
-hr {
+.divider {
   border: none;
   border-top: 1px solid #64748B;
   margin: 0 0 10px;
 }
 
 .copyright {
-  background-color: #1A4B4C;
+  background-color:  #203394;
   padding: 25px;
   text-align: center;
-  border-radius: 0;
 }
 
 .socialIcons {
@@ -79,13 +82,13 @@ hr {
   margin: 0 15px;
   text-decoration: none;
   transition: all 0.3s ease;
+
 }
 
 .socialIcons a:hover {
   color: #FDFDFD;
   transform: translateY(-3px);
 }
-
 
 @media (max-width: 768px) {
   .footerInner {

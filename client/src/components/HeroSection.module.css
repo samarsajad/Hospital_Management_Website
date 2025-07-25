@@ -53,6 +53,10 @@
   font-weight: 500;
   margin: 0;
 }
+.highlight {
+  color: #0f4613;
+  font-weight: bold;
+}
 
 
 @media (max-width: 1024px) {

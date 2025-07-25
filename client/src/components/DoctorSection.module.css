@@ -2,22 +2,22 @@
   text-align: center;
   padding: 50px 0;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(19, 179, 59, 0.1); 
 }
 
 .doctorsSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  border: 2px solid #f6f9f9;
-  color: #000707;
-  background: (135deg, #E6F7F1, #FDFDFD);
-  box-shadow: 0 0 10px rgba(0, 17, 18, 0.708);
+  border: 2px solid #13b33b; 
+  color: #e6f3e6; 
+  background-color: #203394; 
+  box-shadow: 0 4px 24px #13b33b;
   border-radius: 10px;
   height: 100px;
-  text-align: center;
   padding-top: 30px;
   width: 80%;
   margin: 5px auto;
+  text-align: center;
 }
 
 .doctorsContainer {
@@ -26,6 +26,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  box-shadow: 0 4px 24px #13b33b;
 }
 
 .doctorCard {
@@ -105,5 +106,4 @@
 
 .socialIcons a:hover {
   transform: scale(1.2);
-  color: #007bff;
-}
+  color: #13b33b; }

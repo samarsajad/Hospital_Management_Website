@@ -1,8 +1,7 @@
-
 import React from "react";
 
-
-
+// Import all home page sections
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
 import HeroSection from "../components/HeroSection";
@@ -14,7 +13,7 @@ import ContactSection from "../components/ContactSection";
 const Homepage = () => {
   return (
     <div>
-  
+      <Navbar />
       <Slider />
       <HeroSection />
       <ServiceSection />

@@ -1,17 +1,16 @@
 .serviceSection {
   text-align: center;
   padding: 50px 0;
-  background-color: #ffff, #203394;
+  background: linear-gradient(to bottom, #ffff, #203394);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .serviceSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color:#f1f4fc;
+  color: #fafcfb;
   background-color: #203394;
-
-  box-shadow: 0 0 10px rgba(47, 94, 161, 0.708);
+  box-shadow: 0 4px 24px #13b33b;
   border-radius: 10px 10px;
   height: 100px;
   margin-top: 5px;
@@ -28,6 +27,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  box-shadow: 0 4px 24px #13b33b;
 }
 
 .box {
@@ -48,21 +48,21 @@
 
 .image {
   width: 100%;
-  height: 200px; 
+  height: 200px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9; 
-  margin: 0; 
-  padding: 0; 
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
 }
 
 .image img {
   width: auto;
   max-width: 100%;
   max-height: 80%;
-  object-fit: contain; 
+  object-fit: contain;
   display: block;
 }
 
@@ -75,13 +75,25 @@
   align-items: center;
 }
 
-.readMore {
-  color: #007bff;
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 0.9rem;
+
+.textWithIcon {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.iconSmall {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  padding-left: 5px;
 }
 
 .description {
@@ -91,23 +103,23 @@
   color: #333;
 }
 
+.bookButton {
+  margin: 10px auto 15px;
+  padding: 8px 20px;
+  background-color: #203394;
+  color: #fafcfb;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
 
-
-  
-  .iconSmall {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    border-radius: 4px;
-  padding-left: 5px;
-
-   
-  }
-  
-
-
-
-
+.bookButton:hover {
+  background-color: #13b33b;
+  color: #fff;
+}
 
 @keyframes fadeIn {
   from {
@@ -119,6 +131,7 @@
     transform: translateY(0);
   }
 }
+
 @media (max-width: 1024px) {
   .box {
     width: 45%;

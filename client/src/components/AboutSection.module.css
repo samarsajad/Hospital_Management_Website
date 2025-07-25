@@ -1,7 +1,7 @@
 .aboutUs {
   padding: 60px 40px;
-  background-color:#ffffff;
-  box-shadow: 0 8px 24px #1a4b4c14;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px #f6f5f7;
   margin: 30px auto;
   border-radius: 12px;
   max-width: 1400px;
@@ -14,11 +14,11 @@
 
 .aboutContainer h1 {
   font-size: 2.8em;
-  color:#f6f6f8;
+  color: #eef6f9; 
   text-align: center;
   margin-bottom: 30px;
-  background: #203394 ;
-  border: 1px solid #E2E8F0;
+  background: #203394;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   height: 120px;
   display: flex;
@@ -26,11 +26,17 @@
   justify-content: center;
   font-weight: 600;
   letter-spacing: -0.5px;
+  box-shadow: 0 4px 24px #13b33b;
+}
+
+.headerIcon {
+  margin-right: 10px;
+  font-size: 2.2em;
 }
 
 .text {
   font-size: 1.2em;
-  color: #00070e;
+  color: #1c2733; 
   line-height: 1.7;
   margin-bottom: 25px;
   text-align: justify;
@@ -45,10 +51,16 @@
   margin-top: 15px;
   text-decoration: underline;
   transition: color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 1em;
+  padding: 0;
 }
 
-.readMore:hover {
+.readMore:hover,
+.readMore:focus {
   color: #57d596;
+  outline: none;
 }
 
 .historyVisionMission {
@@ -62,8 +74,8 @@
 
 .history, .vision, .mission {
   flex: 1;
-  background-color: #FDFDFD;
-  border: 1px solid #E2E8F0;
+  background-color: #fdfdfd;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0;
   box-shadow: 0 4px 12px rgba(44, 122, 123, 0.08);
@@ -74,12 +86,12 @@
 
 .history:hover, .vision:hover, .mission:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(44, 122, 123, 0.12);
+  box-shadow: 0 8px 24px rgba(1, 30, 31, 0.12);
 }
 
 .history h2, .vision h2, .mission h2 {
   font-size: 1.6em;
-  color: #FDFDFD;
+  color: #fdfdfd;
   margin: 0 0 20px 0;
   padding: 20px 25px;
   background: linear-gradient(135deg, #7eb1e4, #203394);
@@ -89,6 +101,13 @@
   gap: 12px;
   font-weight: 600;
   letter-spacing: -0.3px;
+}
+
+.iconImg {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  object-fit: contain;
 }
 
 .history p, .vision p, .mission p {
@@ -104,9 +123,9 @@
   text-align: center;
   font-size: 2.8em;
   margin: 60px auto 30px;
-  color:  #f0f1f7;
-  background: #203394 ;
-  border: 2px solid  #f3f4fa;
+  color: #edf7f0;
+  background-color: #203394;
+  border: 2px solid #f3f4fa;
   border-radius: 12px;
   height: 120px;
   padding-top: 30px;
@@ -116,12 +135,13 @@
   justify-content: center;
   font-weight: 600;
   letter-spacing: -0.5px;
+  box-shadow: 0 4px 24px #13b33b;
 }
 
 .specialties {
   flex: 1;
-  background-color: #FDFDFD;
-  border: 1px solid #E2E8F0;
+  background-color: #fdfdfd;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -133,11 +153,11 @@
 
 .specialty {
   flex: 1;
-  background-color: #FDFDFD;
-  border: 1px solid #E2E8F0;
+  background-color: #fdfdfd;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0;
-  box-shadow: 0 4px 12px rgba(58, 48, 140, 0.08);
+  box-shadow: 0 4px 12px rgba(15, 197, 85, 0.08);
   min-width: 300px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -149,20 +169,16 @@
 }
 
 .specialty img {
-  width: 10%;
-  height: 50px;
-  
-  object-fit: cover;
-  border-radius: 0;
-  max-height: 100px;
-  max-width: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   filter: drop-shadow(0 0 4px rgba(0,0,0,0.2));
+  padding: 10px;
 }
 
 .specialty h3 {
   font-size: 1.5em;
-  color: #FDFDFD;
+  color: #fdfdfd;
   margin: 0 0 20px 0;
   background: linear-gradient(135deg, #7eb1e4, #203394);
   padding: 18px 25px;
@@ -172,8 +188,7 @@
   align-items: center;
   gap: 12px;
   font-weight: 600;
-  letter-spacing: -0.3px; 
-
+  letter-spacing: -0.3px;
 }
 
 .specialty p {
@@ -191,17 +206,17 @@
     padding: 40px 20px;
     margin: 20px 10px;
   }
-  
+
   .aboutContainer h1, .specialtiesHeading {
     font-size: 2.2em;
     height: 100px;
   }
-  
+
   .historyVisionMission, .specialties {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .history, .vision, .mission, .specialty {
     min-width: unset;
   }
