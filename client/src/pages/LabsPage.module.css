@@ -77,3 +77,28 @@ button[type="submit"] {
     z-index: 0;
     margin-top: 10px;
 }
+
+.dark-mode .labsContainer {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode h1 {
+  color: #FFD700 !important;
+}
+
+.dark-mode .formGroup label {
+  color: #FFD700 !important;
+}
+
+.dark-mode .formGroup input,
+.dark-mode .formGroup select {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+.dark-mode button[type="submit"] {
+  background-color: #FFD700 !important;
+  color: #23272f !important;
+}

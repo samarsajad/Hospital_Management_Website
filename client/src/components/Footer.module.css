@@ -74,3 +74,22 @@ hr {
 .socialIcons a:hover {
   color: white;
 }
+
+.dark-mode .siteFooter {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .copyright {
+  background-color: #181a1b !important;
+  color: #FFD700 !important;
+}
+
+.dark-mode .quickLinks a,
+.dark-mode .legalInfo a {
+  color: #FFD700 !important;
+}
+
+.dark-mode .socialIcons a {
+  color: #FFD700 !important;
+}

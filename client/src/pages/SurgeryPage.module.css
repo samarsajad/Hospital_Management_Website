@@ -50,3 +50,27 @@
 .surgeryForm button:hover {
   background-color: #2980b9;
 }
+
+.dark-mode .surgeryContainer {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .surgeryContainer h1 {
+  color: #FFD700 !important;
+}
+
+.dark-mode .surgeryForm input[type="text"],
+.dark-mode .surgeryForm input[type="email"],
+.dark-mode .surgeryForm input[type="tel"],
+.dark-mode .surgeryForm input[type="date"],
+.dark-mode .surgeryForm input[type="file"] {
+  background-color: #181a1b !important;
+  color: #FFD700 !important;
+  border-color: #FFD700 !important;
+}
+
+.dark-mode .surgeryForm button {
+  background-color: #FFD700 !important;
+  color: #23272f !important;
+}

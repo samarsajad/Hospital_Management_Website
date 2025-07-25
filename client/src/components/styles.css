@@ -9,8 +9,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  width: 100%;
+  min-height: 80px;      /* Changed from height: 100px */
   padding: 10px 20px;
   background-color: #ffffff;
   opacity: 0.9;
@@ -20,20 +19,25 @@ body {
 
 
 .img {
-  flex: 1;
+  width: 120px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
 }
 
 #rd-logo {
-  width: 100px;
-  height: 100px;
+  width: 60px;   /* Try reducing from 90px */
+  height: 60px;
   margin-left: 10px;
   margin-top: 10px;
 }
 
 .nav_menu {
-  flex: 10;
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav_link {
@@ -64,4 +68,52 @@ body {
     color: #13b33b;
     text-decoration: none;
 }
+
+/* Dark mode overrides */
+.dark-mode {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .header_container {
+  background-color: #23272f !important;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.2);
+}
+
+.dark-mode .nav_link a {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .nav_link li a:hover {
+  color: #FFD700 !important;
+}
+
+.dark-mode .img #rd-logo {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #FFD700 !important;
+}
+
+.dark-mode-toggle {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s;
+  z-index: 999;
+  position: relative;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 60px;
+}
+
+/* Add more dark mode overrides for other components as needed */
 

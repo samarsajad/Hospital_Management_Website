@@ -106,3 +106,64 @@
   transform: scale(1.2);
   color: #007bff;
 }
+
+/* .dark-mode .doctorsSection {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .doctorsSection h1 {
+  background-color: #23272f !important;
+  color: #FFD700 !important;
+}
+
+.dark-mode .doctorCard,
+.dark-mode .cardFront,
+.dark-mode .cardBack {
+  background-color: #181a1b !important;
+  color: #FFD700 !important;
+  border-color: #FFD700 !important;
+}
+
+.dark-mode .cardBack {
+  background-color: #23272f !important;
+}
+
+.dark-mode .cardFront p {
+  color: #FFD700 !important;
+}
+
+.dark-mode .socialIcons a {
+  color: #FFD700 !important;
+} */
+
+/* Scoped dark mode overrides */
+.dark {
+  background-color: #23272f;
+  color: #e0e0e0;
+}
+
+.dark h1 {
+  background-color: #23272f;
+  color: #F2F7A1;
+}
+
+.dark .doctorCard,
+.dark .cardFront,
+.dark .cardBack {
+  background-color: #181a1b;
+  color: #F2F7A1;
+  border-color: #F2F7A1;
+}
+
+.dark .cardBack {
+  background-color: #23272f;
+}
+
+.dark .cardFront p {
+  color: #F2F7A1;
+}
+
+.dark .socialIcons a {
+  color: #F2F7A1;
+}

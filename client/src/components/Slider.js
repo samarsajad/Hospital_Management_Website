@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './slider.module.css';
+
 import pic1 from '../assets/pic5.webp';
 import pic2 from '../assets/pic.webp';
 import pic3 from '../assets/pic5.webp';
@@ -15,13 +16,12 @@ function Slider() {
     setCurrentIndex(newIndex);
   };
 
-  // ✅ Auto-slide using useEffect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // cleanup
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -34,16 +34,10 @@ function Slider() {
           loading="lazy"
         />
       </div>
-      <button
-        className={`${styles.button} ${styles.prev}`}
-        onClick={() => changeSlide(-1)}
-      >
+      <button className={`${styles.button} ${styles.prev}`} onClick={() => changeSlide(-1)}>
         &#10094;
       </button>
-      <button
-        className={`${styles.button} ${styles.next}`}
-        onClick={() => changeSlide(1)}
-      >
+      <button className={`${styles.button} ${styles.next}`} onClick={() => changeSlide(1)}>
         &#10095;
       </button>
     </div>

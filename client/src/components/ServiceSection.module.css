@@ -39,6 +39,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s forwards;
   transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
 .box:hover {
@@ -97,4 +98,55 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.dark .heading {
+  background-color: #23272f;
+  color: #F2F7A1;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.dark {
+  background-color: #23272f;
+  color: #e0e0e0;
+}
+
+.dark-mode .serviceSection {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+
+.dark-mode .box {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+  border-color: #F2F7A1 !important;
+}
+
+.dark-mode .description {
+  color: #f6f5f3 !important;
+}
+
+.dark-mode .readMore {
+  color: #F2F7A1 !important;
+}
+
+.dark-mode .bookButton {
+  background-color: #F2F7A1 !important;
+  color: #23272f !important;
+  border: none !important;
+}
+
+:global(.dark-mode) .serviceContainer {
+  background-color: #23272f !important;
+}
+
+:global(.dark-mode) .box {
+  background-color: #181a1b !important;
+  color: #F2F7A1 !important;
+  border-color: #F2F7A1 !important;
+}
+
+:global(.dark-mode) .description {
+  color: #f6f5f3 !important;
 }

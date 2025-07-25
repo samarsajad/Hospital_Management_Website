@@ -149,3 +149,87 @@
 .success, .error { font-weight: 600; margin-top: 4px; }
 .success { color: #28a745; }
 .error   { color: #dc3545; }
+
+
+.dark {
+  background: #23272f;
+  color: #F2F7A1;
+}
+
+.dark .card {
+  background: #181a1b;
+  border-color: #FFD700;
+  color: #F2F7A1;
+}
+
+.dark .info h2,
+.dark .tagline {
+  color: #F2F7A1;
+}
+
+.dark .group input,
+.dark .group textarea {
+  background: #23272f;
+  color: #F2F7A1;
+  border-color: #F2F7A1;
+}
+
+.dark .group label {
+  background: #23272f;
+  color: #F2F7A1;
+}
+
+.dark .submit {
+  background: linear-gradient(135deg,#F2F7A1 0%,#F2F7A1 100%);
+  color: #23272f;
+}
+
+.dark .success {
+  color: #13b33b;
+}
+
+.dark .error {
+  color: #dc3545;
+}
+
+
+.dark-mode .contact {
+  background: #23272f !important;
+  color: #F2F7A1 !important;
+}
+
+.dark-mode .card {
+  background: #181a1b !important;
+  border-color: #F2F7A1 !important;
+  color: #F2F7A1 !important;
+}
+
+.dark-mode .info h2,
+.dark-mode .tagline {
+  color: #F2F7A1 !important;
+}
+
+.dark-mode .group input,
+.dark-mode .group textarea {
+  background: #23272f !important;
+  color: #F2F7A1 !important;
+  border-color: #F2F7A1 !important;
+}
+
+.dark-mode .group label {
+  background: #23272f !important;
+  color: #F2F7A1 !important;
+}
+
+.dark-mode .submit {
+  background: linear-gradient(135deg,#F2F7A1 0%,#FFD700 100%) !important;
+  color: #23272f !important;
+}
+
+.dark-mode .success {
+  color: #13b33b !important;
+}
+
+.dark-mode .error {
+  color: #dc3545 !important;
+}
