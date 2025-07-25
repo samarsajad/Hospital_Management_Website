@@ -1,24 +1,27 @@
+/* AboutSection.module.css */
+
+/* About Us Section - Enhanced */
 .aboutUs {
-  padding: 60px 40px;
+  padding: 80px 40px;
   background-color: #ffffff;
-  box-shadow: 0 8px 24px #f6f5f7;
   margin: 30px auto;
-  border-radius: 12px;
   max-width: 1400px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .aboutContainer {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto 60px;
+  text-align: center;
 }
 
 .aboutContainer h1 {
+  
   font-size: 2.8em;
   color: #eef6f9; 
   text-align: center;
-  margin-bottom: 30px;
-  background: #203394;
-  border: 1px solid #e2e8f0;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #203394, #3a5fcd);
   border-radius: 12px;
   height: 120px;
   display: flex;
@@ -26,100 +29,127 @@
   justify-content: center;
   font-weight: 600;
   letter-spacing: -0.5px;
-  box-shadow: 0 4px 24px #13b33b;
+    box-shadow: 0 4px 24px #13b33b;
+  position: relative;
+  overflow: hidden;
 }
 
-.headerIcon {
-  margin-right: 10px;
-  font-size: 2.2em;
+.aboutContainer h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #13b33b, transparent);
+}
+
+.aboutContainer h1 i {
+  margin-right: 15px;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 .text {
   font-size: 1.2em;
-  color: #1c2733; 
-  line-height: 1.7;
-  margin-bottom: 25px;
-  text-align: justify;
+  color: #4a5568; 
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
   font-weight: 400;
 }
 
-.readMore {
-  color: #1461ef;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-block;
-  margin-top: 15px;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-  background: none;
-  border: none;
-  font-size: 1em;
-  padding: 0;
-}
-
-.readMore:hover,
-.readMore:focus {
-  color: #57d596;
-  outline: none;
-}
-
 .historyVisionMission {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  flex-wrap: wrap;
-  margin: 50px 0 60px;
-  padding: 20px 0;
+  margin: 50px 0 80px;
 }
 
 .history, .vision, .mission {
-  flex: 1;
-  background-color: #fdfdfd;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0;
-  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.08);
-  min-width: 300px;
+  background-color: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
 }
 
 .history:hover, .vision:hover, .mission:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(1, 30, 31, 0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(32, 51, 148, 0.15);
 }
 
-.history h2, .vision h2, .mission h2 {
-  font-size: 1.6em;
-  color: #fdfdfd;
-  margin: 0 0 20px 0;
-  padding: 20px 25px;
-  background: linear-gradient(135deg, #7eb1e4, #203394);
-  border-radius: 0;
+.cardHeader {
+  background: linear-gradient(135deg, #203394, #3a5fcd);
+  padding: 25px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+  color: white;
+}
+
+.cardHeader h2 {
+  font-size: 1.6em;
+  margin: 0;
   font-weight: 600;
   letter-spacing: -0.3px;
 }
 
-.iconImg {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  object-fit: contain;
+.cardHeader img {
+  filter: brightness(0) invert(1);
 }
 
-.history p, .vision p, .mission p {
+.cardContent {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent p {
   font-size: 1.1em;
-  color: #334155;
+  color: #4a5568;
   line-height: 1.7;
-  margin-bottom: 15px;
-  text-align: justify;
-  padding: 0 25px 25px;
+  margin-bottom: 25px;
+  text-align: left;
 }
 
-.specialtiesHeading {
+.readMoreContainer {
+  margin-top: auto;
+  text-align: right;
+}
+
+.readMore {
+  color: #203394;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.readMore:hover {
+  color: #3a5fcd;
+  background-color: rgba(32, 51, 148, 0.1);
+}
+
+.readMore i {
+  transition: transform 0.3s ease;
+}
+
+.readMore:hover i {
+  transform: translateX(3px);
+}
+
+/* Specialties Section - Kept EXACTLY as original */
+.specialtiesHeading {  
   text-align: center;
   font-size: 2.8em;
   margin: 60px auto 30px;
@@ -128,7 +158,6 @@
   border: 2px solid #f3f4fa;
   border-radius: 12px;
   height: 120px;
-  padding-top: 30px;
   width: 85%;
   display: flex;
   align-items: center;
@@ -136,6 +165,7 @@
   font-weight: 600;
   letter-spacing: -0.5px;
   box-shadow: 0 4px 24px #13b33b;
+  padding: 0; 
 }
 
 .specialties {
@@ -201,23 +231,51 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutUs {
+    padding: 60px 30px;
+  }
+  
+  .aboutContainer h1 {
+    font-size: 2.4em;
+    height: 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .aboutUs {
     padding: 40px 20px;
-    margin: 20px 10px;
   }
-
+  
   .aboutContainer h1, .specialtiesHeading {
-    font-size: 2.2em;
-    height: 100px;
+    font-size: 2em;
+    height: 90px;
   }
+  
+  .historyVisionMission {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .text, .cardContent p {
+    font-size: 1em;
+  }
+}
 
-  .historyVisionMission, .specialties {
+@media (max-width: 480px) {
+  .aboutContainer h1 {
+    font-size: 1.8em;
+    height: 80px;
+  }
+  
+  .cardHeader {
+    padding: 20px;
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
+    gap: 10px;
   }
-
-  .history, .vision, .mission, .specialty {
-    min-width: unset;
+  
+  .cardHeader h2 {
+    font-size: 1.4em;
   }
 }

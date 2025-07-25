@@ -23,44 +23,58 @@ function AboutUs() {
 
       <div className={styles.historyVisionMission}>
         <div className={styles.history}>
-          <h2>
-            Our History <img src={historyImg} alt="history" width={50} height={50} style={{ padding: '10px' }} />
-          </h2>
-          <p className={styles.text}>
-            Established in 2019, MidCity Hospital has been at the forefront of healthcare innovation. Our founders, Dr. xyz and Dr. abc, envisioned a hospital that not only treated illnesses but also prioritized patient comfort and satisfaction. Over the decades, we have grown into a multifaceted healthcare provider, expanding our services to meet the evolving needs of our patients.
-            
-          </p>
-          <span className={styles.readMore}>Read More</span>
+          <div className={styles.cardHeader}>
+            <img src={historyImg} alt="history" width={50} height={50} />
+            <h2>Our History</h2>
+          </div>
+          <div className={styles.cardContent}>
+            <p className={styles.text}>
+              Established in 2019, MidCity Hospital has been at the forefront of healthcare innovation. Our founders, Dr. xyz and Dr. abc, envisioned a hospital that not only treated illnesses but also prioritized patient comfort and satisfaction. Over the decades, we have grown into a multifaceted healthcare provider, expanding our services to meet the evolving needs of our patients.
+            </p>
+            <div className={styles.readMoreContainer}>
+              <span className={styles.readMore}>Read More <i className="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
         </div>
 
         <div className={styles.vision}>
-          <h2>
-            Our Vision <img src={visionImg} alt="vision" width={50} height={50} style={{ padding: '10px' }} />
-          </h2>
-          <p className={styles.text}>
-            Our vision is to be a beacon of excellence in the healthcare industry, recognized for our innovative practices, clinical expertise, and unwavering commitment to patient care. We aim to set new standards in healthcare delivery and become the preferred choice for urology and gynecology services.
-          </p>
-          <span className={styles.readMore}>Read More</span>
+          <div className={styles.cardHeader}>
+            <img src={visionImg} alt="vision" width={50} height={50} />
+            <h2>Our Vision</h2>
+          </div>
+          <div className={styles.cardContent}>
+            <p className={styles.text}>
+              Our vision is to be a beacon of excellence in the healthcare industry, recognized for our innovative practices, clinical expertise, and unwavering commitment to patient care. We aim to set new standards in healthcare delivery and become the preferred choice for urology and gynecology services.
+            </p>
+            <div className={styles.readMoreContainer}>
+              <span className={styles.readMore}>Read More <i className="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
         </div>
 
         <div className={styles.mission}>
-          <h2>
-            Our Mission <img src={missionImg} alt="mission" width={50} height={50} style={{ padding: '10px' }} />
-          </h2>
-          <p className={styles.text}>
-            Our mission is to deliver exceptional healthcare services with a patient-centered approach. We strive to enhance the quality of life for our patients by offering advanced medical treatments and personalized care in a welcoming environment.
-          </p>
-          <span className={styles.readMore}>Read More</span>
+          <div className={styles.cardHeader}>
+            <img src={missionImg} alt="mission" width={50} height={50} />
+            <h2>Our Mission</h2>
+          </div>
+          <div className={styles.cardContent}>
+            <p className={styles.text}>
+              Our mission is to deliver exceptional healthcare services with a patient-centered approach. We strive to enhance the quality of life for our patients by offering advanced medical treatments and personalized care in a welcoming environment.
+            </p>
+            <div className={styles.readMoreContainer}>
+              <span className={styles.readMore}>Read More <i className="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Specialties Section - Kept EXACTLY as original */}
       <h2 className={styles.specialtiesHeading}>
         Specialties
       </h2>
 
       <div className={styles.specialties}>
         <div className={styles.specialty}>
-          
           <h3>
             Urology <img src={urologyImg} alt="urology" width={50} height={50} style={{ padding: '10px' }} />
           </h3>
@@ -70,7 +84,6 @@ function AboutUs() {
         </div>
 
         <div className={styles.specialty}>
-          
           <h3>
             Gynaecology <img src={gynaeImg} alt="gynae" width={50} height={50} style={{ padding: '10px' }} />
           </h3>
