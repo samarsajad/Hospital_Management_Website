@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./slider.module.css";
-import { images } from "../assets/images";
+import  images  from "../assets/images";
 
 const sliderImages = [
   images.pic5,

@@ -1,3 +1,7 @@
+.aboutSection {
+  padding: 60px 40px;
+  background-color: #ffffff;
+}
 .aboutUs {
   padding: 60px 40px;
   background-color: #ffffff;
@@ -199,6 +203,77 @@
   padding: 0 25px 25px;
   margin: 0;
 }
+.specialtiesHeading {
+  text-align: center;
+  font-size: 2.8em;
+  margin: 60px auto 30px;
+  color: #edf7f0;
+  background-color: #203394;
+  border: 2px solid #f3f4fa;
+  border-radius: 12px;
+  height: 120px;
+  padding-top: 30px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  box-shadow: 0 4px 24px #13b33b;
+}
+
+/* Container for specialties */
+.specialtyHeading {
+  text-align: center;
+  font-size: 2.5em;
+  color: #203394;
+  margin-bottom: 40px;
+}
+
+.specialtyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  margin-bottom: 60px;
+}
+
+.specialtyCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding:20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.specialtyCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.specialtyCard img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 400 / 365;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0 auto 15px;
+}
+
+.specialtyCard h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #203394;
+}
+
+.specialtyCard p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
