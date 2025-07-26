@@ -1,22 +1,13 @@
-import React, { useState } from "react";
-import {
-  FaHome,
-  FaInfoCircle,
-  FaCog,
-  FaUserMd,
-  FaPhone,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
-import logo from "../assets/logo-web.jpg";
-import "./styles.css";
+// Navbar.jsx
+import './styles.css';
+import logo from '../assets/logo-web.jpg';
+import { FaHome, FaInfoCircle, FaCog, FaUserDoctor, FaPhone } from 'react-icons/fa';
+import { FaUserMd } from 'react-icons/fa';
+
+
+
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const closeMenu = () => setMobileMenuOpen(false);
-
   return (
     <header className="header_container nav-h">
       <div className="img">
@@ -58,10 +49,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-
-      <div className="navbar__toggle" onClick={toggleMenu}>
-        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-      </div>
     </header>
   );
 }

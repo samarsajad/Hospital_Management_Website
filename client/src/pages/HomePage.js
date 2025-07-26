@@ -10,16 +10,16 @@ import DoctorsSection from "../components/DoctorsSection";
 import AboutSection from "../components/AboutSection";
 import ContactSection from "../components/ContactSection";
 
-const Homepage = () => {
+const Homepage = ({ darkMode, setDarkMode }) => {
   return (
     <div>
-      <Navbar />
-      <Slider />
-      <HeroSection />
-      <ServiceSection />
-      <DoctorsSection />
-      <AboutSection />
-      <ContactSection />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Slider darkMode={darkMode} />
+      <HeroSection darkMode={darkMode} />
+      <ServiceSection darkMode={darkMode} />
+      <DoctorsSection darkMode={darkMode}/>
+      <AboutSection darkMode={darkMode} />
+      <ContactSection darkMode={darkMode} />
       <Footer />
     </div>
   );

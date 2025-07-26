@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './DoctorSection.module.css';
 import doctorImg from '../assets/pic5.webp';
 
-function DoctorsSection() {
+function DoctorsSection({darkMode}) {
   const doctors = [
     {
       name: 'Dr. Rahul Mishra',
@@ -27,7 +27,7 @@ function DoctorsSection() {
   ];
 
   return (
-    <section className={styles.doctorsSection}>
+    <section className={`${styles.doctorsSection} ${darkMode ? styles.dark : ''}`}>
       <h1>
         <i className="fa-solid fa-user-doctor" style={{ fontSize: '50px', padding: '10px' }}></i>
         Meet Our Doctors

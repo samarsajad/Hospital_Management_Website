@@ -40,6 +40,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s forwards;
   transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
 .box:hover {
@@ -129,41 +130,5 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 1024px) {
-  .box {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .box {
-    width: 100%;
-  }
-
-  .image {
-    height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .image {
-    height: 150px;
-  }
-
-  .serviceSection h1 {
-    font-size: 1.5em;
-    height: auto;
-    padding: 20px 10px;
-  }
-
-  .description {
-    font-size: 0.85rem;
-  }
-
-  .readMore {
-    font-size: 0.85rem;
   }
 }

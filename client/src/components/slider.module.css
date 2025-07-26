@@ -1,5 +1,4 @@
 .slider {
-    padding-top: 115px;
     position: relative;
     max-width: 100%;
     margin: auto;
@@ -21,30 +20,52 @@
   max-height: 700px;
 }
 
-button {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    z-index: 1;
+.button {
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
-    left: 0;
+  left: 0;
 }
 
 .next {
-    right: 0;
-} 
+  right: 0;
+}
+
+/* ========== Dark Mode ========== */
+.dark-mode .slider {
+  background-color: #23272f !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .slides {
+  background-color: #23272f !important;
+}
+
+.dark-mode .slide {
+  background-color: #181a1b !important;
+}
+
+.dark-mode .button {
+  background-color: rgba(255, 215, 0, 0.2) !important;
+  color: #F2F7A1 !important;
+}
+
+.dark-mode .button:hover {
+  background-color: rgba(255, 215, 0, 0.4) !important;
+}
