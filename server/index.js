@@ -11,7 +11,7 @@ const path = require("path");
 const Surgery = require("./models/surgery");
 const authRoutes = require("./routes/authRoutes");
 const medicineRoutes = require("./routes/medicineRoutes");
-
+const adminRoutes = require("./routes/adminRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -36,6 +36,7 @@ mongoose
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes);
 app.use("/api/admin/medicines", medicineRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.get("/api/doctors", async (req, res) => {
   try {
