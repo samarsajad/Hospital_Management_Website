@@ -11,37 +11,36 @@ function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const changeSlide = (direction) => {
-    const newIndex = (currentIndex + direction + sliderImages.length) % sliderImages.length;
+    const newIndex = (currentIndex + direction + images.length) % images.length;
     setCurrentIndex(newIndex);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.slides}>
-        <img
-          src={sliderImages[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
-          className={styles.slide}
-          loading="lazy"
-        />
+    <div className={styles.heroHeader}>
+      <div className={styles.slider}>
+        <div className={styles.slides}>
+          <img
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            className={styles.slide}
+            loading="lazy"
+          />
+        </div>
+        <button className={`${styles.button} ${styles.prev}`} onClick={() => changeSlide(-1)}>
+          &#10094;
+        </button>
+        <button className={`${styles.button} ${styles.next}`} onClick={() => changeSlide(1)}>
+          &#10095;
+        </button>
       </div>
-      <button
-        className={`${styles.button} ${styles.prev}`}
-        onClick={() => changeSlide(-1)}
-      >
-        &#10094;
-      </button>
-      <button className={`${styles.button} ${styles.next}`} onClick={() => changeSlide(1)}>
-        &#10095;
-      </button>
     </div>
   );
 }

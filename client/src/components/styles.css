@@ -7,6 +7,7 @@ body {
 
 .header_container {
   display: flex;
+  width: 100vw;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -14,10 +15,11 @@ body {
   padding: 10px 20px;
   background-color: #ffffff;
   opacity: 0.9;
-  border-radius: 20px;
+  border-radius: 0px;
   box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
   position: fixed;
   top: 0;
+  height: 120px;
   z-index: 1000;
 }
 
@@ -46,10 +48,12 @@ body {
   gap: 20px;
   margin: 0;
   padding: 0;
+  color: #203394;;
 }
 
 .nav_link li {
   display: inline;
+  color: #203394;
 }
 
 .nav_link a {
@@ -66,6 +70,108 @@ body {
 .nav_link a:hover {
   color: #13b33b;
   text-decoration: none;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 60px;
+}
+
+.navbar__toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav_menu {
+    position: fixed;
+    top: 100px; 
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    z-index: 999;
+  }
+
+  .nav_menu.active {
+    max-height: 300px; 
+  }
+
+  .nav_link {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+    color: #203394;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+}
+
+body {
+  background-color: white;
+  color: #203394;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header container */
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--header-bg, #fff);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Logo */
+.logo-container {
+  flex-shrink: 0;
+}
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Navigation */
+.nav_menu {
+  flex-grow: 1;
+  text-align: right;
+}
+.nav_link {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav_link li a {
+  text-decoration: none;
+  color: #203394;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav_link li a:hover {
+  color: green;
 }
 
 /* Dark mode overrides */
@@ -105,55 +211,35 @@ body {
   transition: color 0.3s;
   z-index: 999;
   position: relative;
+  color: #FFD700;
 }
 
-.toggle-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 60px;
+/* Dark mode toggle */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-/* Add more dark mode overrides for other components as needed */
+/* Navbar dark styles */
+body.dark-mode .header_container {
+  background-color: #1e1e1e;
+}
 
+body.dark-mode .nav_link a {
+  color: #e0e0e0;
+}
 
-
-.navbar__toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
+.dark-toggle-btn {
+  background: none;
+  border: none;
   color: #203394;
+  font-size: 25px;
+  padding-top: 2px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+body.dark-mode .dark-toggle-btn{
+  color: #FFD700;
 }
 
 
-@media (max-width: 768px) {
-  .nav_menu {
-    position: fixed;
-    top: 100px; 
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
-    z-index: 999;
-  }
-
-  .nav_menu.active {
-    max-height: 300px; 
-  }
-
-  .nav_link {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 0;
-  }
-
-  .navbar__toggle {
-    display: block;
-  }
-}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react'; 
 import './components/styles.css';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -10,6 +10,10 @@ import SurgeryPage from './pages/SurgeryPage';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
+
 
   return (
      <Routes>

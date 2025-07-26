@@ -1,4 +1,40 @@
 html {
     scroll-behavior: smooth;
   }
+
+  /* Global elements */
+/* .dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: #cf4545;
+}
+
+.dark-mode .card {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+
+.dark-mode a {
+  color: #ffcb6b;
+} */
+
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p {
+  color: #ffffff;
+}
+
   

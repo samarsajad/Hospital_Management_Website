@@ -1,23 +1,33 @@
+/* Fullscreen hero header */
+.heroHeader {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .slider {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    border: 2px solid #ddd;
+  padding: 115px 0 0 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slides {
+  height: 100%;
   width: 100%;
-  transition: transform 0.5s ease-in-out;
+  position: relative;
 }
 
 .slide {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  max-height: 700px;
+  display: block;
 }
 
 .button {
@@ -47,16 +57,30 @@
   right: 0;
 }
 
+.overlayText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.overlayText h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.overlayText p {
+  font-size: 1.25rem;
+}
+
 /* ========== Dark Mode ========== */
-.dark-mode .slider {
-  background-color: #23272f !important;
-  border-color: #333 !important;
-}
-
-.dark-mode .slides {
-  background-color: #23272f !important;
-}
-
+.dark-mode .heroHeader,
+.dark-mode .slider,
+.dark-mode .slides,
 .dark-mode .slide {
   background-color: #181a1b !important;
 }
@@ -68,4 +92,9 @@
 
 .dark-mode .button:hover {
   background-color: rgba(255, 215, 0, 0.4) !important;
+}
+
+.dark-mode .overlayText {
+  color: #f7f7f7 !important;
+  text-shadow: 0 2px 10px #000;
 }

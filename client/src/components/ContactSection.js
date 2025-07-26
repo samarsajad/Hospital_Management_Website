@@ -7,7 +7,7 @@ import {
   FaPaperPlane
 } from 'react-icons/fa';
 
-const ContactSection = ({darkMode}) => {
+const ContactSection = () => {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -41,7 +41,7 @@ const ContactSection = ({darkMode}) => {
   };
 
   return (
-    <section className={`${styles.contact} ${darkMode ? styles.dark : ''}`} id="contact">
+    <section className={styles.contact} id="contact">
       <div className={styles.card}>
         {/* ───────── Left column ───────── */}
         <aside className={styles.info}>

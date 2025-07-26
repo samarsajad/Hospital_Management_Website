@@ -72,37 +72,3 @@
     max-width: 100%;
   }
 }
-
-.dark {
-  background-color: #23272f;
-  color: #e0e0e0;
-}
-
-.darkContainer {
-  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.1);
-}
-
-.darkText {
-  background-color: #181a1b;
-  color: #F2F7A1;
-}
-
-.darkText p {
-  color: #F2F7A1;
-}
-
-
-.dark-mode .heroContainer {
-  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.1) !important;
-}
-
-.dark-mode .heroText,
-.dark-mode .messageText {
-  background-color: #181a1b !important;
-  color: #F2F7A1 !important;
-}
-
-.dark-mode .heroText p,
-.dark-mode .messageText p {
-  color: #F2F7A1 !important;
-}

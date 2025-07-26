@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ServiceSection.module.css';
-import pic1 from '../assets/pic5.webp';
-import scalpel from '../assets/scalpel.png';
-import { GiScalpel } from 'react-icons/gi';
+import { images } from '../assets/images';
+
 import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';
 import { FaPrescriptionBottleMedical } from 'react-icons/fa6';
 
 function ServiceSection({darkMode}) {
+    const modeClass = darkMode ? styles.dark : '';
+
   return (
-    <section className={`${styles.serviceSection} ${darkMode ? styles.dark : ''}`}>
-      <h1 className={styles.heading}>
+    <section className={`${styles.serviceSection} ${modeClass}`}>
+      <h1>
         Services <FaCog />
       </h1>
 

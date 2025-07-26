@@ -149,3 +149,28 @@
 .success, .error { font-weight: 600; margin-top: 4px; }
 .success { color: #28a745; }
 .error   { color: #dc3545; }
+
+
+/* ------------------------------ */
+:global(body.dark-mode) {
+  --accent:       #4cc38a;
+  --accent-light: #72ddbb;
+  --bg-section:   #121212;
+  --bg-card:      #1e1e1e;
+  --bg-input:     #1e1e1e;
+  --text-primary: #f0f0f0;
+  --text-muted:   #aaaaaa;
+  --border:       #333333;
+}
+
+
+:global(body.dark-mode) group {
+  border: #00a505;
+}
+
+:global(body.dark-mode) input {
+  color: white
+}
+:global(body.dark-mode) textarea {
+  color: white
+}

@@ -84,15 +84,18 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.history h2,
-.vision h2,
-.mission h2 {
-  font-size: 1.5em;
-  color: #ffffff;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #13b33b;
-  border-radius: 0px 10px 10px 0px;
+.history:hover, .vision:hover, .mission:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(1, 30, 31, 0.12);
+}
+
+.history h2, .vision h2, .mission h2 {
+  font-size: 1.6em;
+  color: #fdfdfd;
+  margin: 0 0 20px 0;
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #7eb1e4, #203394);
+  border-radius: 0;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -219,60 +222,51 @@
   }
 }
 
-/* Scoped dark mode for AboutSection */
-.dark {
-  background-color: #23272f;
+
+/* ------------------------------- */
+
+:global(body.dark-mode) .aboutUs {
+  background-color: #121212;
+  box-shadow: 0 8px 24px #000;
+}
+
+:global(body.dark-mode) .aboutContainer h1,
+:global(body.dark-mode) .specialtiesHeading {
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #4caf50;
+}
+
+:global(body.dark-mode) .text,
+:global(body.dark-mode) .history p,
+:global(body.dark-mode) .vision p,
+:global(body.dark-mode) .mission p,
+:global(body.dark-mode) .specialty p {
   color: #e0e0e0;
 }
 
-.dark .aboutContainer h1,
-.dark .specialtiesHeading {
-  background-color: #23272f;
-  color: #F2F7A1;
+:global(body.dark-mode) .history,
+:global(body.dark-mode) .vision,
+:global(body.dark-mode) .mission,
+:global(body.dark-mode) .specialty,
+:global(body.dark-mode) .specialties {
+  background-color: #1e1e2f;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
 
-.dark .history,
-.dark .vision,
-.dark .mission,
-.dark .specialty {
-  background-color: #181a1b;
-  color: #F2F7A1;
+:global(body.dark-mode) .history h2,
+:global(body.dark-mode) .vision h2,
+:global(body.dark-mode) .mission h2,
+:global(body.dark-mode) .specialty h3 {
+  background: linear-gradient(135deg, #3c3f75, #1a1f3c);
+  color: #fff;
 }
 
-.dark .history h2,
-.dark .vision h2,
-.dark .mission h2,
-.dark .specialty h3 {
-  background-color: #F2F7A1 ;
-  color: #23272f;
+:global(body.dark-mode) .readMore {
+  color: #57d596;
 }
 
- 
-.dark-mode .aboutUs {
-  background-color: #23272f !important;
-  color: #e0e0e0 !important;
+:global(body.dark-mode) .readMore:hover {
+  color: #4caf50;
 }
-
-.dark-mode .aboutContainer h1,
-.dark-mode .specialtiesHeading {
-  background-color: #23272f !important;
-  color: #F2F7A1 !important;
-}
-
-.dark-mode .history,
-.dark-mode .vision,
-.dark-mode .mission,
-.dark-mode .specialty {
-  background-color: #181a1b !important;
-  color: #F2F7A1 !important;
-}
-
-.dark-mode .history h2,
-.dark-mode .vision h2,
-.dark-mode .mission h2,
-.dark-mode .specialty h3 {
-  background-color: #F2F7A1 !important;
-  color: #23272f !important;
-}
-
-

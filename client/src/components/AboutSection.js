@@ -8,9 +8,9 @@ import missionImg from '../assets/mission.png';
 import urologyImg from '../assets/urology.png';
 import gynaeImg from '../assets/gyanaecology.png';
 
-function AboutUs({darkMode}) {
+function AboutUs() {
   return (
-    <section className={`${styles.aboutUs} ${darkMode ? styles.dark : ''}`}>
+    <section className={styles.aboutUs}>
       <div className={styles.aboutContainer}>
         <h1>
           <i className="bi bi-house-door-fill" style={{ fontSize: '50px', padding: '10px' }}></i>
