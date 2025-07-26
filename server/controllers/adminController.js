@@ -2,7 +2,7 @@
 const Lab = require("../models/lab");
 const Checkup = require("../models/checkup");
 const Surgery = require("../models/surgery");
-
+const Doctor = require('../models/doctor');
 // Generic CRUD helpers
 const getAll = (Model) => async (req, res) => {
   try {
@@ -36,6 +36,65 @@ const deleteById = (Model) => async (req, res) => {
   }
 };
 
+const createDoctor = async (req, res) => {
+  try {
+    const { name, specialization, availability, photoUrl } = req.body;
+    if (!name || !specialization || !availability || !photoUrl) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    const newDoctor = new Doctor({ name, specialization, availability, photoUrl });
+    const saved = await newDoctor.save();
+    res.status(201).json(saved);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getAllDoctors = async (req, res) => {
+  try {
+    const doctors = await Doctor.find();
+    res.status(200).json(doctors);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const updateDoctor = async (req, res) => {
+  try {
+    const doctor = await Doctor.findById(req.params.id);
+    if (!doctor) {
+      return res.status(404).json({ message: 'Doctor not found' });
+    }
+
+    const { name, specialization, availability, photoUrl } = req.body;
+    doctor.name = name || doctor.name;
+    doctor.specialization = specialization || doctor.specialization;
+    doctor.availability = availability || doctor.availability;
+    doctor.photoUrl = photoUrl || doctor.photoUrl;
+
+    const updated = await doctor.save();
+    res.json(updated);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const deleteDoctor = async (req, res) => {
+  try {
+    const doctor = await Doctor.findById(req.params.id);
+    if (!doctor) {
+      return res.status(404).json({ message: 'Doctor not found' });
+    }
+
+    await doctor.remove();
+    res.json({ message: 'Doctor deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
 module.exports = {
   getAllLabs: getAll(Lab),
   updateLab: updateById(Lab),
@@ -48,4 +107,9 @@ module.exports = {
   getAllSurgeries: getAll(Surgery),
   updateSurgery: updateById(Surgery),
   deleteSurgery: deleteById(Surgery),
+
+  createDoctor,
+  getAllDoctors,
+  updateDoctor,
+  deleteDoctor
 };
