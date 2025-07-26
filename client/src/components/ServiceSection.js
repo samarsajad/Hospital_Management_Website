@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ServiceSection.module.css';
-import { images } from '../assets/images';
+import images from '../assets/images';
 
 import { GiScalpel } from 'react-icons/gi';
 import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';

@@ -1,5 +1,5 @@
 // General Images
-import pic1 from './pic1.jpg'
+import pic1 from './pic1.jpg';
 import pic2 from './pic2.jpg';
 import pic3 from './pic3.jpg';
 import pic4 from './pic4.jpg';
@@ -16,20 +16,29 @@ import logo from './logo.png';
 import home from './home.png';
 import mission from './mission.png';
 import vision from './vision.png';
-import history from './history.png';
+import historyImg from './history.png';  // renamed to avoid conflict
+import branchLeaves from './branch-leaves.png';
 
 // Medical Images
 import scalpel from './scalpel.png';
 import surgery from './surgery.png';
-import gyanaecology from './gyanaecology.png';
-import urology from './urology.png';
+import gyanaecology from './Gynaecology(2).png'
+import urology from './Urology.png'
 import labscWebp from './labsc.webp';
 import labscJpg from './labsc.jpg';
 
-// Decorative
-import branchLeaves from './branch-leaves.png';
+import Dental from './Dental.png';
+import Dermatology from './Dermatology.png';
+import Gastroenterology from './Gastroenterology.jpg';
+import cardiologyImg from './Cardiology.jpg';
+import Nephrology from './Nephrology.png';
+import Neurologywebp from './Neurology(2).png'
+import Oncology from './Oncology.png';
+import Orthopaedics from './Orthopaedics.png';
+import Paediatrics from './Paediatrics (1).png';
+import Ophthalmology from './Ophthalmology.png';
 
-export const images = {
+const images = {
   // General
   pic1,
   pic2,
@@ -48,7 +57,8 @@ export const images = {
   home,
   mission,
   vision,
-  history,
+  historyImg,
+  branchLeaves,
 
   // Medical
   scalpel,
@@ -57,7 +67,16 @@ export const images = {
   urology,
   labscWebp,
   labscJpg,
-
-  // Decorative
-  branchLeaves
+  Dental,
+  Dermatology,
+  Gastroenterology,
+  cardiologyImg,
+  Nephrology,
+  Neurologywebp,
+  Oncology,
+  Orthopaedics,
+  Paediatrics,
+  Ophthalmology,
 };
+
+export default images;
