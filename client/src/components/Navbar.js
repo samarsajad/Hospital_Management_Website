@@ -1,67 +1,55 @@
-import React, { useState } from "react";
+import { useState, useEffect } from 'react';
+import './styles.css';
+import logo from '../assets/logo-web.jpg';
 import {
   FaHome,
   FaInfoCircle,
   FaCog,
   FaUserMd,
   FaPhone,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
-import logo from "../assets/logo-web.jpg";
-import "./styles.css";
+  FaMoon,
+  FaSun,
+} from 'react-icons/fa';
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-  const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const closeMenu = () => setMobileMenuOpen(false);
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
 
   return (
     <header className="header_container nav-h">
-      <div className="img">
+      <div className="logo-container">
         <img
-          id="rd-logo"
-          style={{ width: "100px", height: "100px" }}
           src={logo}
-          alt="Logo"
+          alt="Company Logo"
+          className="logo-img"
         />
-        <span className="navbar__title"></span>
       </div>
 
-      <nav className={`nav_menu ${mobileMenuOpen ? "active" : ""}`}>
+      <nav className="nav_menu">
         <ul className="nav_link">
+          <li><a href="#home"><FaHome /> <span>Home</span></a></li>
+          <li><a href="#about"><FaInfoCircle /> <span>About</span></a></li>
+          <li><a href="#services"><FaCog /> <span>Services</span></a></li>
+          <li><a href="#doctors"><FaUserMd /> <span>Doctors</span></a></li>
+          <li><a href="#contact"><FaPhone /> <span>Contact</span></a></li>
           <li>
-            <a href="#home" onClick={closeMenu}>
-              <FaHome /> Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" onClick={closeMenu}>
-              <FaInfoCircle /> About
-            </a>
-          </li>
-          <li>
-            <a href="#services" onClick={closeMenu}>
-              <FaCog /> Services
-            </a>
-          </li>
-          <li>
-            <a href="#doctors" onClick={closeMenu}>
-              <FaUserMd /> Doctors
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={closeMenu}>
-              <FaPhone /> Contact
-            </a>
+            <button
+              className="dark-toggle-btn"
+              onClick={toggleDarkMode}
+              aria-label="Toggle dark mode"
+            >
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
           </li>
         </ul>
       </nav>
-
-      <div className="navbar__toggle" onClick={toggleMenu}>
-        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-      </div>
     </header>
   );
 }

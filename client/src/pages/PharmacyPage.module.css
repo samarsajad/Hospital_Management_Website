@@ -59,3 +59,31 @@
   
 }
 
+.dark-mode .pharmacyContainer {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .pharmacyTitle {
+  color: #FFD700 !important;
+}
+
+.dark-mode .medicineCard {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .medicineDetails h2 {
+  color: #FFD700 !important;
+}
+
+.dark-mode .medicineDetails p {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .orderButton {
+  background-color: #FFD700 !important;
+  color: #23272f !important;
+}
+

@@ -1,63 +1,29 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState,useEffect } from 'react'; 
+import './components/styles.css';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import PharmacyPage from './pages/PharmacyPage';
+import LabsPage from './pages/LabsPage';
+import CheckupPage from './pages/CheckupPage';
+import SurgeryPage from './pages/SurgeryPage';
 
-import Navbar from "./components/Navbar";
-import Slider from "./components/Slider";
-import AboutUs from "./components/AboutSection";
-import ServiceSection from "./components/ServiceSection";
-import DoctorsSection from "./components/DoctorsSection";
-import ContactUs from "./components/ContactSection";
-import Footer from "./components/Footer";
-
-import PharmacyPage from "./pages/PharmacyPage";
-import LabsPage from "./pages/LabsPage";
-import CheckupPage from "./pages/CheckupPage";
-import SurgeryPage from "./pages/SurgeryPage";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
+
+
   return (
-    <>
-      <Navbar />
-
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <section id="home">
-                  <Slider />
-                </section>
-
-                <section id="about">
-                  <AboutUs />
-                </section>
-
-                <section id="services">
-                  <ServiceSection />
-                </section>
-
-                <section id="doctors">
-                  <DoctorsSection />
-                </section>
-
-                <section id="contact">
-                  <ContactUs />
-                </section>
-              </>
-            }
-          />
-
-          {/* Service pages */}
-          <Route path="/services/pharmacy" element={<PharmacyPage />} />
-          <Route path="/services/labs-diagnostics" element={<LabsPage />} />
-          <Route path="/services/checkup" element={<CheckupPage />} />
-          <Route path="/services/surgery" element={<SurgeryPage />} />
-        </Routes>
-      </main>
-
-      <Footer />
-    </>
+     <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/services/pharmacy" element={<PharmacyPage />} />
+      <Route path="/services/labs-diagnostics" element={<LabsPage />} />
+      <Route path="/services/checkup" element={<CheckupPage />} />
+      <Route path="/services/surgery" element={<SurgeryPage />} />
+    </Routes>
+    
   );
 }
 

@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import styles from './ServiceSection.module.css';
 import { images } from '../assets/images';
 
-import { GiScalpel } from 'react-icons/gi';
 import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';
 import { FaPrescriptionBottleMedical } from 'react-icons/fa6';
 
-function ServiceSection() {
+function ServiceSection({darkMode}) {
+    const modeClass = darkMode ? styles.dark : '';
+
   return (
-    <section className={styles.serviceSection}>
+    <section className={`${styles.serviceSection} ${modeClass}`}>
       <h1>
         Services <FaCog />
       </h1>
