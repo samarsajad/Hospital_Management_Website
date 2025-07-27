@@ -1,189 +1,317 @@
 .serviceSection {
   text-align: center;
-  padding: 60px 20px;
-  background-color: #f9f9f9;
+  padding: 60px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px #f6f5f7;
+  margin: 30px auto;
+  border-radius: 12px;
+  max-width: 1400px;
 }
 
-.h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #fafcfb;
-  background-color: #203394;
-  box-shadow: 0 4px 24px #13b33b;
-  border-radius: 10px 10px;
-  height: 100px;
-  margin-top: 5px;
+.sectionHeader {
+  margin-bottom: 60px;
   text-align: center;
-  padding-top: 30px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.cogIcon {
-  color: #1e90ff;
+.sectionTitle {
+  background: linear-gradient(135deg, #203394, #13b33b);
+  border-radius: 20px;
+  padding: 0;
+  margin: 0 auto 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(19, 179, 59, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.titleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.iconWrapper {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.iconWrapper svg {
+  font-size: 2.5em;
+  width: 2.5em;
+  height: 2.5em;
+  color: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.titleText {
+  font-size: 2.2em;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+}
+
+.titleUnderline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #fff, rgba(255,255,255,0.5), #fff);
+  border-radius: 2px;
+  animation: expandContract 2s ease-in-out infinite alternate;
+}
+
+@keyframes expandContract {
+  0% { width: 60px; }
+  100% { width: 140px; }
+}
+
+.sectionSubtitle {
+  font-size: 1.2em;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .serviceContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  flex-wrap: nowrap;
+  gap: 20px;
   justify-content: center;
+  padding: 20px 0;
+  overflow-x: auto;
+  min-height: 420px;
 }
 
-.box {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  width: 270px;
+.serviceCard {
+  background: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(44, 122, 123, 0.08);
+  width: 280px;
+  min-width: 280px;
+  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
-  width: 23%;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s forwards;
-  transition: transform 0.3s ease;
-  border-radius: 10px;
-
-  /* gap: 10px; */
-  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 310px;
-
+  border: 1px solid #e2e8f0;
+  animation: fadeIn 1s forwards;
 }
 
-.box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+.serviceCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(44, 122, 123, 0.15);
 }
 
-.image img {
+.imageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.serviceImage {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.text {
+.serviceCard:hover .serviceImage {
+  transform: scale(1.1);
+}
 
-  flex: 1;
-  padding: 10px;
-  text-align: center;
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(32, 51, 148, 0.8), rgba(19, 179, 59, 0.8));
   display: flex;
-  justify-content: center;
   align-items: center;
-   font-weight: 600;
-  font-size: 1.2em;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+.serviceCard:hover .imageOverlay {
+  opacity: 1;
+}
 
-.textWithIcon {
-  flex: 1;
-  padding: 10px;
-  text-align: center;
+.serviceIcon {
+  font-size: 3em;
+  color: #fff;
+  animation: bounce 1s infinite;
+}
 
-  font-size: 1.2rem;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.cardContent {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.serviceTitle {
+  font-size: 1.4em;
+  color: #203394;
+  margin: 0;
   font-weight: 600;
-  margin: 15px 0 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: #333;
+  letter-spacing: -0.3px;
 }
 
-.description {
-  font-size: 0.95rem;
-  color: #555;
-  padding: 0 16px;
+.serviceDescription {
+  font-size: 1em;
+  color: #334155;
+  line-height: 1.6;
   text-align: justify;
-  line-height: 1.5;
-  margin-bottom: 12px;
-  /* Add this instead of flex-grow */
+  margin: 0;
+  flex-grow: 1;
 }
 
-
-.bookButton {
-  background-color: #203394;
-  color: white;
-  padding: 10px 16px;
-  margin: 0 16px 20px;
+.serviceButton {
+  background: linear-gradient(135deg, #203394, #13b33b);
+  color: #fff;
+  padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  text-align: center;
+  font-weight: 600;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: stretch;
 }
 
-.bookButton:hover {
-  background-color: #218838;
+.serviceButton:hover {
+  background: linear-gradient(135deg, #13b33b, #203394);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(19, 179, 59, 0.3);
 }
 
-/* FadeIn Animation */
+.buttonArrow {
+  transition: transform 0.3s ease;
+}
+
+.serviceButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.fadeIn {
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .box {
-    width: 90%;
+  .serviceSection {
+    padding: 40px 20px;
+    margin: 20px 10px;
   }
 
+  .sectionTitle {
+    font-size: 2.2em;
+    height: 100px;
+    width: 95%;
+  }
 
-  .image {
-    height: 180px;
+  .serviceContainer {
+    gap: 20px;
+  }
+
+  .serviceCard {
+    width: 100%;
+    max-width: 350px;
   }
 }
 
 @media (max-width: 480px) {
-  .image {
-    height: 150px;
+  .sectionTitle {
+    font-size: 1.8em;
+    height: 80px;
   }
 
-  .serviceSection h1 {
-    font-size: 1.5em;
-    height: auto;
-    padding: 20px 10px;
-  }
-
-  .description {
-    font-size: 0.85rem;
-  }
-
-  .readMore {
-    font-size: 0.85rem;
+  .cardContent {
+    padding: 20px;
   }
 }
 
-/* --------------------------- */
-
+/* Dark mode styles */
 :global(body.dark-mode) .serviceSection {
   background: #1a1a1a;
   color: #eee;
 }
 
-:global(body.dark-mode) .box {
+:global(body.dark-mode) .serviceCard {
   color: #ddd;
   background-color: #1e1e2f;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-  border: black 3px solid;
+  border: 1px solid #333;
+}
+
+:global(body.dark-mode) .sectionTitle {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
+  color: #fff;
+  box-shadow: 0 4px 24px #4caf50;
+}
+
+:global(body.dark-mode) .serviceTitle {
+  color: #57d596;
+}
+
+:global(body.dark-mode) .serviceDescription {
+  color: #e0e0e0;
+}
+
+:global(body.dark-mode) .serviceButton {
+  background: linear-gradient(135deg, #2c2c3c, #4caf50);
+}
+
+:global(body.dark-mode) .serviceButton:hover {
+  background: linear-gradient(135deg, #4caf50, #2c2c3c);
 }
 
 :global(body.dark-mode) .box:hover {

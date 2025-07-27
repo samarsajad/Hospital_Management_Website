@@ -59,23 +59,42 @@ function ServiceSection({ darkMode }) {
 
   return (
     <section className={`${styles.serviceSection} ${modeClass}`}>
-      <h1>
-        Services <FaCog />
-      </h1>
+      <div className={styles.sectionHeader}>
+        <h1 className={styles.sectionTitle}>
+          <div className={styles.titleContent}>
+            <div className={styles.iconWrapper}>
+              <FaCog />
+            </div>
+            <span className={styles.titleText}>Services</span>
+            <div className={styles.titleUnderline}></div>
+          </div>
+        </h1>
+        <p className={styles.sectionSubtitle}>
+          Comprehensive healthcare solutions with state-of-the-art facilities and expert medical professionals
+        </p>
+      </div>
 
       <div className={styles.serviceContainer}>
         {services.map((service, index) => (
-          <div key={index} className={`${styles.box} ${styles.fadeIn}`}>
-            <div className={styles.image}>
-              <img src={service.img} alt={service.title} />
+          <div key={index} className={`${styles.serviceCard} ${styles.fadeIn}`}>
+            <div className={styles.imageContainer}>
+              <img src={service.img} alt={service.title} className={styles.serviceImage} />
+              <div className={styles.imageOverlay}>
+                <div className={styles.serviceIcon}>
+                  {service.icon}
+                </div>
+              </div>
             </div>
-            <div className={styles.text}>
-              {service.title} {service.icon}
+            <div className={styles.cardContent}>
+              <h3 className={styles.serviceTitle}>
+                {service.title}
+              </h3>
+              <p className={styles.serviceDescription}>{service.desc}</p>
+              <Link to={service.link} className={styles.serviceButton}>
+                {service.btnText}
+                <span className={styles.buttonArrow}>→</span>
+              </Link>
             </div>
-            <p className={styles.description}>{service.desc}</p>
-            <Link to={service.link} className={styles.bookButton}>
-              {service.btnText}
-            </Link>
           </div>
         ))}
       </div>

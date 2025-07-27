@@ -64,47 +64,209 @@
   color: #fff;
 }
 
-.historyVisionMission {
+/* Enhanced card layout styles */
+.cardGrid {
   display: flex;
-  justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 50px 0 60px;
   padding: 20px 10px;
 }
 
-.history, .vision, .mission {
+.card {
   flex: 1;
   background-color: #fdfdfd;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(44, 122, 123, 0.08);
   min-width: 300px;
+  max-width: 370px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  animation: fadeInUp 0.7s;
 }
 
-.history:hover, .vision:hover, .mission:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(1, 30, 31, 0.12);
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
 }
 
-.history h2, .vision h2, .mission h2 {
-  font-size: 1.6em;
-  color: #fdfdfd;
-  margin: 0 0 20px 0;
-  padding: 20px 25px;
-  background: linear-gradient(135deg, #7eb1e4, #203394);
-  border-radius: 0;
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(44, 122, 123, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cardHeader {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  background: linear-gradient(135deg, #7eb1e4, #203394);
+  border-radius: 16px 16px 0 0;
+  padding: 22px 25px;
+  color: #fff;
+}
+
+.cardBody {
+  background: #fdfdfd;
+  border-radius: 0 0 16px 16px;
+  padding: 20px 25px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.cardBody .text {
+  color: #334155;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.readMore {
+  color: #13b33b;
   font-weight: 600;
-  letter-spacing: -0.3px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(19, 179, 59, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+  text-align: center;
+  min-width: 100px;
+}
+
+.readMore:hover {
+  color: #fff;
+  background: #203394;
+  border-color: #203394;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(32, 51, 148, 0.3);
+}
+
+/* Enhanced specialties layout */
+.specialtiesGrid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.specialtyCard {
+  flex: 1;
+  background-color: #fdfdfd;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(15, 197, 85, 0.08);
+  min-width: 300px;
+  max-width: 370px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.7s;
+}
+
+.specialtyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(44, 122, 123, 0.12);
+}
+
+.specialtyHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #7eb1e4, #203394);
+  border-radius: 16px 16px 0 0;
+  padding: 18px 25px;
+  color: #fff;
+}
+
+.specialtyHeader h3 {
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.specialtyCard {
+  background: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(44, 122, 123, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+  animation: fadeInUp 0.7s;
+}
+
+.specialtyCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(44, 122, 123, 0.15);
+}
+
+.specialtyHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #7eb1e4, #203394);
+  padding: 22px 25px;
+  color: #fff;
+}
+
+.specialtyHeader h3 {
+  font-size: 1.4em;
+  margin: 0;
+  font-weight: 600;
+}
+
+.specialtyBody {
+  padding: 20px 25px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.specialtyBody p {
+  font-size: 1.1em;
+  color: #334155;
+  text-align: justify;
+  line-height: 1.7;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.card h2 {
+  font-size: 1.4em;
+  margin: 0;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1.1em;
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  text-align: justify;
 }
 
 .iconImg {
@@ -114,32 +276,36 @@
   object-fit: contain;
 }
 
-.history p, .vision p, .mission p {
-  font-size: 1.1em;
-  color: #334155;
-  line-height: 1.7;
-  margin-bottom: 15px;
-  text-align: justify;
-  padding: 0 25px 25px;
-}
-
 .specialtiesHeading {
   text-align: center;
-  font-size: 2.8em;
-  margin: 60px auto 30px;
-  color: #edf7f0;
-  background-color: #203394;
-  border: 2px solid #f3f4fa;
-  border-radius: 12px;
-  height: 120px;
-  padding-top: 30px;
-  width: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
+  font-size: 2.4em;
+  margin: 50px auto 40px;
+  color: #203394;
+  font-weight: 700;
   letter-spacing: -0.5px;
-  box-shadow: 0 4px 24px #13b33b;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.specialtiesHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #203394, #13b33b);
+  border-radius: 2px;
+}
+
+.specialtiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .specialties {
@@ -211,6 +377,49 @@
     margin: 20px 10px;
   }
 
+  .hero {
+    margin-bottom: 40px;
+    border-radius: 12px;
+  }
+
+  .heroImg {
+    height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 2.2em;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .heroText {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+
+  .heroStats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .statNumber {
+    font-size: 2em;
+  }
+
+  .statLabel {
+    font-size: 1em;
+  }
+
+  .specialtiesHeading {
+    font-size: 2em;
+    margin: 40px auto 30px;
+  }
+
+  .specialtiesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .aboutContainer h1, .specialtiesHeading {
     font-size: 2.2em;
     height: 100px;
@@ -224,6 +433,95 @@
   .history, .vision, .mission, .specialty {
     min-width: unset;
   }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  margin-bottom: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.heroImg {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero:hover .heroImg {
+  transform: scale(1.05);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(32, 51, 148, 0.85), rgba(19, 179, 59, 0.75));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 800px;
+  color: white;
+}
+
+.heroTitle {
+  font-size: 3.2em;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.heroIcon {
+  font-size: 1.2em;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.heroText {
+  font-size: 1.3em;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.statLabel {
+  font-size: 1.1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 
