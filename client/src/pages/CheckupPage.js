@@ -1,74 +1,125 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import styles from './CheckupPage.module.css';
+import React, { useState, useEffect } from "react";
+import styles from "./CheckupPage.module.css";
 
 function CheckupPage() {
-  const [doctors, setDoctors] = useState([]);
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    date: '',
+    name: "",
+    email: "",
+    doctor: "",
+    date: "",
   });
 
+  const [doctors, setDoctors] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    axios.get('http://localhost:5000/api/doctors')
-      .then(res => setDoctors(res.data))
-      .catch(err => console.error('Error fetching doctors:', err));
+    fetch("http://localhost:5000/api/doctors")
+      .then((res) => res.json())
+      .then((data) => setDoctors(data))
+      .catch((err) => console.error("Error fetching doctors:", err));
   }, []);
 
-  const handleInputChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const validate = () => {
+    let newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Please enter your name";
+    if (!formData.email.trim()) newErrors.email = "Please enter your email";
+    if (!formData.doctor) newErrors.doctor = "Please select a doctor";
+    if (!formData.date) newErrors.date = "Please select a date";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) return;
 
-    if (!selectedDoctor) {
-      alert('Please select a doctor!');
-      return;
-    }
+    setLoading(true); // ✅ Start loading
 
-    const appointmentData = {
-      ...formData,
-      doctor: selectedDoctor.name,
-    };
-
-    axios.post('http://localhost:5000/api/checkup/book', appointmentData)
-      .then(() => {
-        alert('Appointment booked successfully!');
-        setFormData({ name: '', email: '', date: '' });
-        setSelectedDoctor(null);
+    fetch("http://localhost:5000/api/checkup/book", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        alert(res.message || "Checkup booked!");
+        setFormData({ name: "", email: "", doctor: "", date: "" }); // Reset form
       })
-      .catch(() => alert('Failed to book appointment'));
+      .catch((err) => {
+        console.error("Booking error:", err);
+        alert("Booking failed");
+      })
+      .finally(() => setLoading(false)); // ✅ Stop loading
   };
 
   return (
-    <div className={styles.checkupContainer}>
-      <h1>Our Doctors</h1>
-      <div className={styles.doctorGrid}>
-        {doctors.map((doc) => (
-          <div
-            key={doc._id}
-            className={`${styles.doctorCard} ${selectedDoctor?._id === doc._id ? styles.selected : ''}`}
-            onClick={() => setSelectedDoctor(doc)}
-          >
-            <img src={doc.image} alt={doc.name} />
-            <h3>{doc.name}</h3>
-            <p><strong>Specialization:</strong> {doc.specialization}</p>
-            <p><strong>Experience:</strong> {doc.experience}</p>
-            <p><strong>Available:</strong> {doc.availableDays?.join(', ') || 'Not Available'}</p>
+    <div className={styles.labsContainer}>
+      <h1>Book a Health Checkup</h1>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.formGroup}>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          {errors.name && <span style={{ color: "red" }}>{errors.name}</span>}
+        </div>
 
-          </div>
-        ))}
-      </div>
+        <div className={styles.formGroup}>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
+        </div>
 
-      <h2>Book Appointment</h2>
-      <form className={styles.appointmentForm} onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} required />
-        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} required />
-        <input type="date" name="date" value={formData.date} onChange={handleInputChange} required />
-        <button type="submit">Book</button>
+        <div className={styles.formGroup}>
+          <label>Select a Doctor</label>
+          <select name="doctor" value={formData.doctor} onChange={handleChange}>
+            <option value="">-- Select Doctor --</option>
+            {doctors.map((doc, index) => (
+              <option key={index} value={doc.name}>
+                {doc.name} ({doc.specialty})
+              </option>
+            ))}
+          </select>
+          {errors.doctor && (
+            <span style={{ color: "red" }}>{errors.doctor}</span>
+          )}
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>Preferred Date</label>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            min={new Date().toISOString().split("T")[0]} // disables past dates
+          />
+
+          {errors.date && <span style={{ color: "red" }}>{errors.date}</span>}
+        </div>
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Booking..." : "Book Checkup"}
+        </button>
       </form>
     </div>
   );

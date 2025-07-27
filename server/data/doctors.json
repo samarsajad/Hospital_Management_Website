@@ -1,18 +1,15 @@
 [
   {
-    "id": 1,
     "name": "Dr. Ayesha Khan",
     "specialty": "General Physician",
     "image": "/images/doctor1.jpg"
   },
   {
-    "id": 2,
     "name": "Dr. Rahul Mehta",
     "specialty": "Cardiologist",
     "image": "/images/doctor2.jpg"
   },
   {
-    "id": 3,
     "name": "Dr. Priya Sharma",
     "specialty": "Dermatologist",
     "image": "/images/doctor3.jpg"
