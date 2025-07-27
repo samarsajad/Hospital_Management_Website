@@ -1,170 +1,139 @@
-# 🏥 MidCity Hospital Web Application
-
-A modern full-stack healthcare management platform that streamlines key hospital services online.
-
----
-
-## 📌 What Can Users Do?
-
-- 💊 Browse and order medicines
-- 🧪 Book lab test appointments
-- 👨‍⚕️ Schedule doctor checkups
-- 🏥 Request surgery bookings with prescription uploads
-
----
-
-## ✨ Features Overview
-
-- 🧾 Pharmacy: Browse available medicines with details and pricing
-- 🧪 Lab Tests: Book lab test appointments from a predefined list
-- 👨‍⚕️ Doctor Checkups: Browse doctors and book appointments
-- 🏥 Surgery Booking: Upload prescriptions and request surgeries
-- 🧠 Admin Panel: Manage appointments and listings via MongoDB
-
----
-
-## ✨ Features
-
-### 🧾 Pharmacy
-
-- View available medicines with images and details (brand, composition, price)
-- Data stored in MongoDB
-
-### 🧪 Lab Test Booking
-
-- Enter patient details and select tests from a predefined list
-- Booking data saved in MongoDB
-
-### 👨‍⚕️ Doctor Checkups
-
-- Browse doctors by photo and specialization
-- Book checkups with patient details
-
-### 🏥 Surgery Booking
-
-- Fill out a form with patient and surgery details
-- Upload prescription (PDF/image)
-- Files and data stored securely
-
-### 🧠 Admin Panel
-
-- View and manage all appointments, medicine listings, and surgeries through MongoDB (Compass or Atlas)
-
----
-
-## 🚀 Tech Stack
-
-| Layer        | Technology            |
-|--------------|------------------------|
-| Frontend     | React, CSS Modules     |
-| Backend      | Node.js, Express       |
-| Database     | MongoDB with Mongoose  |
-| File Uploads | Multer                 |
-
----
-
-## 📚 Table of Contents
-
-- [What Can Users Do?](#-what-can-users-do)
-- [Features Overview](#-features-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-  - [1. Clone the Repository](#1-clone-the-repository)
-  - [2. Backend Setup](#2-backend-setup-server-folder)
-  - [3. Frontend Setup](#3-frontend-setup-client-folder)
-- [Notes](#-notes)
-- [Contributors](#-contributors)
-- [Contributing Steps](#-contributing-steps)
-- [License](#-license)
-- [Need Help?](#-need-help)
-
----
-
-## 🛠️ Getting Started
-
-### 1. 📥 Clone the Repository
-
-Git Bash
-git clone https://github.com/samarsajad/Hospital_Management_Website.git
-cd Hospital_Management_Website
+<div align="center">
+  <h1> Hospital Management Website</h1>
+  <p>A modern full-stack healthcare management platform that streamlines key hospital services online.</p>
+</div>
 
 
-### 2. 🔧 Backend Setup (`/server` folder)
 
-🔹 Install Dependencies
-Git Bash:
+<div align="left">
+  <h2> Features Overview</h2>
+  <p>View and order medicines</p>
+  <p>Book lab test appointments </p>
+  <p>Schedule checkups with doctors </p>
+  <p>Book surgeries with prescription upload </p>
+  <p>Admin panel for managing appointments and listings</p>
+  
+</div>
+<div align="left">
+  <h2>Tech Stack</h2>
+  <p>Frontend: React, CSS Modules</p>
+  <p>Backend: Node.js, Express</p>
+  <p>Database: MongoDB (with Mongoose)</p>
+</div>
+
+<div>
+  <h2>Getting Started</h2>
+</div>
+
+To run the website app locally, follow these steps:
+
+1. Clone this repository:
+
+ ```bash
+ git clone https://github.com/samarsajad/Hospital_Management_Website.git
+```
+
+2. Navigate to the "server":
+
+```bash
 cd server
-npm install
-🔹 Create .env File
-Inside the server/ directory, create a .env file with the following:
+```
 
+3. Install dependencies:
+
+```bash
+npm install
+``` 
+
+4.Create a .env file in the /server folder and add the following environment variables:
+
+```bash
 MONGO_URI=your_mongodb_connection_string
-💡 You can create a free MongoDB cluster at MongoDB Atlas or use a local MongoDB instance.
+JWT_SECRET=your_jwt_secret_key
+```
+NOTE: Use your own MongoDB URI. You can get it from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
-🔹 Start the Backend Server
-Git Bash :
+5. Start the backend server:
 
+```bash
 node index.js
-🖥 Server will run at: http://localhost:5000
+```
+The backend should now be running at [http://localhost:5000](http://localhost:5000)  
 
- ### 3. Frontend Setup (/`/client` folder)
-🔹 Install Dependencies
-Git Bash :
+5. Start the backend server:
+   Open a new terminal and navigate to the "client" folder:
 
-cd ../client
+```bash
+cd client
+```
+6. Install Dependencies:
+  
+```bash
 npm install
-🔹 Start the Frontend Server
-Git Bash :
-
+```
+7. Start the frontend server:
+  
+```bash
 npm start
-🌐 App will be accessible at: http://localhost:3000
+```
+The server runs on [http://localhost:3000](http://localhost:3000)  
 
-## 🗂 Folder Structure Notes
-📁 /uploads/
-Stores uploaded prescription files.
-If it doesn’t exist, create it manually inside the server/ directory.
+<div>
+  <h2>Code Contributions</h2>
+</div>
 
-🛠 Files in /uploads/ are served statically by the backend.
+We appreciate any code contributions that enhance the functionality or improve the user experience of the website. To contribute code, follow these steps:
 
-👥 Contributors
-We welcome contributions of all kinds, whether it’s fixing bugs, improving documentation, or adding new features!
+1. Fork the repository to your GitHub account.
+2. Clone your forked repository to your local machine.
+3. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
+4. Make your changes and ensure that the code follows the guidelines
+5. Test your changes locally to ensure they work as expected.
+6. Commit your changes with descriptive commit messages: `git commit -m "Add feature XYZ"`.
+7. Push your changes to your forked repository: `git push origin feature-name`.
+8. Create a pull request against the `main` branch of the original repository.
+   
+<!-- Open Source Programs -->
+  <div>
+    <h2><img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Hand%20gestures/Flexed%20Biceps.png?raw=true" width="35" height="35" > Open Source Programs</h2>
+  </div>
 
-## 🚀 Contributing Steps
-- Fork the repository
+  <table border="1" cellpadding="10">
+        <tr>
+            <td rowspan="2">
+                <img src="https://github.com/Meetjain1/wanderlust/assets/133582566/21b2bc42-bdd5-487a-a083-1b262c2f6d9b" alt="GSSOC Logo" width="100" height="55">
+            </td>
+            <td>
+                <strong>GSSOC 2025</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                This project is part of GirlScript Summer of Code. We enthusiastically welcome community contributions to enhance the website.
+            </td>
+        </tr>
+    </table>
 
-- Create a new branch:
-git checkout -b your-feature-name
-
-- Make your changes and commit:
--git commit -m "Your meaningful message"
-
-- Push to your fork:
-git push origin your-feature-name
-
-### Create a Pull Request on GitHub ✅
-
-This project is part of GirlScript Summer of Code 2025 (GSSoC '25) 🌸
-
-## 📄 License
-This project is licensed under the MIT License.
-
-
- 
-## 🙋‍♀️ Need Help?
-Feel free to:
-
-- Open an Issue
-
-- Ask questions or suggest ideas via GitHub Discussions
-
-- Connect with the GSSoC community for guidance
-
-- Let’s build something impactful together! 💻✨
+<hr>
 
 
-## 📝 Notes
+<!-- Code of Conduct -->
+<div>
+<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="35" height="35"> Code of Conduct</h2>
+</div>
+By contributing to this website, you agree to our [Code of Conduct](CODE_OF_CONDUCT.md)
+).  
+We expect everyone to foster an open, respectful, and welcoming environment. 
+<div>
+<!-- License -->
+<div>
+<h2><img src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Page%20with%20Curl.png" width="35" height="35"> License</h2>
+</div>
 
-- Uploaded files are saved in the `/uploads/` directory and served statically by the backend.
-- Make sure the `/uploads/` directory exists inside the `server/` folder. If not, create it manually.
-- MongoDB must be running locally or accessible via a valid cloud URI (e.g., MongoDB Atlas).
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
+This project is licensed under the [MIT License](./LICENSE).
+
+
+
+
+

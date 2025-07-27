@@ -1,110 +1,73 @@
-.headerContainer {
-  background-color: #ffffff;
-  opacity: 0.9;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  padding: 10px 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
-}
-
-.container {
-  position: relative;
-  min-height: 10px;
-  display: flex;
-  z-index: 1000;
-}
-
 .heroSection {
+  background-color: #0f4613; 
+  padding: 40px 20px;
   display: flex;
-  padding: 20px;
-  background-color: #0f4613;
-  width: 100%;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.heroContainer {
-  display: flex;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(41, 23, 121, 0.1);
-  padding: 10px;
-}
-
-.heroBox {
-  width: 100%;
-}
-
-.heroImage img {
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-}
-
-.heroText {
-  padding: 20px;
-  background-color: white;
-  font-size: 24px;
-  line-height: 1.5;
-}
-
-.heroText p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-  margin: 0;
-  width: 500px;
-}
-
-@media (max-width: 1000px) {
-  .heroContainer {
-    flex-direction: column;
-  }
-
-  .heroImage img {
-    max-width: 100%;
-  }
-}
-
+.heroContainer,
 .messageContainer {
   display: flex;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 30px;
+  padding: 30px;
 }
 
-.messageBox {
-  width: 100%;
+.heroContainer:hover,
+.messageContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+
+.heroImage img,
 .messageImage img {
   width: 100%;
-  height: 100%;
-  max-width: 400px;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
+
+.heroText,
 .messageText {
-  padding: 20px;
-  background-color: white;
-  font-size: 24px;
-  line-height: 1.5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.heroText p,
 .messageText p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.8;
   color: #333;
+  font-weight: 500;
   margin: 0;
-  width: 500px;
+}
+.highlight {
+  color: #0f4613;
+  font-weight: bold;
 }
 
-@media (max-width: 1000px) {
+
+@media (max-width: 1024px) {
+  .heroContainer,
   .messageContainer {
     flex-direction: column;
+    text-align: center;
+    padding: 20px;
   }
 
+  .heroImage img,
   .messageImage img {
     max-width: 100%;
   }

@@ -1,16 +1,16 @@
 .serviceSection {
   text-align: center;
   padding: 50px 0;
-  background-color: #fff;
+  background: linear-gradient(to bottom, #ffff, #203394);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .serviceSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: #333;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(95, 228, 128, 0.708);
+  color: #fafcfb;
+  background-color: #203394;
+  box-shadow: 0 4px 24px #13b33b;
   border-radius: 10px 10px;
   height: 100px;
   margin-top: 5px;
@@ -27,13 +27,14 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  box-shadow: 0 4px 24px #13b33b;
 }
 
 .box {
   display: flex;
   flex-direction: column;
   width: 23%;
-  background-color: white;
+  background-color: #f9f9f9;
   border: 1px solid #ddd;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -46,13 +47,23 @@
 }
 
 .image {
-  flex: 1;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
 }
 
 .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  display: block;
 }
 
 .text {
@@ -64,13 +75,25 @@
   align-items: center;
 }
 
-.readMore {
-  color: #007bff;
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 0.9rem;
+
+.textWithIcon {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.iconSmall {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  padding-left: 5px;
 }
 
 .description {
@@ -79,15 +102,25 @@
   font-size: 0.9rem;
   color: #333;
 }
-.scalpelIcon {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
-  
+
+.bookButton {
+  margin: 10px auto 15px;
+  padding: 8px 20px;
+  background-color: #203394;
+  color: #fafcfb;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
+.bookButton:hover {
+  background-color: #13b33b;
+  color: #fff;
+}
 
-/* Optional fadeIn animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -96,5 +129,41 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 100%;
+  }
+
+  .image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image {
+    height: 150px;
+  }
+
+  .serviceSection h1 {
+    font-size: 1.5em;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .readMore {
+    font-size: 0.85rem;
   }
 }

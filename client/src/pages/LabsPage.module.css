@@ -16,8 +16,10 @@ h1 {
 }
 
 .form {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;                 /* combined - flex overrides grid */
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
     gap: 20px;
 }
 
@@ -57,23 +59,12 @@ button[type="submit"] {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+
+    position: relative;
+    z-index: 0;
+    margin-top: 10px;
 }
 
 button[type="submit"]:hover {
     background-color: #005fa3;
-}
-
-
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    position: relative;
-}
-
-button[type="submit"] {
-    position: relative;
-    z-index: 0;
-    margin-top: 10px;
 }

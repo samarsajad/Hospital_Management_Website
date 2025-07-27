@@ -5,7 +5,7 @@ import doctorImg from '../assets/pic5.webp';
 function DoctorsSection() {
   const doctors = [
     {
-      name: 'Dr. XYZ',
+      name: 'Dr. Rahul Mishra',
       specialty: 'Cardiologist',
       img: doctorImg,
     },
@@ -20,7 +20,7 @@ function DoctorsSection() {
       img: doctorImg,
     },
     {
-      name: 'Dr. XYZ',
+      name: 'Dr. Ridhi Gupta',
       specialty: 'Orthopedic Surgeon',
       img: doctorImg,
     },
@@ -41,10 +41,10 @@ function DoctorsSection() {
                 <h2>{doc.name}</h2>
                 <p>{doc.specialty}</p>
                 <div className={styles.socialIcons}>
-                  <a href="#"><i className="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i className="fa-brands fa-square-twitter"></i></a>
-                  <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-                  <a href="#"><i className="fa-brands fa-square-instagram"></i></a>
+                  <a href="#" onClick={e => e.preventDefault()}><i className="fa-brands fa-facebook"></i></a>
+                  <a href="#" onClick={e => e.preventDefault()}><i className="fa-brands fa-square-twitter"></i></a>
+                  <a href="#" onClick={e => e.preventDefault()}><i className="fa-brands fa-linkedin"></i></a>
+                  <a href="#" onClick={e => e.preventDefault()}><i className="fa-brands fa-square-instagram"></i></a>
                 </div>
               </div>
               <div className={styles.cardBack}>
