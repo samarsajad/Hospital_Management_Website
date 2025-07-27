@@ -44,23 +44,24 @@
 }
 
 .readMore {
-  color: #1461ef;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-block;
-  margin-top: 15px;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-  background: none;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 8px 20px;
+  background-color: #203394;
+  color: #fafcfb;
   border: none;
-  font-size: 1em;
-  padding: 0;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .readMore:hover,
 .readMore:focus {
-  color: #57d596;
-  outline: none;
+  background-color: #13b33b;
+  color: #fff;
 }
 
 .historyVisionMission {
@@ -69,7 +70,7 @@
   gap: 30px;
   flex-wrap: wrap;
   margin: 50px 0 60px;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 .history, .vision, .mission {
@@ -77,11 +78,14 @@
   background-color: #fdfdfd;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 0;
   box-shadow: 0 4px 12px rgba(44, 122, 123, 0.08);
   min-width: 300px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .history:hover, .vision:hover, .mission:hover {
@@ -220,4 +224,53 @@
   .history, .vision, .mission, .specialty {
     min-width: unset;
   }
+}
+
+
+/* ------------------------------- */
+
+:global(body.dark-mode) .aboutUs {
+  background-color: #121212;
+  box-shadow: 0 8px 24px #000;
+}
+
+:global(body.dark-mode) .aboutContainer h1,
+:global(body.dark-mode) .specialtiesHeading {
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #4caf50;
+}
+
+:global(body.dark-mode) .text,
+:global(body.dark-mode) .history p,
+:global(body.dark-mode) .vision p,
+:global(body.dark-mode) .mission p,
+:global(body.dark-mode) .specialty p {
+  color: #e0e0e0;
+}
+
+:global(body.dark-mode) .history,
+:global(body.dark-mode) .vision,
+:global(body.dark-mode) .mission,
+:global(body.dark-mode) .specialty,
+:global(body.dark-mode) .specialties {
+  background-color: #1e1e2f;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+:global(body.dark-mode) .history h2,
+:global(body.dark-mode) .vision h2,
+:global(body.dark-mode) .mission h2,
+:global(body.dark-mode) .specialty h3 {
+  background: linear-gradient(135deg, #3c3f75, #1a1f3c);
+  color: #fff;
+}
+
+:global(body.dark-mode) .readMore {
+  color: #57d596;
+}
+
+:global(body.dark-mode) .readMore:hover {
+  color: #4caf50;
 }

@@ -28,10 +28,16 @@ h1 {
   flex-direction: column;
 }
 
+
 .formGroup label {
   margin-bottom: 6px;
   font-weight: 600;
   color: #333;
+
+.doctorCard.selected {
+  border-color: #13b33b;
+  background-color: #e03636;
+
 }
 
 .formGroup input,
@@ -64,6 +70,30 @@ button[type="submit"] {
   margin-top: 10px;
 }
 
+
 button[type="submit"]:hover {
   background-color: #005fa3;
+}
+
+:global(.dark-mode) .checkupContainer {
+  background-color: #23272f !important;
+  color: #e0e0e0 !important;
+}
+
+:global(.dark-mode) .doctorCard {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+  border-color: #FFD700 !important;
+}
+
+:global(.dark-mode) .doctorCard.selected {
+  background-color: #23272f !important;
+  border-color: #FFD700 !important;
+}
+
+:global(.dark-mode) .appointmentForm input,
+:global(.dark-mode) .appointmentForm button {
+  background-color: #181a1b !important;
+  color: #FFD700 !important;
+  border-color: #FFD700 !important;
 }
