@@ -8,8 +8,8 @@ const {
   deleteMedicine
 } = require("../controllers/medicineController");
 
-const isAuthenticated = require("../middlewares/isAuthenticated");
-const isAdmin = require("../middlewares/isAdmin");
+const isAuthenticated = require("../middleware/isAuthenticated");
+const isAdmin = require("../middleware/isAdmin");
 
 router.post("/", isAuthenticated, isAdmin, createMedicine);
 router.get("/", isAuthenticated, isAdmin, getAllMedicines);

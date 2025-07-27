@@ -138,6 +138,7 @@
 .socialIcons a:hover {
   color: #13b33b;
   transform: scale(1.2);
+
 }
 
 .bookBtn {
@@ -187,3 +188,34 @@
     padding: 10px;
   }
 }
+
+  color: #13b33b; }
+
+
+  /* --- DARK MODE --- */
+:global(body.dark-mode) .doctorsSection {
+  background-color: #121212;
+  color: #fff;
+}
+
+:global(body.dark-mode) .cardFront {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+:global(body.dark-mode) .cardFront p {
+  color: #bbb;
+}
+
+:global(body.dark-mode) .socialIcons a {
+  color: #aaa;
+}
+
+:global(body.dark-mode) .socialIcons a:hover {
+  color: #57d596;
+}
+
+:global(body.dark-mode) .cardBack {
+  background-color: #262a52;
+}
+
