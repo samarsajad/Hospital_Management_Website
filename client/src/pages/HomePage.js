@@ -13,16 +13,15 @@ import ContactSection from "../components/ContactSection";
 const Homepage = ({ darkMode, setDarkMode }) => {
   return (
     <div className={darkMode ? "dark-mode" : ""}>
-  <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-  <Slider darkMode={darkMode} />
-  <AboutSection darkMode={darkMode} />
-  {/* <HeroSection darkMode={darkMode} /> */}
-  <ServiceSection darkMode={darkMode} />
-  <DoctorsSection darkMode={darkMode}/>      
-  <ContactSection darkMode={darkMode} />
-  <Footer />
-</div>
-
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Slider darkMode={darkMode} />
+      <AboutSection darkMode={darkMode} />
+      {/* <HeroSection darkMode={darkMode} /> */}
+      <ServiceSection darkMode={darkMode} />
+      <DoctorsSection darkMode={darkMode} />
+      <ContactSection darkMode={darkMode} />
+      <Footer />
+    </div>
   );
 };
 
