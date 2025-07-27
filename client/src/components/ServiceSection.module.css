@@ -1,11 +1,10 @@
 .serviceSection {
   text-align: center;
-  padding: 50px 0;
-  background: linear-gradient(to bottom, #ffff, #203394);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 60px 20px;
+  background-color: #f9f9f9;
 }
 
-.serviceSection h1 {
+.h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
   color: #fafcfb;
@@ -21,18 +20,26 @@
   margin-right: auto;
 }
 
+.cogIcon {
+  color: #1e90ff;
+}
+
 .serviceContainer {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 24px #13b33b;
+  gap: 30px;
+  justify-content: center;
 }
 
 .box {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 270px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+
   width: 23%;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -41,33 +48,27 @@
   animation: fadeIn 1s forwards;
   transition: transform 0.3s ease;
   border-radius: 10px;
+
+  /* gap: 10px; */
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 310px;
+
 }
 
 .box:hover {
-  transform: scale(1.05);
-}
-
-.image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .image img {
-  width: auto;
-  max-width: 100%;
-  max-height: 80%;
-  object-fit: contain;
-  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .text {
+
   flex: 1;
   padding: 10px;
   text-align: center;
@@ -83,68 +84,68 @@
   flex: 1;
   padding: 10px;
   text-align: center;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 15px 0 10px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
-  font-size: 1.2em;
-}
-
-.iconSmall {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  border-radius: 4px;
-  padding-left: 5px;
-}
-
-.description {
-  padding: 10px;
-  text-align: justify;
-  font-size: 0.9rem;
   color: #333;
 }
 
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  padding: 0 16px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  /* Add this instead of flex-grow */
+}
+
+
 .bookButton {
-  margin: 10px auto 15px;
-  padding: 8px 20px;
   background-color: #203394;
-  color: #fafcfb;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
+  color: white;
+  padding: 10px 16px;
+  margin: 0 16px 20px;
+  border-radius: 8px;
   text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  text-align: center;
 }
 
 .bookButton:hover {
-  background-color: #13b33b;
-  color: #fff;
+  background-color: #218838;
 }
 
+/* FadeIn Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@media (max-width: 1024px) {
-  .box {
-    width: 45%;
-  }
+.fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .box {
-    width: 100%;
+    width: 90%;
   }
+
 
   .image {
     height: 180px;
@@ -211,4 +212,6 @@
 :global(body.dark-mode) .serviceContainer{
   background: #121212;
   box-shadow: 0 10px 24px #000501;
+
+
 }
