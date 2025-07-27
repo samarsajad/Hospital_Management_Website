@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./ServiceSection.module.css";
 
 // Icons
-import { FaCog } from 'react-icons/fa';
+import { FaCog } from "react-icons/fa";
 import {
   FaPrescriptionBottleMedical,
   FaVials,
@@ -55,10 +55,10 @@ const services = [
 
 // Component
 function ServiceSection({ darkMode }) {
-  const modeClass = darkMode ? styles.dark : '';
+  const modeClass = darkMode ? styles.dark : "";
 
   return (
-    <section className={`${styles.serviceSection} ${modeClass}`}>
+    <section id="services" className={`${styles.serviceSection} ${modeClass}`}>
       <h1>
         Services <FaCog />
       </h1>
