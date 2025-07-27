@@ -13,7 +13,12 @@ const {
   updateSurgery,
   deleteSurgery,
 } = require("../controllers/adminController");
-
+const {
+  createDoctor,
+  getAllDoctors,
+  updateDoctor,
+  deleteDoctor,
+} = require("../controllers/adminController");
 const isAuthenticated = require("../middleware/isAuthenticated");
 const isAdmin = require("../middleware/isAdmin");
 
@@ -33,5 +38,10 @@ router.delete("/checkup/:id", deleteCheckup);
 router.get("/surgery", getAllSurgeries);
 router.put("/surgery/:id", updateSurgery);
 router.delete("/surgery/:id", deleteSurgery);
+
+router.post("/doctors", createDoctor);
+router.get("/all-doctors", getAllDoctors);
+router.put("/doctors/:id", updateDoctor);
+router.delete("/doctors/:id", deleteDoctor);
 
 module.exports = router;
