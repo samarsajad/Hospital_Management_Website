@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ServiceSection.module.css";
 
+
+import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';
+import { FaPrescriptionBottleMedical } from 'react-icons/fa6';
+
 import pharmacy from "../assets/services/pharmacy.jpg";
 import labs from "../assets/services/labs.jpg";
 import checkup from "../assets/services/checkup.jpeg";
@@ -49,10 +53,21 @@ const services = [
   },
 ];
 
-function ServiceSection() {
+
+function ServiceSection({darkMode}) {
+    const modeClass = darkMode ? styles.dark : '';
+
   return (
+
+    <section className={`${styles.serviceSection} ${modeClass}`}>
+      <h1>
+        Services <FaCog />
+      </h1>
+
+
     <section className={styles.serviceSection}>
       <h1>Services</h1>
+
       <div className={styles.serviceContainer}>
         {services.map((service, index) => (
           <div key={index} className={`${styles.box} ${styles.fadeIn}`}>
