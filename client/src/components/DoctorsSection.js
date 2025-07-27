@@ -8,21 +8,25 @@ function DoctorsSection() {
       name: 'Dr. Rahul Mishra',
       specialty: 'Cardiologist',
       img: doctorImg,
+      bio: 'Expert in interventional cardiology with 15+ years experience',
     },
     {
       name: 'Dr. Zahoor Ahmed Gilkar',
       specialty: 'Urologist',
       img: doctorImg,
+      bio: 'Specializes in minimally invasive urologic surgeries',
     },
     {
       name: 'Dr. Shahida Kounsar',
       specialty: 'Gynaecologist',
       img: doctorImg,
+      bio: 'Women\'s health specialist focusing on holistic care',
     },
     {
       name: 'Dr. Ridhi Gupta',
       specialty: 'Orthopedic Surgeon',
       img: doctorImg,
+      bio: 'Joint replacement and sports medicine expert',
     },
   ];
 
@@ -48,7 +52,10 @@ function DoctorsSection() {
                 </div>
               </div>
               <div className={styles.cardBack}>
-                BACK
+                <h3>{doc.name}</h3>
+                <p className={styles.specialty}>{doc.specialty}</p>
+                <p className={styles.bio}>{doc.bio}</p>
+                <button className={styles.bookBtn}>Book Appointment</button>
               </div>
             </div>
           </div>

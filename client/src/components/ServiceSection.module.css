@@ -1,6 +1,29 @@
 .serviceSection {
   text-align: center;
   padding: 60px 20px;
+<
+  background: linear-gradient(to bottom, #ffffff, #f5f9ff, #e6f0ff);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 24px #13b33b;
+}
+
+.serviceSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(to right, #203394, #2a42b0);
+  z-index: 0;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  transform: scaleX(1.5);
+  
+}
+
+.serviceSection h1 {
+
   background-color: #f9f9f9;
 }
 
@@ -13,11 +36,25 @@
   border-radius: 10px 10px;
   height: 100px;
   margin-top: 5px;
+
   text-align: center;
-  padding-top: 30px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 2.8em;
+  margin: 60px auto 30px;
+  color: #edf7f0;
+  /* background-color: #203394; */
+  /* border: 2px solid #f3f4fa; */
+  /* border-radius: 12px; */
+  height: 120px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  /* box-shadow: 0 4px 24px #13b33b; */
+  padding: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .cogIcon {
@@ -28,7 +65,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1400px;
+  position: relative;
+  z-index: 1;
+
   justify-content: center;
+
 }
 
 .box {
@@ -39,6 +84,44 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  width: 280px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(32, 51, 148, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(32, 51, 148, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(32, 51, 148, 0.1), rgba(32, 51, 148, 0.3));
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
 
   width: 23%;
   background-color: #f9f9f9;
@@ -77,8 +160,21 @@
   align-items: center;
    font-weight: 600;
   font-size: 1.2em;
+
 }
 
+.box:hover .image {
+  transform: scale(1.05);
+}
+
+.iconContainer {
+  position: absolute;
+  bottom: -24px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
 
 .textWithIcon {
   flex: 1;
@@ -89,9 +185,49 @@
   font-weight: 600;
   margin: 15px 0 10px;
 
+
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.serviceIcon {
+  font-size: 28px;
+  color: #203394;
+}
+
+.customIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.content {
+  padding: 30px 20px 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.title {
+  font-size: 1.3rem;
+  margin: 10px 0 15px;
+  color: #203394;
+  font-weight: 700;
+  text-align: left;
+}
+
+.description {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+  flex: 1;
+
   gap: 8px;
   color: #333;
 }
@@ -104,10 +240,50 @@
   line-height: 1.5;
   margin-bottom: 12px;
   /* Add this instead of flex-grow */
+
 }
 
 
 .bookButton {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #203394;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.bookButton:hover {
+  background-color: #13b33b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(19, 179, 59, 0.3);
+}
+
+.bookButton svg {
+  transition: transform 0.3s ease;
+}
+
+.bookButton:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .box {
+    width: calc(50% - 30px);
+    max-width: 350px;
+  }
+
   background-color: #203394;
   color: white;
   padding: 10px 16px;
@@ -138,38 +314,56 @@
 
 .fadeIn {
   animation: fadeIn 1s ease-in-out forwards;
+
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .box {
+
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .serviceSection h1 {
+    font-size: 2.2em;
+    height: 100px;
+    width: 90%;
+
     width: 90%;
   }
 
 
   .image {
     height: 180px;
+
   }
 }
 
 @media (max-width: 480px) {
-  .image {
-    height: 150px;
-  }
-
   .serviceSection h1 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     height: auto;
     padding: 20px 10px;
   }
+  
+  .imageContainer {
+    height: 180px;
+  }
+  
+  .content {
+    padding: 25px 15px 20px;
+  }
 
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
   .description {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
-  .readMore {
-    font-size: 0.85rem;
-  }
 }
 
 /* --------------------------- */
@@ -212,6 +406,7 @@
 :global(body.dark-mode) .serviceContainer{
   background: #121212;
   box-shadow: 0 10px 24px #000501;
+
 
 
 }
