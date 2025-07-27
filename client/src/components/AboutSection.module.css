@@ -225,3 +225,52 @@
     min-width: unset;
   }
 }
+
+
+/* ------------------------------- */
+
+:global(body.dark-mode) .aboutUs {
+  background-color: #121212;
+  box-shadow: 0 8px 24px #000;
+}
+
+:global(body.dark-mode) .aboutContainer h1,
+:global(body.dark-mode) .specialtiesHeading {
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #4caf50;
+}
+
+:global(body.dark-mode) .text,
+:global(body.dark-mode) .history p,
+:global(body.dark-mode) .vision p,
+:global(body.dark-mode) .mission p,
+:global(body.dark-mode) .specialty p {
+  color: #e0e0e0;
+}
+
+:global(body.dark-mode) .history,
+:global(body.dark-mode) .vision,
+:global(body.dark-mode) .mission,
+:global(body.dark-mode) .specialty,
+:global(body.dark-mode) .specialties {
+  background-color: #1e1e2f;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+:global(body.dark-mode) .history h2,
+:global(body.dark-mode) .vision h2,
+:global(body.dark-mode) .mission h2,
+:global(body.dark-mode) .specialty h3 {
+  background: linear-gradient(135deg, #3c3f75, #1a1f3c);
+  color: #fff;
+}
+
+:global(body.dark-mode) .readMore {
+  color: #57d596;
+}
+
+:global(body.dark-mode) .readMore:hover {
+  color: #4caf50;
+}

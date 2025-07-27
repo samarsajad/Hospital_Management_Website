@@ -7,43 +7,44 @@ body {
 
 .header_container {
   display: flex;
+  width: 100vw;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
   height: 80px;
   width: 100%;
+
+  min-height: 80px;      /* Changed from height: 100px */
+
   padding: 10px 20px;
   background-color: #ffffff;
   opacity: 0.9;
-  border-radius: 20px;
+  border-radius: 0px;
   box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
   position: fixed;
   top: 0;
+  height: 120px;
   z-index: 1000;
 }
 
 .img {
   flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 #rd-logo {
   width: 100px;
   height: 100px;
-}
-
-.navbar__title {
-  font-size: 28px;
-  color: #203394;
-  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .nav_menu {
-  flex: 10;
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav_link {
@@ -52,10 +53,12 @@ body {
   gap: 20px;
   margin: 0;
   padding: 0;
+  color: #203394;;
 }
 
 .nav_link li {
   display: inline;
+  color: #203394;
 }
 
 .nav_link a {
@@ -74,15 +77,18 @@ body {
   text-decoration: none;
 }
 
-
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 60px;
+}
 
 .navbar__toggle {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  color: #203394;
 }
-
 
 @media (max-width: 768px) {
   .nav_menu {
@@ -109,9 +115,136 @@ body {
     flex-direction: column;
     gap: 15px;
     padding: 15px 0;
+    color: #203394;
   }
 
   .navbar__toggle {
     display: block;
   }
 }
+
+body {
+  background-color: white;
+  color: #203394;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header container */
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--header-bg, #fff);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Logo */
+.logo-container {
+  flex-shrink: 0;
+}
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Navigation */
+.nav_menu {
+  flex-grow: 1;
+  text-align: right;
+}
+.nav_link {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav_link li a {
+  text-decoration: none;
+  color: #203394;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav_link li a:hover {
+  color: green;
+}
+
+/* Dark mode overrides */
+.dark-mode {
+  background-color: #181a1b !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .header_container {
+  background-color: #23272f !important;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.2);
+}
+
+.dark-mode .nav_link a {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .nav_link li a:hover {
+  color: #FFD700 !important;
+}
+
+.dark-mode .img #rd-logo {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.dark-mode .dark-mode-toggle {
+  color: #FFD700 !important;
+}
+
+.dark-mode-toggle {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s;
+  z-index: 999;
+  position: relative;
+  color: #FFD700;
+}
+
+/* Dark mode toggle */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Navbar dark styles */
+body.dark-mode .header_container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .nav_link a {
+  color: #e0e0e0;
+}
+
+.dark-toggle-btn {
+  background: none;
+  border: none;
+  color: #203394;
+  font-size: 25px;
+  padding-top: 2px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+body.dark-mode .dark-toggle-btn{
+  color: #FFD700;
+}
+
+
