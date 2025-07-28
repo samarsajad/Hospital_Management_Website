@@ -2,15 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ServiceSection.module.css";
 
-
-import { FaCog, FaVials, FaStethoscope } from 'react-icons/fa';
-import { FaPrescriptionBottleMedical } from 'react-icons/fa6';
-
-import pharmacy from "../assets/services/pharmacy.jpg";
-import labs from "../assets/services/labs.jpg";
-import checkup from "../assets/services/checkup.jpeg";
-import surgery from "../assets/services/surgery.jpeg";
-
+// Icons
+import { FaCog } from 'react-icons/fa';
 import {
   FaPrescriptionBottleMedical,
   FaVials,
@@ -18,6 +11,13 @@ import {
 } from "react-icons/fa6";
 import { GiScalpel } from "react-icons/gi";
 
+// Images
+import pharmacy from "../assets/services/pharmacy.jpg";
+import labs from "../assets/services/labs.jpg";
+import checkup from "../assets/services/checkup.jpeg";
+import surgery from "../assets/services/surgery.jpeg";
+
+// Services Data
 const services = [
   {
     title: "Pharmacy",
@@ -53,20 +53,15 @@ const services = [
   },
 ];
 
-
-function ServiceSection({darkMode}) {
-    const modeClass = darkMode ? styles.dark : '';
+// Component
+function ServiceSection({ darkMode }) {
+  const modeClass = darkMode ? styles.dark : '';
 
   return (
-
     <section className={`${styles.serviceSection} ${modeClass}`}>
       <h1>
         Services <FaCog />
       </h1>
-
-
-    <section className={styles.serviceSection}>
-      <h1>Services</h1>
 
       <div className={styles.serviceContainer}>
         {services.map((service, index) => (
