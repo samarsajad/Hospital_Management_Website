@@ -4,16 +4,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+.light {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+/* Dark Mode */
+.dark {
   background-color: #0f172a;
   color: #f8fafc;
-  text-align: center;
-  padding: 20px;
 }
 
 .title {
   font-size: 120px;
-  color: #ef4444;
   margin-bottom: 10px;
+  color: #ef4444;
 }
 
 .message {
@@ -29,9 +39,23 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .button:hover {
   background-color: #2563eb;
+}
+
+/* Toggle Button */
+.toggleContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: inherit;
 }
