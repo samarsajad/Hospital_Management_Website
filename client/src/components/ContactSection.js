@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ContactSection.module.css';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -20,6 +22,20 @@ const ContactSection = () => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 0);
+      }
+    }
+  }, [location]);
 
   const handleSubmit = async e => {
     e.preventDefault();

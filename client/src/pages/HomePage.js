@@ -12,7 +12,7 @@ import ContactSection from "../components/ContactSection";
 
 const Homepage = ({ darkMode, setDarkMode }) => {
   return (
-    <div className={darkMode ? "dark-mode" : ""}>
+    <div className={darkMode ? "dark-mode" : ""} id="home">
   <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
   <Slider darkMode={darkMode} />
   <AboutSection darkMode={darkMode} />

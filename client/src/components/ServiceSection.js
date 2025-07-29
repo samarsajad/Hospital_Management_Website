@@ -58,7 +58,7 @@ function ServiceSection({ darkMode }) {
   const modeClass = darkMode ? styles.dark : '';
 
   return (
-    <section className={`${styles.serviceSection} ${modeClass}`}>
+    <section className={`${styles.serviceSection} ${modeClass}`} id="services">
       <h1>
         Services <FaCog />
       </h1>
