@@ -1,0 +1,37 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 120px;
+  color: #ef4444;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}

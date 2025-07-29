@@ -6,6 +6,7 @@ import PharmacyPage from './pages/PharmacyPage';
 import LabsPage from './pages/LabsPage';
 import CheckupPage from './pages/CheckupPage';
 import SurgeryPage from './pages/SurgeryPage';
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/services/labs-diagnostics" element={<LabsPage />} />
       <Route path="/services/checkup" element={<CheckupPage />} />
       <Route path="/services/surgery" element={<SurgeryPage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
     
   );
