@@ -2,21 +2,26 @@
     padding: 3rem 2rem;
     max-width: 900px;
     margin: 0 auto;
-    background: #f9f9f9;
+    background: var(--bg-section, #f9f9f9);
     border-radius: 16px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    color: var(--text-primary, #333);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .dark {
-    background: #1e1e1e;
-    color: #ffffff;
+    --bg-section: #1e1e1e;
+    --text-primary: #fff;
+    --text-muted: #ccc;
+    background: var(--bg-section);
+    color: var(--text-primary);
   }
   
   .title {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: #004080;
+    color: var(--accent, #004080);
   }
   
   .faqList {
@@ -26,15 +31,16 @@
   }
   
   .faqItem {
-    background: white;
+    background: var(--bg-card, white);
     padding: 1.2rem 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
     transition: all 0.3s ease;
+    color: var(--text-primary);
   }
   
   .dark .faqItem {
-    background: #2c2c2c;
+    background: var(--bg-card-dark, #2c2c2c);
   }
   
   .question {
@@ -43,16 +49,17 @@
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
+    color: var(--text-primary);
   }
   
   .answer {
     margin-top: 0.8rem;
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #444;
+    color: var(--text-muted, #444);
   }
   
   .dark .answer {
-    color: #ccc;
+    color: var(--text-muted);
   }
   
