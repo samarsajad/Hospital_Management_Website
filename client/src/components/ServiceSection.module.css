@@ -108,75 +108,74 @@
   font-weight: 400;
 }
 
-.serviceContainer {
+.sliderWrapper {
+  position: relative;
   display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px 0;
-  overflow-x: auto;
-  min-height: 420px;
+  align-items: center;
+  gap: 10px;
 }
 
-.serviceCard {
+.serviceSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.serviceSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.box {
+  flex: 0 0 auto;
+  min-width: 280px;
+  scroll-snap-align: start;
   background: #fdfdfd;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(44, 122, 123, 0.08);
-  width: 280px;
-  min-width: 280px;
-  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e2e8f0;
-  animation: fadeIn 1s forwards;
+  min-height: 310px;
 }
 
-.serviceCard:hover {
+.box:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 32px rgba(44, 122, 123, 0.15);
 }
 
-.imageContainer {
+.image {
   position: relative;
   height: 200px;
   overflow: hidden;
 }
 
-.serviceImage {
+.image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.serviceCard:hover .serviceImage {
-  transform: scale(1.1);
-}
-
-.imageOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(32, 51, 148, 0.8), rgba(19, 179, 59, 0.8));
+.text {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  font-weight: 600;
+  font-size: 1.2em;
 }
 
-.serviceCard:hover .imageOverlay {
-  opacity: 1;
-}
-
-.serviceIcon {
-  font-size: 3em;
-  color: #fff;
-  animation: bounce 1s infinite;
+.textWithIcon {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
 }
 
 @keyframes bounce {
@@ -185,35 +184,20 @@
   60% { transform: translateY(-5px); }
 }
 
-.cardContent {
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  flex-grow: 1;
-}
-
-.serviceTitle {
-  font-size: 1.4em;
-  color: #203394;
-  margin: 0;
-  font-weight: 600;
-  letter-spacing: -0.3px;
-}
-
-.serviceDescription {
+.description {
   font-size: 1em;
   color: #334155;
   line-height: 1.6;
-  text-align: justify;
+  padding: 0 15px;
   margin: 0;
   flex-grow: 1;
 }
 
-.serviceButton {
-  background: linear-gradient(135deg, #203394, #13b33b);
-  color: #fff;
-  padding: 12px 24px;
+.bookButton {
+  background-color: #203394;
+  color: white;
+  padding: 10px 16px;
+  margin: 0 16px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -226,23 +210,34 @@
   align-self: stretch;
 }
 
-.serviceButton:hover {
-  background: linear-gradient(135deg, #13b33b, #203394);
+.bookButton:hover {
+  background-color: #13b33b;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(19, 179, 59, 0.3);
-}
-
-.buttonArrow {
-  transition: transform 0.3s ease;
-}
-
-.serviceButton:hover .buttonArrow {
-  transform: translateX(4px);
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.fadeIn {
+  animation: fadeIn 1s forwards;
+}
+
+.navButton {
+  background-color: #203394;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: #218838;
 }
 
 /* Responsive Design */
@@ -253,18 +248,20 @@
   }
 
   .sectionTitle {
-    font-size: 2.2em;
-    height: 100px;
     width: 95%;
   }
 
-  .serviceContainer {
-    gap: 20px;
+  .image {
+    height: 180px;
   }
 
-  .serviceCard {
-    width: 100%;
-    max-width: 350px;
+  .box {
+    min-width: 80%;
+    flex-shrink: 0;
+  }
+
+  .serviceSlider {
+    gap: 16px;
   }
 }
 
@@ -272,10 +269,6 @@
   .sectionTitle {
     font-size: 1.8em;
     height: 80px;
-  }
-
-  .cardContent {
-    padding: 20px;
   }
 }
 
@@ -285,61 +278,42 @@
   color: #eee;
 }
 
-:global(body.dark-mode) .serviceCard {
-  color: #ddd;
-  background-color: #1e1e2f;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-  border: 1px solid #333;
-}
-
-:global(body.dark-mode) .sectionTitle {
-  background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
-  color: #fff;
+:global(body.dark-mode) .serviceSection h1 {
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
   box-shadow: 0 4px 24px #4caf50;
 }
 
-:global(body.dark-mode) .serviceTitle {
-  color: #57d596;
-}
-
-:global(body.dark-mode) .serviceDescription {
-  color: #e0e0e0;
-}
-
-:global(body.dark-mode) .serviceButton {
-  background: linear-gradient(135deg, #2c2c3c, #4caf50);
-}
-
-:global(body.dark-mode) .serviceButton:hover {
-  background: linear-gradient(135deg, #4caf50, #2c2c3c);
+:global(body.dark-mode) .box {
+  color: #ddd;
+  background-color: #1e1e2f;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+  border: black 1px solid;
 }
 
 :global(body.dark-mode) .box:hover {
   background-color: #202040;
-  box-shadow: 0 4px 20px rgb(239, 235, 235);;
+  box-shadow: 0 4px 20px rgb(239, 235, 235);
 }
 
-:global(body.dark-mode) .description  {
+:global(body.dark-mode) .description {
   color: #c1bdbd;
 }
-:global(body.dark-mode) .text{
-  color: rgb(239, 239, 60);
 
-}
-
-:global(body.dark-mode) .textWithIcon{
+:global(body.dark-mode) .text {
   color: rgb(239, 239, 60);
 }
 
-
-:global(body.dark-mode) .serviceSection h1{
-   background-color: #1e1e2f;
-  box-shadow: 0 10px 24px #000100;
+:global(body.dark-mode) .textWithIcon {
+  color: rgb(239, 239, 60);
 }
 
-:global(body.dark-mode) .serviceContainer{
-  background: #121212;
-  box-shadow: 0 10px 24px #000501;
+:global(body.dark-mode) .sectionTitle {
+  background: linear-gradient(135deg, #1e1e2f, #4caf50);
+  box-shadow: 0 8px 32px rgba(76, 175, 80, 0.3);
+}
 
-
+:global(body.dark-mode) .sectionSubtitle {
+  color: #b0b0b0;
 }
