@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './styles.css';
-import logo from '../assets/logo-web.jpg';
+import logoLight from '../assets/logo-web.jpg';
+import logoDark from '../assets/logo-dark-mode.png';
+import { Link } from 'react-router-dom';
 import {
   FaHome,
   FaInfoCircle,
@@ -26,7 +28,7 @@ export default function Navbar() {
     <header className="header_container nav-h">
       <div className="logo-container">
         <img
-          src={logo}
+          src={darkMode ? logoDark : logoLight}
           alt="Company Logo"
           className="logo-img"
         />
@@ -34,11 +36,11 @@ export default function Navbar() {
 
       <nav className="nav_menu">
         <ul className="nav_link">
-          <li><a href="#home"><FaHome /> <span>Home</span></a></li>
-          <li><a href="#about"><FaInfoCircle /> <span>About</span></a></li>
-          <li><a href="#services"><FaCog /> <span>Services</span></a></li>
-          <li><a href="#doctors"><FaUserMd /> <span>Doctors</span></a></li>
-          <li><a href="#contact"><FaPhone /> <span>Contact</span></a></li>
+          <li><Link to="/#home"><FaHome /> <span>Home</span></Link></li>
+          <li><Link to="/#about"><FaInfoCircle /> <span>About</span></Link></li>
+          <li><Link to="/#services"><FaCog /> <span>Services</span></Link></li>
+          <li><Link to="/#doctors"><FaUserMd /> <span>Doctors</span></Link></li>
+          <li><Link to="/#contact"><FaPhone /> <span>Contact</span></Link></li>
           <li>
             <button
               className="dark-toggle-btn"

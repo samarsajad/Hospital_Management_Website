@@ -17,6 +17,7 @@ const specialties = [
   {title: 'Ophthalmology',image: images.Ophthalmology},
 ];
 
+
 function AboutUs() {
   return (
     <section className={styles.aboutUs}>

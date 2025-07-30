@@ -115,6 +115,13 @@
   color: #fff;
 }
 
+:global(body.dark-mode) .doctorsSection h1{color: #e6f3e6; 
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px #4caf50;
+}
+
 :global(body.dark-mode) .cardFront {
   background-color: #1f1f1f;
   color: #eee;
