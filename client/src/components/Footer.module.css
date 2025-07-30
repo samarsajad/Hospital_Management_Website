@@ -1,107 +1,131 @@
 .siteFooter {
-  background-color: #203394;
-  color: #E6F7F1;
-  box-shadow: 0 4px 24px #13b33b;
-
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f0f4f8;
+  padding: 3rem 2rem 1rem;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .footerInner {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 auto 30px;
-  max-width: 1200px;
-  padding: 10px;
-  
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-.quickLinks,
-.legalInfo {
+.column {
   flex: 1;
-  min-width: 200px;
-  margin: 5px;
-
+  min-width: 220px;
 }
 
-.quickLinks h2,
-.legalInfo h2 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #E6F7F1;
+.column h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  border-bottom: 2px solid #2ecc71;
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
-.quickLinks ul,
-.legalInfo ul {
+.column ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.quickLinks li,
-.legalInfo li {
-  margin-bottom: 4px;
+.column ul li {
+  margin-bottom: 0.6rem;
 }
 
-.quickLinks a,
-.legalInfo a {
-  color: #FDFDFD;
+.column ul li a {
+  color: #cbd5e1;
   text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 1.1em;
-  color: #E6F7F1;
+  transition: color 0.2s ease;
 }
 
-.quickLinks a:hover,
-.legalInfo a:hover {
-  color: #E6F7F1;
-  text-decoration: underline;
-  color: #13b33b;
+.column ul li a:hover {
+  color: #2ecc71;
 }
 
-.divider {
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.newsletter input {
+  padding: 0.6rem 1rem;
   border: none;
-  border-top: 1px solid #64748B;
-  margin: 0 0 5px;
+  border-radius: 8px;
+  width: 80%;
+  outline: none;
+  font-size: 1rem;
 }
 
-.copyright {
-  background-color:  #203394;
-  padding: 5px;
+.newsletter button {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.newsletter button:hover {
+  background-color: #27ae60;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background-color: #34495e;
+}
+
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   text-align: center;
 }
 
 .socialIcons {
-  margin-bottom: 15px;
+  display: flex;
+  gap: 1.2rem;
 }
 
 .socialIcons a {
-  color: #E6F7F1;
-  font-size: 28px;
-  margin: 0 15px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-
+  color: #f0f4f8;
+  font-size: 1.2rem;
+  transition: color 0.3s;
 }
 
 .socialIcons a:hover {
-  color: #FDFDFD;
-  transform: translateY(-3px);
+  color: #21c164;
+}
+.headingWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.headingWithIcon h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #21c164;
+}
+
+.headingWithIcon i {
+  font-size: 1.4rem;
+  color: #21c164;
 }
 
 @media (max-width: 768px) {
   .footerInner {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .quickLinks, 
-  .legalInfo {
-    margin: 20px 0;
-  }
-
-  .socialIcons a {
-    margin: 0 10px;
-    font-size: 24px;
+    align-items: flex-start;
   }
 }
