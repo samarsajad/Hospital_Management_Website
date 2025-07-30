@@ -131,6 +131,9 @@
 .serviceCard:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 32px rgba(44, 122, 123, 0.15);
+
+  min-height: 310px;
+
 }
 
 .image {
