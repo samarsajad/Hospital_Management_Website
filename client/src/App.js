@@ -6,7 +6,11 @@ import PharmacyPage from "./pages/PharmacyPage";
 import LabsPage from "./pages/LabsPage";
 import CheckupPage from "./pages/CheckupPage";
 import SurgeryPage from "./pages/SurgeryPage";
+
+import Navbar from "./components/Navbar";
+
 import NotFoundPage from "./pages/NotFoundPage";
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -15,6 +19,19 @@ function App() {
   }, [darkMode]);
 
   return (
+
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services/pharmacy" element={<PharmacyPage />} />
+        <Route path="/services/labs-diagnostics" element={<LabsPage />} />
+        <Route path="/services/checkup" element={<CheckupPage />} />
+        <Route path="/services/surgery" element={<SurgeryPage />} />
+      </Routes>
+    </>
+
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/services/pharmacy" element={<PharmacyPage />} />
@@ -24,6 +41,7 @@ function App() {
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
+
   );
 }
 
