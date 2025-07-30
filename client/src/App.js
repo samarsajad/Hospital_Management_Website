@@ -9,7 +9,7 @@ import SurgeryPage from "./pages/SurgeryPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = useState(false);
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
   }, [darkMode]);

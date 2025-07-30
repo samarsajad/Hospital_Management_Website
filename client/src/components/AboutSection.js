@@ -9,6 +9,7 @@ import urologyImg from '../assets/urology.png';
 import gynaeImg from '../assets/gyanaecology.png';
 import surgeryImg from '../assets/surgery.png';
 import scalpelImg from '../assets/scalpel.png';
+import pic1 from '../assets/pic1.webp';
 
 function AboutUs() {
   return (

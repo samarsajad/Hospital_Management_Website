@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './DoctorSection.module.css';
 import doctorImg from '../assets/pic5.webp';
-import { FaUserDoctor, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa6';
+import { FaUserDoctor } from 'react-icons/fa6';
 
 function DoctorsSection() {
   const doctors = [
