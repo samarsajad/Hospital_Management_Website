@@ -4,20 +4,21 @@
   background-color: #f9f9f9;
 }
 
-.h1 {
+
+.serviceSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: #fafcfb;
-  background-color: #203394;
+  border: white 1px; 
+  color: #e6f3e6; 
+  background-color: #203394; 
   box-shadow: 0 4px 24px #13b33b;
-  border-radius: 10px 10px;
+  border-radius: 10px;
   height: 100px;
-  margin-top: 5px;
-  text-align: center;
   padding-top: 30px;
+  margin-bottom: 15px;;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5px auto;
+  text-align: center;
 }
 
 .cogIcon {
@@ -25,6 +26,7 @@
 }
 
 .serviceContainer {
+  padding-top: 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -174,16 +176,26 @@
   color: #eee;
 }
 
+
+:global(body.dark-mode) .serviceSection h1{
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #13b33b;
+}
 :global(body.dark-mode) .box {
   color: #ddd;
   background-color: #1e1e2f;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-  border: black 3px solid;
+  border: black 1px solid;
 }
 
 :global(body.dark-mode) .box:hover {
   background-color: #202040;
+
+  box-shadow: 0 4px 15px rgb(239, 235, 235);;
+
   box-shadow: 0 4px 20px rgb(239, 235, 235);
+
 }
 
 :global(body.dark-mode) .description {
@@ -195,6 +207,15 @@
 
 :global(body.dark-mode) .textWithIcon {
   color: rgb(239, 239, 60);
+}
+
+
+
+:global(body.dark-mode) .serviceSection h1{
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px #4caf50;  
 }
 
 :global(body.dark-mode) .serviceSection h1 {
@@ -273,3 +294,4 @@
     gap: 16px;
   }
 }
+
