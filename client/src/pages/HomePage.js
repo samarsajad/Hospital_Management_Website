@@ -9,7 +9,7 @@ import ServiceSection from "../components/ServiceSection";
 import DoctorsSection from "../components/DoctorsSection";
 import AboutSection from "../components/AboutSection";
 import ContactSection from "../components/ContactSection";
-
+import FaqSection from '../components/FaqSection';
 const Homepage = ({ darkMode, setDarkMode }) => {
   return (
     <div className={darkMode ? "dark-mode" : ""}>
@@ -20,6 +20,7 @@ const Homepage = ({ darkMode, setDarkMode }) => {
   <ServiceSection darkMode={darkMode} />
   <DoctorsSection darkMode={darkMode}/>      
   <ContactSection darkMode={darkMode} />
+  <FaqSection darkMode={darkMode}/>
   <Footer />
 </div>
 
