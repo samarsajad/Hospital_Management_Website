@@ -10,6 +10,7 @@
 .aboutContainer {
   max-width: 1200px;
   margin: auto;
+  border-radius: 12px;
 }
 
 .aboutContainer h1 {
@@ -26,7 +27,7 @@
   justify-content: center;
   font-weight: 600;
   letter-spacing: -0.5px;
-  box-shadow: 0 4px 24px #13b33b;
+  
 }
 
 .headerIcon {
@@ -46,8 +47,9 @@
 .readMore {
   margin-left: 20%;
   margin-right: 20%;
+  width: 35%;
   padding: 8px 20px;
-  background-color: #203394;
+  background-color: #13b33b;
   color: #fafcfb;
   border: none;
   border-radius: 6px;
@@ -71,41 +73,51 @@
   flex-wrap: wrap;
   margin: 50px 0 60px;
   padding: 20px 10px;
+  border-radius: 50px;
+  
 }
 
 .history, .vision, .mission {
-  flex: 1;
-  background-color: #fdfdfd;
-  border: 1px solid #e2e8f0;
+  background-color: white; 
+  color: white;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(44, 122, 123, 0.08);
-  min-width: 300px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 .history:hover, .vision:hover, .mission:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(1, 30, 31, 0.12);
 }
 
-.history h2, .vision h2, .mission h2 {
-  font-size: 1.6em;
-  color: #fdfdfd;
-  margin: 0 0 20px 0;
-  padding: 20px 25px;
+.history h2,
+.vision h2,
+.mission h2 {
+  font-size: 24px;
+  color: white;
   background: linear-gradient(135deg, #7eb1e4, #203394);
-  border-radius: 0;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 600;
-  letter-spacing: -0.3px;
+  border-radius: 4px;
 }
+
+.history h2 img,
+.vision h2 img,
+.mission h2 img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+
 
 .iconImg {
   width: 50px;
@@ -139,7 +151,7 @@
   justify-content: center;
   font-weight: 600;
   letter-spacing: -0.5px;
-  box-shadow: 0 4px 24px #13b33b;
+  
 }
 
 .specialties {
@@ -237,7 +249,7 @@
 :global(body.dark-mode) .aboutContainer h1,
 :global(body.dark-mode) .specialtiesHeading {
   color: #eef6f9;
-  background: #203394;
+  background-color: #1e1e2f;
   border: 1px solid #e2e8f0;
 }
 

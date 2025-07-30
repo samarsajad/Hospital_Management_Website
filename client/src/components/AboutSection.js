@@ -22,7 +22,7 @@ function AboutUs() {
       </div>
 
       <div className={styles.historyVisionMission}>
-        <div className={styles.history} style = {{padding: '30px 0'}}>
+        <div className={styles.history} >
           <h2>
             Our History <img src={historyImg} alt="history" width={50} height={50} style={{ padding: '10px' }} />
           </h2>
