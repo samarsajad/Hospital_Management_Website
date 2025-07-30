@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './AboutSection.module.css';
-import pic1 from '../assets/pic1.jpg';
+
 import historyImg from '../assets/history.png';
-import branchImg from '../assets/branch-leaves.png';
+
 import visionImg from '../assets/vision.png';
 import missionImg from '../assets/mission.png';
 import urologyImg from '../assets/urology.png';

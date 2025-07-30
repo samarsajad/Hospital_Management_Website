@@ -236,9 +236,9 @@
 
 :global(body.dark-mode) .aboutContainer h1,
 :global(body.dark-mode) .specialtiesHeading {
-  background-color: #1e1e2f;
-  color: #fff;
-  box-shadow: 0 4px 24px #4caf50;
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
 }
 
 :global(body.dark-mode) .text,

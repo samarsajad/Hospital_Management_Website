@@ -4,20 +4,21 @@
   background-color: #f9f9f9;
 }
 
-.h1 {
+
+.serviceSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: #fafcfb;
-  background-color: #203394;
+  border: white 1px; 
+  color: #e6f3e6; 
+  background-color: #203394; 
   box-shadow: 0 4px 24px #13b33b;
-  border-radius: 10px 10px;
+  border-radius: 10px;
   height: 100px;
-  margin-top: 5px;
-  text-align: center;
   padding-top: 30px;
+  margin-bottom: 15px;;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5px auto;
+  text-align: center;
 }
 
 .cogIcon {
@@ -25,6 +26,7 @@
 }
 
 .serviceContainer {
+  padding-top: 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -53,7 +55,6 @@
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 310px;
-
 }
 
 .box:hover {
@@ -68,17 +69,15 @@
 }
 
 .text {
-
   flex: 1;
   padding: 10px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-   font-weight: 600;
+  font-weight: 600;
   font-size: 1.2em;
 }
-
 
 .textWithIcon {
   flex: 1;
@@ -105,7 +104,6 @@
   margin-bottom: 12px;
   /* Add this instead of flex-grow */
 }
-
 
 .bookButton {
   background-color: #203394;
@@ -146,7 +144,6 @@
     width: 90%;
   }
 
-
   .image {
     height: 180px;
   }
@@ -179,39 +176,122 @@
   color: #eee;
 }
 
+
+:global(body.dark-mode) .serviceSection h1{
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #13b33b;
+}
 :global(body.dark-mode) .box {
   color: #ddd;
   background-color: #1e1e2f;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-  border: black 3px solid;
+  border: black 1px solid;
 }
 
 :global(body.dark-mode) .box:hover {
   background-color: #202040;
-  box-shadow: 0 4px 20px rgb(239, 235, 235);;
+
+  box-shadow: 0 4px 15px rgb(239, 235, 235);;
+
+  box-shadow: 0 4px 20px rgb(239, 235, 235);
+
 }
 
-:global(body.dark-mode) .description  {
+:global(body.dark-mode) .description {
   color: #c1bdbd;
 }
-:global(body.dark-mode) .text{
-  color: rgb(239, 239, 60);
-
-}
-
-:global(body.dark-mode) .textWithIcon{
+:global(body.dark-mode) .text {
   color: rgb(239, 239, 60);
 }
+
+:global(body.dark-mode) .textWithIcon {
+  color: rgb(239, 239, 60);
+}
+
 
 
 :global(body.dark-mode) .serviceSection h1{
-   background-color: #1e1e2f;
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px #4caf50;  
+}
+
+:global(body.dark-mode) .serviceSection h1 {
+  background-color: #1e1e2f;
   box-shadow: 0 10px 24px #000100;
 }
 
-:global(body.dark-mode) .serviceContainer{
+:global(body.dark-mode) .serviceContainer {
   background: #121212;
   box-shadow: 0 10px 24px #000501;
-
-
 }
+.serviceSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.serviceSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.box {
+  flex: 0 0 auto;
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+
+.sliderWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.serviceSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.serviceSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.navButton {
+  background-color: #203394;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .box {
+    min-width: 80%;
+    flex-shrink: 0;
+  }
+
+  .serviceSlider {
+    gap: 16px;
+  }
+}
+
