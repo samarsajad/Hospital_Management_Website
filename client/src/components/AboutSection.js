@@ -13,6 +13,7 @@ import pic1 from '../assets/pic1.webp';
 
 function AboutUs() {
   return (
+
     <section className={styles.aboutUs}>
       {/* Hero Section */}
       <div className={styles.hero}>
@@ -42,6 +43,17 @@ function AboutUs() {
             </div>
           </div>
         </div>
+
+    <section className={styles.aboutUs} id="about">
+      <div className={styles.aboutContainer}>
+        <h1>
+          <i className="bi bi-house-door-fill" style={{ fontSize: '50px', padding: '10px' }}></i>
+          About Us
+        </h1>
+        <p className={styles.text}>
+          Welcome to MidCity Hospital Urology and General Nursing Home, a leading healthcare institution renowned for its excellence in urology and gynecology. Our commitment to providing top-notch medical care, state-of-the-art facilities, and compassionate patient care has made us a trusted name in the community.
+        </p>
+
       </div>
 
       {/* History, Vision, Mission Cards */}

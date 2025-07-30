@@ -55,12 +55,38 @@ function ServiceSection({ darkMode }) {
   const modeClass = darkMode ? styles.dark : "";
 
   return (
+
     <section className={`${styles.serviceSection} ${modeClass}`}>
       <div className={styles.sectionHeader}>
         <h1 className={styles.sectionTitle}>
           <div className={styles.titleContent}>
             <div className={styles.iconWrapper}>
               <FaCog />
+
+    <section className={`${styles.serviceSection} ${modeClass}`} id="services">
+      <h1>
+        Services <FaCog />
+      </h1>
+
+      <div className={styles.sliderWrapper}>
+        <button onClick={() => scroll("left")} className={styles.navButton}>
+          <ChevronLeft />
+        </button>
+
+        <div className={styles.serviceSlider} ref={sliderRef}>
+          {repeatedServices.map((service, index) => (
+            <div key={index} className={`${styles.box} ${styles.fadeIn}`}>
+              <div className={styles.image}>
+                <img src={service.img} alt={service.title} />
+              </div>
+              <div className={styles.text}>
+                {service.title} {service.icon}
+              </div>
+              <p className={styles.description}>{service.desc}</p>
+              <Link to={service.link} className={styles.bookButton}>
+                {service.btnText}
+              </Link>
+
             </div>
             <span className={styles.titleText}>Services</span>
             <div className={styles.titleUnderline}></div>

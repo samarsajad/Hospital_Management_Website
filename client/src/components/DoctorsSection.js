@@ -40,6 +40,7 @@ function DoctorsSection() {
   ];
 
   return (
+
     <section className={styles.doctorsSection}>
       <div className={styles.sectionHeader}>
         <h1 className={styles.sectionTitle}>
@@ -55,6 +56,13 @@ function DoctorsSection() {
           Our team of highly qualified medical professionals is dedicated to providing you with the best healthcare experience
         </p>
       </div>
+
+    <section className={styles.doctorsSection} id='doctors'>
+      <h1>
+        <i className="fa-solid fa-user-doctor" style={{ fontSize: '50px', padding: '10px' }}></i>
+        Meet Our Doctors
+      </h1>
+
       <div className={styles.doctorsContainer}>
         {doctors.map((doc, index) => (
           <div className={styles.doctorCard} key={index}>

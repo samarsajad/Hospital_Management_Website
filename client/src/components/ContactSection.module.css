@@ -153,11 +153,11 @@
 
 /* ------------------------------ */
 :global(body.dark-mode) {
-  --accent:       #4cc38a;
-  --accent-light: #72ddbb;
+  --accent:       #13b33b;
+  --accent-light: #13b33b;
   --bg-section:   #121212;
-  --bg-card:      #1e1e1e;
-  --bg-input:     #1e1e1e;
+  --bg-card:      #1e1e2f;
+  --bg-input:     #1e1e2f;
   --text-primary: #f0f0f0;
   --text-muted:   #aaaaaa;
   --border:       #333333;
