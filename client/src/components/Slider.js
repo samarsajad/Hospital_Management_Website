@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./slider.module.css";
-import  images  from "../assets/images";
+import images from "../assets/images";
 
 const sliderImages = [
   images.pic5,
@@ -28,28 +28,29 @@ function Slider() {
   }, []);
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.slides}>
-        <img
-          src={sliderImages[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
-          className={styles.slide}
-          loading="lazy"
-        />
+    <div className={styles.heroHeader}>
+      <div className={styles.slider}>
+        <div className={styles.slides}>
+          <img
+            src={sliderImages[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            className={styles.slide}
+            loading="lazy"
+          />
+        </div>
+        <button
+          className={`${styles.button} ${styles.prev}`}
+          onClick={() => changeSlide(-1)}
+        >
+          &#10094;
+        </button>
+        <button
+          className={`${styles.button} ${styles.next}`}
+          onClick={() => changeSlide(1)}
+        >
+          &#10095;
+        </button>
       </div>
-
-      <button
-        className={`${styles.button} ${styles.prev}`}
-        onClick={() => changeSlide(-1)}
-      >
-        &#10094;
-      </button>
-      <button
-        className={`${styles.button} ${styles.next}`}
-        onClick={() => changeSlide(1)}
-      >
-        &#10095;
-      </button>
     </div>
   );
 }
