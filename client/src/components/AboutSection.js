@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './AboutSection.module.css';
+
 import images from '../assets/images'; 
 
 const specialties = [
@@ -16,6 +17,7 @@ const specialties = [
   { title: 'Paediatrics', image: images.Paediatrics },
   {title: 'Ophthalmology',image: images.Ophthalmology},
 ];
+
 
 function AboutUs() {
   return (
