@@ -1,5 +1,6 @@
 .doctorsSection {
   text-align: center;
+
   padding: 60px 40px;
   background-color: #ffffff;
   box-shadow: 0 8px 24px #f6f5f7;
@@ -10,6 +11,24 @@
 
 .sectionHeader {
   margin-bottom: 60px;
+
+  padding: 50px 0;
+  background-color: #fff;
+  
+}
+
+.doctorsSection h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border: 2px solid #e6f3e6;
+  color: #e6f3e6; 
+  background-color: #203394; 
+  border-radius: 10px;
+  height: 100px;
+  padding-top: 30px;
+  width: 80%;
+  margin: 5px auto;
+
   text-align: center;
 }
 
@@ -113,8 +132,14 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   gap: 30px;
   padding: 20px 0;
+
+  gap: 20px;
+  padding: 20px;
+  
+
 }
 
 .doctorCard {
@@ -426,13 +451,13 @@
 
 :global(body.dark-mode) .doctorsSection h1 {
   color: #eef6f9;
-  background: #203394;
+  background-color: #1e1e2f;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 24px #4caf50;
+  
 }
 
 :global(body.dark-mode) .cardFront {
-  background-color: #1f1f1f;
+  background-color: #1e1e2f;
   color: #eee;
 }
 

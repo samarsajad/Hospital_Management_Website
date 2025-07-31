@@ -56,6 +56,7 @@ function AboutUs() {
 
       </div>
 
+
       {/* History, Vision, Mission Cards */}
       <div className={styles.cardGrid}>
         <div className={`${styles.card} ${styles.history}`}>
@@ -67,6 +68,17 @@ function AboutUs() {
             <p className={styles.text}>
               Established in 2019, MidCity Hospital has been at the forefront of healthcare innovation. Our founders, Dr. xyz and Dr. abc, envisioned a hospital that not only treated illnesses but also prioritized patient comfort and satisfaction. Over the decades, we have grown into a multifaceted healthcare provider, expanding our services to meet the evolving needs of our patients.
             </p>
+
+      <div className={styles.historyVisionMission}>
+        <div className={styles.history} >
+          <h2>
+            Our History <img src={historyImg} alt="history" width={50} height={50} style={{ padding: '10px' }} />
+          </h2>
+          <p className={styles.text}>
+            Established in 2019, MidCity Hospital has been at the forefront of healthcare innovation. Our founders, Dr. xyz and Dr. abc, envisioned a hospital that not only treated illnesses but also prioritized patient comfort and satisfaction. Over the decades, we have grown into a multifaceted healthcare provider, expanding our services to meet the evolving needs of our patients.
+            
+          </p>
+
             <span className={styles.readMore}>Read More</span>
           </div>
         </div>

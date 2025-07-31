@@ -8,8 +8,25 @@
   max-width: 1400px;
 }
 
+
 .sectionHeader {
   margin-bottom: 60px;
+
+
+.serviceSection h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border: white 1px; 
+  color: #e6f3e6; 
+  background-color: #203394; 
+  box-shadow: 0 4px 24px #727773;
+  border-radius: 10px;
+  height: 100px;
+  padding-top: 30px;
+  margin-bottom: 15px;;
+  width: 80%;
+  margin: 5px auto;
+
   text-align: center;
 }
 
@@ -128,9 +145,15 @@
   min-height: 310px;
 }
 
+
 .serviceCard:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 32px rgba(44, 122, 123, 0.15);
+
+.box:hover {
+      transform:scale(1.05) !important;
+   box-shadow: 0 4px 24px #727773;
+
 
   min-height: 310px;
 
@@ -170,7 +193,7 @@
 }
 
 .bookButton {
-  background-color: #203394;
+  background-color: #13b33b;
   color: white;
   padding: 10px 16px;
   margin: 0 16px 20px;
@@ -235,11 +258,19 @@
   color: #eee;
 }
 
+
 :global(body.dark-mode) .serviceSection h1 {
   color: #eef6f9;
   background: #203394;
   border: 1px solid #e2e8f0;
   box-shadow: 0 4px 24px #4caf50;
+
+
+:global(body.dark-mode) .serviceSection h1{
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #727773;
+
 }
 
 :global(body.dark-mode) .serviceCard {
@@ -258,6 +289,7 @@
   color: #c1bdbd;
 }
 
+
 :global(body.dark-mode) .text {
   color: rgb(239, 239, 60);
 }
@@ -265,6 +297,100 @@
 :global(body.dark-mode) .sectionTitle {
   background: linear-gradient(135deg, #1e1e2f, #4caf50);
   box-shadow: 0 8px 32px rgba(76, 175, 80, 0.3);
+
+:global(body.dark-mode) .text {
+  color: white
+}
+
+:global(body.dark-mode) .textWithIcon {
+  color: white
+}
+
+
+
+:global(body.dark-mode) .serviceSection h1{
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px #4caf50;  
+}
+
+:global(body.dark-mode) .serviceSection h1 {
+  background-color: #1e1e2f;
+  box-shadow: 0 10px 24px #000100;
+}
+
+:global(body.dark-mode) .serviceContainer {
+  background: #121212;
+  box-shadow: 0 10px 24px #000501;
+}
+.serviceSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.serviceSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.box {
+  flex: 0 0 auto;
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+
+.sliderWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.serviceSlider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.serviceSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.navButton {
+  background-color:#218838; 
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: #203394;
+}
+
+@media (max-width: 768px) {
+  .box {
+    min-width: 80%;
+    flex-shrink: 0;
+  }
+
+  .serviceSlider {
+    gap: 16px;
+  }
+
 }
 
 :global(body.dark-mode) .sectionSubtitle {

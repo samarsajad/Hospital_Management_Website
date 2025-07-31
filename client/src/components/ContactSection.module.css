@@ -1,7 +1,7 @@
 /* ===== Tokens (light theme) ===== */
 :root {
-  --accent:       #007bff;
-  --accent-light: #3da0ff;
+  --accent:       #13b33b;
+  --accent-light: #13b33b;
   --bg-section:   #f7f9fc;
   --bg-card:      #ffffff;
   --bg-input:     #ffffff;
@@ -88,7 +88,7 @@
 .group textarea:focus + label {
   transform: translateY(-28px);
   font-size: .8rem;
-  color: var(--accent);
+  color: #13b33b;
 }
 
 /* ===== Submit button ===== */
@@ -97,26 +97,23 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   padding: 16px 36px;
   border: none;
   border-radius: 999px;
+  background-color: #13b33b;
   background: linear-gradient(135deg,var(--accent) 0%,var(--accent-light) 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-
   cursor: pointer;
   overflow: hidden;
   position: relative;
-
-  box-shadow: 0 6px 18px rgba(0,123,255,.25);
   transition: transform .18s, box-shadow .18s;
 }
 
 .submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0,123,255,.35);
+  background-color: #13b33b;
 }
 
 .submit:disabled { opacity: .6; cursor: not-allowed; }
