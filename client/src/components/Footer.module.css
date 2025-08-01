@@ -1,5 +1,5 @@
 .siteFooter {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #1d5c38, #1f7a47, #23815f);
   color: #f0f4f8;
   padding: 3rem 2rem 1rem;
   font-family: "Segoe UI", sans-serif;
@@ -21,7 +21,7 @@
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #ffffff;
-  border-bottom: 2px solid #2ecc71;
+  border-bottom: 2px solid #d6e0ea;
   display: inline-block;
   padding-bottom: 0.3rem;
 }
@@ -42,7 +42,7 @@
 }
 
 .column ul li a:hover {
-  color: #2ecc71;
+  color: #d6e0ea;
 }
 
 .newsletter {
@@ -73,7 +73,7 @@
 }
 
 .newsletter button:hover {
-  background-color: #27ae60;
+  background-color: #3ddc97;
 }
 
 hr {
