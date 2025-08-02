@@ -4,12 +4,14 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const Medicine = require("./models/medicines");
 const LabAppointment = require("./models/lab");
-const Doctor = require("./models/checkup");
+const Doctor = require("./models/doctor");
 const CheckupAppointment = require("./models/checkup");
 const multer = require("multer");
 const path = require("path");
 const Surgery = require("./models/surgery");
+const fs = require("fs");
 const authRoutes = require("./routes/authRoutes");
+const medicineRoutes = require("./routes/medicineRoutes");
 const medicineRoutes = require("./routes/medicineRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const contactRoutes = require('./routes/contactRoutes');
@@ -40,14 +42,24 @@ app.use("/api/admin/medicines", medicineRoutes);
 app.use("/api/admin", adminRoutes);
 app.use('/api/contact', contactRoutes);
 
-app.get("/api/doctors", async (req, res) => {
-  try {
-    const doctors = await Doctor.find();
-    res.json(doctors);
-  } catch (err) {
-    console.error("Failed to fetch doctors:", err);
-    res.status(500).json({ error: "Server error" });
-  }
+// Serve doctors from JSON file
+app.get("/api/doctors", (req, res) => {
+  const filePath = path.join(__dirname, "data", "doctors.json");
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading doctors.json:", err);
+      return res.status(500).json({ error: "Failed to load doctors" });
+    }
+
+    try {
+      const doctors = JSON.parse(data);
+      res.json(doctors);
+    } catch (parseErr) {
+      console.error("JSON parse error:", parseErr);
+      res.status(500).json({ error: "Invalid JSON format in doctors.json" });
+    }
+  });
 });
 
 app.post("/api/labs/book", async (req, res) => {
