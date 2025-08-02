@@ -10,9 +10,9 @@ import AboutSection from "../components/AboutSection";
 import ContactSection from "../components/ContactSection";
 import FaqSection from "../components/FaqSection";
 
-const Homepage = ({darkMode, setDarkMode}) => {
+const Homepage = ({ darkMode, setDarkMode }) => {
   return (
-    <div className={darkMode ? "dark-mode" : ""}>
+    <div className={darkMode ? "dark-mode" : ""} id="home">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Slider darkMode={darkMode} />
       <AboutSection darkMode={darkMode} />
