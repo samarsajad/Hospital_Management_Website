@@ -1,6 +1,11 @@
-import React, {useRef, useEffect} from "react";
-import {Link} from "react-router-dom";
-import styles from "./ServiceSection.module.css";
+
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './ServiceSection.module.css';
+import images from '../assets/images';
+
+
 
 import {FaCog} from "react-icons/fa";
 import {
