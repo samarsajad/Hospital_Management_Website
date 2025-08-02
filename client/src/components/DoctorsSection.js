@@ -27,7 +27,7 @@ function DoctorsSection() {
   ];
 
   return (
-    <section className={styles.doctorsSection}>
+    <section className={styles.doctorsSection} id='doctors'>
       <h1>
         <i className="fa-solid fa-user-doctor" style={{ fontSize: '50px', padding: '10px' }}></i>
         Meet Our Doctors
