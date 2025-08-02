@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 80px;
+  padding-top: 70px;
 }
 
 .heroContainer,
@@ -29,11 +31,11 @@
 
 .heroImage img,
 .messageImage img {
-  width: 100%;
-  max-width: 450px;
+  width: auto;
+  max-width: 100%;
   height: auto;
-  object-fit: cover;
   border-radius: 12px;
+  object-fit: fit;
 }
 
 
