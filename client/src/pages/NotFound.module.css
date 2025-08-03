@@ -1,0 +1,61 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+.light {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+/* Dark Mode */
+.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.title {
+  font-size: 120px;
+  margin-bottom: 10px;
+  color: #ef4444;
+}
+
+.message {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+/* Toggle Button */
+.toggleContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: inherit;
+}
