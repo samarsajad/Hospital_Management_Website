@@ -16,7 +16,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<HomePage darkMode={darkMode} setDarkMode={setDarkMode} />} />
       <Route path="/services/pharmacy" element={<PharmacyPage />} />
       <Route path="/services/labs-diagnostics" element={<LabsPage />} />
       <Route path="/services/checkup" element={<CheckupPage />} />
