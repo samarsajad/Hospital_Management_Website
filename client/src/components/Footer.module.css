@@ -1,8 +1,15 @@
 .siteFooter {
+
   background: linear-gradient(135deg, #1d5c38, #1f7a47, #23815f);
   color: #f0f4f8;
   padding: 3rem 2rem 1rem;
   font-family: "Segoe UI", sans-serif;
+
+  background-color: #203394;
+  color: #E6F7F1;
+  box-shadow: 0 4px 24px #727773;
+
+
 }
 
 .footerInner {

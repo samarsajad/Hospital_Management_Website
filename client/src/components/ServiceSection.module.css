@@ -2,22 +2,24 @@
   text-align: center;
   padding: 60px 20px;
   background-color: #f9f9f9;
+  /* color: #13b33b; */
 }
 
-.h1 {
+
+.serviceSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: #fafcfb;
-  background-color: #203394;
-  box-shadow: 0 4px 24px #13b33b;
-  border-radius: 10px 10px;
+  border: white 1px; 
+  color: #e6f3e6; 
+  background-color: #203394; 
+  box-shadow: 0 4px 24px #727773;
+  border-radius: 10px;
   height: 100px;
-  margin-top: 5px;
-  text-align: center;
   padding-top: 30px;
+  margin-bottom: 15px;;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5px auto;
+  text-align: center;
 }
 
 .cogIcon {
@@ -25,10 +27,12 @@
 }
 
 .serviceContainer {
+  padding-top: 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  background-color: whitesmoke;
 }
 
 .box {
@@ -56,8 +60,10 @@
 }
 
 .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      transform:scale(1.05) !important;
+   box-shadow: 0 4px 24px #727773;
+
+
 }
 
 .image img {
@@ -104,7 +110,7 @@
 }
 
 .bookButton {
-  background-color: #203394;
+  background-color: #13b33b;
   color: white;
   padding: 10px 16px;
   margin: 0 16px 20px;
@@ -174,27 +180,46 @@
   color: #eee;
 }
 
+
+:global(body.dark-mode) .serviceSection h1{
+  background-color: #1e1e2f;
+  color: #fff;
+  box-shadow: 0 4px 24px #727773;
+}
 :global(body.dark-mode) .box {
   color: #ddd;
   background-color: #1e1e2f;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-  border: black 3px solid;
+  border: black 1px solid;
 }
 
 :global(body.dark-mode) .box:hover {
   background-color: #202040;
+
+  box-shadow: 0 4px 15px rgb(239, 235, 235);;
+
   box-shadow: 0 4px 20px rgb(239, 235, 235);
+
 }
 
 :global(body.dark-mode) .description {
   color: #c1bdbd;
 }
 :global(body.dark-mode) .text {
-  color: rgb(239, 239, 60);
+  color: white
 }
 
 :global(body.dark-mode) .textWithIcon {
-  color: rgb(239, 239, 60);
+  color: white
+}
+
+
+
+:global(body.dark-mode) .serviceSection h1{
+  color: #eef6f9;
+  background: #203394;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px #4caf50;  
 }
 
 :global(body.dark-mode) .serviceSection h1 {
@@ -249,7 +274,7 @@
 }
 
 .navButton {
-  background-color: #203394;
+  background-color:#218838; 
   color: white;
   border: none;
   border-radius: 50%;
@@ -260,7 +285,7 @@
 }
 
 .navButton:hover {
-  background-color: #218838;
+  background-color: #203394;
 }
 
 @media (max-width: 768px) {
@@ -273,3 +298,4 @@
     gap: 16px;
   }
 }
+
