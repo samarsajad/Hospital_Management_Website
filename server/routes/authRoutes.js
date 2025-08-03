@@ -1,8 +1,35 @@
 const express = require("express");
-const router = express.Router();
-const { register, login } = require("../controllers/authController");
+const {
+  register,
+  login,
+  logout,
+  sendVerifyOtp,
+  verifyOtp,
+  isAuthenticated,
+  sendResetOtp,
+  resetPassword,
+} = require("../controllers/authController");
+const userAuth = require("../middleware/isAuthenticated");
+const passport = require("passport");
 
-router.post("/register", register);
-router.post("/login", login);
+const authRouter = express.Router();
 
-module.exports = router;
+authRouter.post("/register", register);
+authRouter.post("/login", login);
+authRouter.post("/logout", logout);
+authRouter.post("/send-verify-otp", userAuth, sendVerifyOtp);
+authRouter.post("/verify-otp", userAuth, verifyOtp);
+authRouter.get("/is-auth", userAuth, isAuthenticated);
+authRouter.post("/send-reset-otp", sendResetOtp);
+authRouter.post("/reset-password", resetPassword);
+
+authRouter.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+authRouter.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
+);
+
+module.exports = authRouter;
