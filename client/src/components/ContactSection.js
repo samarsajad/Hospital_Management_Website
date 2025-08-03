@@ -38,23 +38,24 @@ const ContactSection = () => {
   }, [location]);
 
   const handleSubmit = async e => {
-    e.preventDefault();
-    setStatus('sending');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
-      });
-      if (!res.ok) throw new Error();
-      setStatus('sent');
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5_000);
-    } catch {
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 5_000);
-    }
-  };
+  e.preventDefault();
+  setStatus('sending');
+  try {
+    const res = await fetch('http://localhost:5000/api/contact', {  
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+    });
+    if (!res.ok) throw new Error();
+    setStatus('sent');
+    setForm({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setStatus('idle'), 5_000);
+  } catch {
+    setStatus('error');
+    setTimeout(() => setStatus('idle'), 5_000);
+  }
+};
+
 
   return (
     <section className={styles.contact} id="contact">

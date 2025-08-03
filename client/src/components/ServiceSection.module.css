@@ -2,6 +2,7 @@
   text-align: center;
   padding: 60px 20px;
   background-color: #f9f9f9;
+  /* color: #13b33b; */
 }
 
 
@@ -11,7 +12,7 @@
   border: white 1px; 
   color: #e6f3e6; 
   background-color: #203394; 
-  box-shadow: 0 4px 24px #13b33b;
+  box-shadow: 0 4px 24px #727773;
   border-radius: 10px;
   height: 100px;
   padding-top: 30px;
@@ -31,6 +32,7 @@
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  background-color: whitesmoke;
 }
 
 .box {
@@ -58,8 +60,10 @@
 }
 
 .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      transform:scale(1.05) !important;
+   box-shadow: 0 4px 24px #727773;
+
+
 }
 
 .image img {
@@ -106,7 +110,7 @@
 }
 
 .bookButton {
-  background-color: #203394;
+  background-color: #13b33b;
   color: white;
   padding: 10px 16px;
   margin: 0 16px 20px;
@@ -180,7 +184,7 @@
 :global(body.dark-mode) .serviceSection h1{
   background-color: #1e1e2f;
   color: #fff;
-  box-shadow: 0 4px 24px #13b33b;
+  box-shadow: 0 4px 24px #727773;
 }
 :global(body.dark-mode) .box {
   color: #ddd;
@@ -202,11 +206,11 @@
   color: #c1bdbd;
 }
 :global(body.dark-mode) .text {
-  color: rgb(239, 239, 60);
+  color: white
 }
 
 :global(body.dark-mode) .textWithIcon {
-  color: rgb(239, 239, 60);
+  color: white
 }
 
 
@@ -270,7 +274,7 @@
 }
 
 .navButton {
-  background-color: #203394;
+  background-color:#218838; 
   color: white;
   border: none;
   border-radius: 50%;
@@ -281,7 +285,7 @@
 }
 
 .navButton:hover {
-  background-color: #218838;
+  background-color: #203394;
 }
 
 @media (max-width: 768px) {

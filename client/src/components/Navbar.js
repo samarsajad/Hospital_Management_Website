@@ -1,7 +1,15 @@
+
 import { useState, useEffect } from "react";
 import "./styles.css";
 import logo from "../assets/logo-web.jpg";
 import { Link } from "react-router-dom";
+
+import { useState, useEffect } from 'react';
+import './styles.css';
+import logoLight from '../assets/logo-web.jpg';
+import logoDark from '../assets/logo-dark-mode.png';
+import { Link } from 'react-router-dom';
+
 import {
   FaHome,
   FaInfoCircle,
@@ -26,7 +34,15 @@ export default function Navbar() {
   return (
     <header className="header_container nav-h">
       <div className="logo-container">
+
         <img src={logo} alt="Company Logo" className="logo-img" />
+
+        <img
+          src={darkMode ? logoDark : logoLight}
+          alt="Company Logo"
+          className="logo-img"
+        />
+
       </div>
 
       <nav className="nav_menu">

@@ -1,0 +1,56 @@
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 20px;
+}
+
+/* Only the clicked card expands */
+.card.expanded {
+  transform: scale(1.05);
+  background-color: #e6f0ff;
+  box-shadow: 0 8px 20px rgba(32, 51, 148, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cardHeader h3 {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.cardText {
+  font-size: 1.1em;
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+.readMoreBtn {
+  background-color: #13b33b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.readMoreBtn:hover {
+  background-color: #0e902e;
+}
+
+.readMoreBtn.expanded {
+  background-color: #203394;
+}
+
