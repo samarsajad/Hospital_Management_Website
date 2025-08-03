@@ -1,0 +1,82 @@
+/* Center the login form on screen */
+.login-form {
+  max-width: 400px;
+  margin: 5% auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form h2 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.login-form p {
+  text-align: center;
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.3rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  border-color: #3182ce;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+label {
+  font-weight: 500;
+  color: #2d3748;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.login-btn {
+  width: 100%;
+  background-color: #3182ce;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 6px;
+}
+
+.login-btn:hover {
+  background-color: #2b6cb0;
+}
+
+.login-form a {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .login-form {
+    margin: 2rem;
+    padding: 1.5rem;
+  }
+}
