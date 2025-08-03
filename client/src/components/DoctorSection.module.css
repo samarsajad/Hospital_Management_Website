@@ -2,16 +2,15 @@
   text-align: center;
   padding: 50px 0;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(19, 179, 59, 0.1); 
+  
 }
 
 .doctorsSection h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  border: 2px solid #13b33b; 
+  border: 2px solid #e6f3e6;
   color: #e6f3e6; 
   background-color: #203394; 
-  box-shadow: 0 4px 24px #13b33b;
   border-radius: 10px;
   height: 100px;
   padding-top: 30px;
@@ -26,7 +25,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  box-shadow: 0 4px 24px #13b33b;
+  
 }
 
 .doctorCard {
@@ -65,13 +64,20 @@
 
 .cardBack {
   transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
   color: #333;
-  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  overflow-y: auto;
+  cursor: pointer;
 }
+
+
 
 .cardFront img {
   width: 100%;
@@ -91,23 +97,75 @@
   margin-bottom: 10px;
 }
 
-.socialIcons {
+.cardBack h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0077b5;
+  margin-bottom: 4px;
+}
+.cardBack hr {
+  border: none;
+  height: 1px;
+  background-color: #eaeaea;
+  margin: 8px 0;
+}
+
+
+.cardBack .bio {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.cardBack .details {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.cardBack .timing {
+  font-weight: 600;
+  font-size: 13px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  background: #e6f7ff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+
+}
+
+.cardBack .socialIcons {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-top: auto;
 }
 
-.socialIcons a {
+.cardBack .socialIcons a {
   color: #555;
-  font-size: 20px;
-  transition: transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.socialIcons a {
+  background: #f2f2f2;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
 }
 
-.socialIcons a:hover {
-  transform: scale(1.2);
-  color: #13b33b; }
 
+.cardBack .socialIcons a:hover {
+  color: #0077b5;
+  transform: scale(1.2);
+}
 
   /* --- DARK MODE --- */
 :global(body.dark-mode) .doctorsSection {
@@ -115,23 +173,78 @@
   color: #fff;
 }
 
+:global(body.dark-mode) .doctorsSection h1{color: #e6f3e6; 
+  color: #eef6f9;
+  background-color: #1e1e2f;
+  border: 1px solid #e2e8f0;
+  
+}
+
 :global(body.dark-mode) .cardFront {
-  background-color: #1f1f1f;
+  background-color: #1e1e2f;
   color: #eee;
+}
+:global(body.dark-mode) .cardBack {
+  background: linear-gradient(180deg, #1e1e2f, #2a2d4a);
+  color: #e6f3e6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 :global(body.dark-mode) .cardFront p {
   color: #bbb;
 }
 
+
+:global(body.dark-mode) .cardBack h4 {
+  color: #57d596;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:global(body.dark-mode) .bio,
+:global(body.dark-mode) .details,
+:global(body.dark-mode) .timing {
+  color: #d0d6e0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+:global(body.dark-mode) .timing {
+  background: rgba(87, 213, 150, 0.15);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+}
+
 :global(body.dark-mode) .socialIcons a {
-  color: #aaa;
+  color: #d0d6e0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 :global(body.dark-mode) .socialIcons a:hover {
   color: #57d596;
+  background: rgba(87, 213, 150, 0.15);
+}
+
+
+:global(body.dark-mode) .cardBack hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
 }
 
 :global(body.dark-mode) .cardBack {
   background-color: #262a52;
 }
+

@@ -1,0 +1,114 @@
+.notFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: inset 0 8px 24px #f6f5f7;
+    padding-top: 5rem;
+  }
+  
+  .content {
+    text-align: center;
+    background-color: #fdfdfd;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(44, 122, 123, 0.08);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .icon {
+    font-size: 4rem;
+    color: #13b33b;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+  }
+  
+  .content h1 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: #203394;
+    font-weight: 700;
+  }
+  
+  .text {
+    font-size: 1.1em;
+    color: #334155;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .homeButton {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #203394;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .homeButton:hover {
+    background-color: #13b33b;
+    color: #fff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content {
+      padding: 30px 20px;
+    }
+  
+    .icon {
+      font-size: 3rem;
+    }
+  
+    .content h1 {
+      font-size: 2em;
+    }
+  
+    .text {
+      font-size: 1em;
+    }
+  }
+  
+  /* ------------------- Dark Mode ------------------- */
+  
+  :global(body.dark-mode) .notFound {
+    background-color: #121212;
+    box-shadow: inset 0 8px 24px #000;
+  }
+  
+  :global(body.dark-mode) .content {
+    background-color: #1e1e2f;
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+  
+  :global(body.dark-mode) .content h1 {
+    color: #ffffff;
+  }
+  
+  :global(body.dark-mode) .text {
+    color: #e0e0e0;
+  }
+  
+  :global(body.dark-mode) .homeButton {
+    background-color: #3c3f75;
+    color: #57d596;
+  }
+  
+  :global(body.dark-mode) .homeButton:hover {
+    background-color: #1a1f3c;
+    color: #4caf50;
+  }
+  
+  :global(body.dark-mode) .icon {
+    color: #57d596;
+  }
+  
