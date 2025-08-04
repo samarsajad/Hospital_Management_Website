@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './AboutSection.module.css';
 
 import historyImg from '../assets/history.png';
@@ -7,23 +8,125 @@ import missionImg from '../assets/mission.png';
 import urologyImg from '../assets/urology.png';
 import gynaeImg from '../assets/gyanaecology.png';
 
+// Optimized animation variants for smooth performance
+const cardVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 20
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
+  },
+  hover: {
+    y: -5,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut"
+    }
+  }
+};
+
+const textVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
+  }
+};
+
+const iconVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.4,
+      ease: "backOut"
+    }
+  },
+  hover: {
+    rotate: 360,
+    scale: 1.05,
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut"
+    }
+  }
+};
+
+const buttonVariants = {
+  hover: {
+    scale: 1.03,
+    transition: {
+      duration: 0.2,
+      ease: "easeOut"
+    }
+  },
+  tap: {
+    scale: 0.97,
+    transition: {
+      duration: 0.1
+    }
+  }
+};
+
 const ReadMoreSection = ({ title, icon, shortText, fullText, isExpanded, onToggle }) => {
   return (
-    <div className={`${styles.card} ${isExpanded ? styles.expanded : ''}`}>
-      <div className={styles.cardHeader}>
+    <motion.div 
+      className={`${styles.card} ${isExpanded ? styles.expanded : ''}`}
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      whileHover="hover"
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      <motion.div 
+        className={styles.cardHeader}
+        variants={textVariants}
+      >
         <h3>{title}</h3>
-        <img src={icon} alt={title} width={30} height={30} />
-      </div>
-      <p className={styles.cardText}>
+        <motion.img 
+          src={icon} 
+          alt={title} 
+          width={30} 
+          height={30}
+          variants={iconVariants}
+          whileHover="hover"
+        />
+      </motion.div>
+      <motion.p 
+        className={styles.cardText}
+        variants={textVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.1 }}
+      >
         {isExpanded ? fullText : shortText}
-      </p>
-      <button
+      </motion.p>
+      <motion.button
         className={`${styles.readMoreButton} ${isExpanded ? styles.expanded : ''}`}
         onClick={onToggle}
+        variants={buttonVariants}
+        whileHover="hover"
+        whileTap="tap"
+        style={{
+          background: isExpanded 
+            ? "linear-gradient(135deg, #e74c3c, #c0392b)" 
+            : "linear-gradient(135deg, #667eea, #764ba2)"
+        }}
       >
         {isExpanded ? 'Show Less' : 'Read More'}
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 };
 
@@ -34,19 +137,83 @@ function AboutUs() {
     setExpandedCard((prev) => (prev === title ? null : title));
   };
 
-  return (
-   <section className={styles.aboutUs} id="about">
-      <div className={styles.aboutContainer}>
-        <h1>
-          <i className="bi bi-house-door-fill" style={{ fontSize: '50px', padding: '10px' }}></i>
-          About Us
-        </h1>
-        <p className={styles.text}>
-          Welcome to MidCity Hospital Urology and General Nursing Home, a leading healthcare institution renowned for its excellence in urology and gynecology. Our commitment to providing top-notch medical care, state-of-the-art facilities, and compassionate patient care has made us a trusted name in the community.
-        </p>
-      </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.1
+      }
+    }
+  };
 
-      <div className={styles.cardGrid}>
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const specialtyCardVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      x: 5,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+   <motion.section 
+     className={styles.aboutUs} 
+     id="about"
+     variants={containerVariants}
+     initial="hidden"
+     whileInView="visible"
+     viewport={{ once: true, amount: 0.1 }}
+   >
+      <motion.div 
+        className={styles.aboutContainer}
+        variants={titleVariants}
+      >
+        <motion.h1
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+        >
+          <i 
+            className="bi bi-house-door-fill" 
+            style={{ fontSize: '50px', padding: '10px' }}
+          ></i>
+          About Us
+        </motion.h1>
+        <motion.p 
+          className={styles.text}
+          variants={textVariants}
+        >
+          Welcome to MidCity Hospital Urology and General Nursing Home, a leading healthcare institution renowned for its excellence in urology and gynecology. Our commitment to providing top-notch medical care, state-of-the-art facilities, and compassionate patient care has made us a trusted name in the community.
+        </motion.p>
+      </motion.div>
+
+      <motion.div 
+        className={styles.cardGrid}
+        variants={containerVariants}
+      >
         <ReadMoreSection
           title="Our History"
           icon={historyImg}
@@ -73,40 +240,83 @@ function AboutUs() {
           isExpanded={expandedCard === 'Our Mission'}
           onToggle={() => handleToggle('Our Mission')}
         />
-      </div>
-<h2 className={styles.specialtiesHeading}>Specialties</h2>
+      </motion.div>
 
-<div className={styles.specialties}>
-  <div className={styles.specialtyCard}>
-    <div className={styles.cardHeader}>
-      <h3>
-        <img src={urologyImg} alt="urology" className={styles.icon} />
-        Urology
-      </h3>
-    </div>
-    <div className={styles.cardBody}>
-      <p>
-        MidCity Hospital's urology department is staffed by some of the most skilled urologists in the field. We offer comprehensive diagnostic and treatment services for a wide range of urological conditions, including kidney stones, urinary tract infections, prostate issues, and more.
-      </p>
-    </div>
-  </div>
+      <motion.h2 
+        className={styles.specialtiesHeading}
+        variants={titleVariants}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+      >
+        Specialties
+      </motion.h2>
 
-  <div className={styles.specialtyCard}>
-    <div className={styles.cardHeader}>
-      <h3>
-        <img src={gynaeImg} alt="gynae" className={styles.icon} />
-        Gynaecology
-      </h3>
-    </div>
-    <div className={styles.cardBody}>
-      <p>
-       Our gynecology department is dedicated to providing women with the highest quality care throughout all stages of life. From routine check-ups to advanced surgical procedures, our experienced gynecologists are committed to addressing the unique health needs of women.
-      </p>
-    </div>
-  </div>
-</div>
+      <motion.div 
+        className={styles.specialties}
+        variants={containerVariants}
+      >
+        <motion.div 
+          className={styles.specialtyCard}
+          variants={specialtyCardVariants}
+          whileHover="hover"
+        >
+          <motion.div 
+            className={styles.cardHeader}
+            variants={textVariants}
+          >
+            <h3>
+              <motion.img 
+                src={urologyImg} 
+                alt="urology" 
+                className={styles.icon}
+                variants={iconVariants}
+                whileHover="hover"
+              />
+              Urology
+            </h3>
+          </motion.div>
+          <motion.div 
+            className={styles.cardBody}
+            variants={textVariants}
+          >
+            <p>
+              MidCity Hospital's urology department is staffed by some of the most skilled urologists in the field. We offer comprehensive diagnostic and treatment services for a wide range of urological conditions, including kidney stones, urinary tract infections, prostate issues, and more.
+            </p>
+          </motion.div>
+        </motion.div>
 
-    </section>
+        <motion.div 
+          className={styles.specialtyCard}
+          variants={specialtyCardVariants}
+          whileHover="hover"
+        >
+          <motion.div 
+            className={styles.cardHeader}
+            variants={textVariants}
+          >
+            <h3>
+              <motion.img 
+                src={gynaeImg} 
+                alt="gynae" 
+                className={styles.icon}
+                variants={iconVariants}
+                whileHover="hover"
+              />
+              Gynaecology
+            </h3>
+          </motion.div>
+          <motion.div 
+            className={styles.cardBody}
+            variants={textVariants}
+          >
+            <p>
+             Our gynecology department is dedicated to providing women with the highest quality care throughout all stages of life. From routine check-ups to advanced surgical procedures, our experienced gynecologists are committed to addressing the unique health needs of women.
+            </p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+    </motion.section>
   );
 }
 
