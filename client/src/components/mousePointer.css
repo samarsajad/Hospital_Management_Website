@@ -1,0 +1,26 @@
+/* Hide default cursor */
+body {
+  cursor: none !important;
+}
+
+/* Show default cursor for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+  
+  .custom-cursor,
+  .cursor-trail,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Disable cursor effects for specific elements if needed */
+.no-cursor-effect {
+  cursor: auto !important;
+}
+
+.no-cursor-effect * {
+  cursor: auto !important;
+} 
