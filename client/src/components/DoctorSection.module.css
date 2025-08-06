@@ -217,6 +217,7 @@
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 3px;
 }
 
 .bookNowBtn:hover {
