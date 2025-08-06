@@ -5,6 +5,7 @@ require("dotenv").config();
 const path = require("path");
 const multer = require("multer");
 
+
 const Medicine = require("./models/medicines");
 const LabAppointment = require("./models/lab");
 const Doctor = require("./models/checkup");
@@ -31,11 +32,13 @@ app.use(express.json());
 app.use(cookieParser());
 
 
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+     cookie: { secure: false }
   })
 );
 
