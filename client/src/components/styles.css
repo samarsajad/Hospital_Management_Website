@@ -108,8 +108,20 @@ body {
   }
 
   .nav_menu.active {
-    max-height: 300px; 
+    max-height: 400px; 
+    background-color: white;
+    opacity: 0.95;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    padding: 10px 0;  
+    overflow-y: auto; 
   }
+
+  body.dark-mode .nav_menu.active {
+    background-color: #23272f; 
+    opacity: 0.95;
+  }
+
 
   .nav_link {
     flex-direction: column;
@@ -122,6 +134,8 @@ body {
     display: block;
   }
 }
+
+
 
 body {
   background-color: white;
