@@ -1,0 +1,20 @@
+/* src/components/AppointmentsCalendar.module.css */
+.calendarContainer {
+  margin: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom event colors */
+:global(.fc-event) {
+  cursor: pointer;
+  border: none !important; /* Remove default borders */
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+:global(.fc-daygrid-event-dot) {
+  display: none; /* Hide default dots */
+}

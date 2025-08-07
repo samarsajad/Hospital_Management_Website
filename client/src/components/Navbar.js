@@ -14,6 +14,9 @@ import {
   FaSun,
   FaBars,
   FaTimes
+
+  FaQuestionCircle
+
 } from 'react-icons/fa';
 import { HiOutlineUser } from "react-icons/hi";
 
@@ -55,6 +58,9 @@ export default function Navbar() {
           <li><Link to="/#services"><FaCog /> <span>Services</span></Link></li>
           <li><Link to="/#doctors"><FaUserMd /> <span>Doctors</span></Link></li>
           <li><Link to="/#contact"><FaPhone /> <span>Contact</span></Link></li>
+          <li><Link to="/#faq"><FaQuestionCircle /> <span>FAQ</span></Link></li>
+           
+
           <li>
             <button
               className="dark-toggle-btn"
