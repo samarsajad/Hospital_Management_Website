@@ -9,7 +9,7 @@ import SurgeryPage from "./pages/SurgeryPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Login  from "./pages/Login";
 import Register from "./pages/Register";
-
+ 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
@@ -25,10 +25,9 @@ function App() {
       <Route path="/services/labs-diagnostics" element={<LabsPage />} />
       <Route path="/services/checkup" element={<CheckupPage />} />
       <Route path="/services/surgery" element={<SurgeryPage />} />
-
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-  );
+  );  
 }
 
 export default App;
