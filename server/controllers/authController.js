@@ -4,6 +4,8 @@ const jwt = require("jsonwebtoken");
 const userModel = require("../models/User");
 const transporter = require("../config/nodemailer");
 const mongoose = require("mongoose");
+const { OAuth2Client } = require("google-auth-library");
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -72,6 +74,47 @@ exports.login = async (req, res) => {
     return res.json({ success: false, message: "Something went wrong" });
   }
 };
+
+exports.googleLogin = async (req, res) => {
+  try {
+    const { credential } = req.body;
+    if (!credential) {
+      return res.json({ success: false, message: "Google token is required" });
+    }
+
+    const ticket = await client.verifyIdToken({
+      idToken: credential,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const { email, name } = ticket.getPayload();
+    if (!email) {
+      return res.json({ success: false, message: "Invalid Google token" });
+    }
+
+    let user = await userModel.findOne({ email });
+
+    if (!user) {
+      user = new userModel({
+        name: name || email.split("@")[0],
+        email,
+        password: null,
+      });
+      await user.save();
+    }
+
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "7d",
+    });
+
+    res.cookie("token", token, { httpOnly: true });
+    return res.json({ success: true, token });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ success: false, message: "Something went wrong" });
+  }
+};
+
 
 exports.logout = async (req, res) => {
   try {
