@@ -25,7 +25,7 @@ const faqData = [
   }, 
   {
     question: 'How long does it take to receive a response after sending an email?',
-    answer: 'Email responses are very fast and you can get response within minutes as long as it is within the working hours'
+    answer: 'Email responses are very fast and you can get a response in minutes as long as it is within the working hours'
 
   }
 
