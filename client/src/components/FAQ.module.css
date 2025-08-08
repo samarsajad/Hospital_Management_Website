@@ -1,0 +1,33 @@
+
+
+.faqContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.faqItem {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.question {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer {
+  margin-top: 0.5rem;
+  color: #09e723;
+  line-height: 1.5;
+}
+
+.toggleIcon {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
