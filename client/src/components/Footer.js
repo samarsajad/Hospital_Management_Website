@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-
+import Translate from "./Translate";
 function Footer() {
   return (
     <footer className={styles.siteFooter}>
@@ -34,7 +34,12 @@ function Footer() {
           <a href="#"><i className="fa-brands fa-square-twitter"></i></a>
           <a href="#"><i className="fa-brands fa-linkedin"></i></a>
           <a href="#"><i className="fa-brands fa-square-instagram"></i></a>
+       <div className={styles.translateContainer}>
+  <Translate />
+</div>
+
         </div>
+
         <p>&copy; 2024 MidCity Hospital. All rights reserved.</p>
       </div>
     </footer>
