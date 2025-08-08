@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './DoctorSection.module.css';
-import doctorImg from '../assets/pic5.webp';
+import doctorImg from '../assets/pic5.webp'; // Assuming these paths are correct
 import doc1 from '../assets/doctors/doc1.jpg';
 import doc2 from '../assets/doctors/doc2.avif';
 import doc3 from '../assets/doctors/docmale.jpg';
-import { FaLinkedin, FaInstagram, FaTwitter,FaUserMd ,FaGraduationCap,FaAward,FaClock} from "react-icons/fa";
-
+import { FaLinkedin, FaInstagram, FaTwitter, FaUserMd, FaGraduationCap, FaAward, FaClock, FaCalendarAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function DoctorsSection() {
-  
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const doctors = [
     {
       name: 'Dr. Rahul Mishra',
@@ -52,6 +53,9 @@ function DoctorsSection() {
     }
   ];
 
+  const handleBookNowClick = () => {
+    navigate('/services/checkup'); 
+  };
 
   return (
     <section className={styles.doctorsSection} id='doctors'>
@@ -61,42 +65,50 @@ function DoctorsSection() {
       </h1>
       <div className={styles.doctorsContainer}>
         {doctors.map((doc, index) => (
-          <div className={styles.doctorCard} key={index}>
-            <div className={styles.cardInner}>
-              <div className={styles.cardFront}>
-                <img src={doc.img} alt={doc.name} />
-                <h2>{doc.name}</h2>
-                <p>{doc.specialty}</p>
-                <p>{doc.experience}</p>
-              </div>
-              <div className={styles.cardBack}>
-                <div>
-                  <h4><FaUserMd /> Bio</h4>
-                  <p className={styles.bio}>{doc.bio}</p>
-                   <hr></hr>
-                  <h4><FaGraduationCap/>Qualification</h4>
-                  <p className={styles.details}>{doc.qualification}</p>
-                  <hr></hr>
-                  <h4><FaAward/>Achievements</h4>
-                  <p className={styles.details}>{doc.achievement}</p>
+          <div className={styles.doctorWrapper} key={index}>
+            <div className={styles.doctorCard}>
+              <div className={styles.cardInner}>
+                <div className={styles.cardFront}>
+                  <img src={doc.img} alt={doc.name} />
+                  <h2>{doc.name}</h2>
+                  <p>{doc.specialty}</p>
+                  <p>{doc.experience}</p>
+                </div>
+                <div className={styles.cardBack}>
+                  <div>
+                    <h4><FaUserMd /> Bio</h4>
+                    <p className={styles.bio}>{doc.bio}</p>
                     <hr></hr>
-                  <h4><FaClock/>Timings</h4>
-                  <p className={styles.timing}>{doc.timing}</p>
-                     <hr></hr>
+                    <h4><FaGraduationCap />Qualification</h4>
+                    <p className={styles.details}>{doc.qualification}</p>
+                    <hr></hr>
+                    <h4><FaAward />Achievements</h4>
+                    <p className={styles.details}>{doc.achievement}</p>
+                    <hr></hr>
+                    <h4><FaClock />Timings</h4>
+                    <p className={styles.timing}>{doc.timing}</p>
+                    <hr></hr>
 
-                  <div className={styles.socialIcons}>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                      <FaLinkedin />
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                      <FaInstagram />
-                    </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                      <FaTwitter />
-                    </a>
+                    <div className={styles.socialIcons}>
+                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin />
+                      </a>
+                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram />
+                      </a>
+                      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <FaTwitter />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div className={styles.bookNowContainer}>
+              <div className={styles.connectorLine}></div>
+              <button className={styles.bookNowBtn} onClick={handleBookNowClick}>
+                <FaCalendarAlt className={styles.bookNowIcon} /> Book Now
+              </button>
             </div>
           </div>
         ))}
