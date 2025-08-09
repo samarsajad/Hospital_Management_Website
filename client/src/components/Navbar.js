@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import './styles.css';
 import logoLight from '../assets/logo-web.jpg';
 import logoDark from '../assets/logo-dark-mode.png';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../context/AuthContext";
 import {
   FaHome,
   FaInfoCircle,
@@ -11,10 +12,13 @@ import {
   FaPhone,
   FaMoon,
   FaSun,
+  FaQuestionCircle
 } from 'react-icons/fa';
+import { HiOutlineUser } from "react-icons/hi";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
+  const { isAuthenticated, logout } = useContext(AuthContext);
 
   useEffect(() => {
     document.body.classList.toggle('dark-mode', darkMode);
@@ -41,6 +45,9 @@ export default function Navbar() {
           <li><Link to="/#services"><FaCog /> <span>Services</span></Link></li>
           <li><Link to="/#doctors"><FaUserMd /> <span>Doctors</span></Link></li>
           <li><Link to="/#contact"><FaPhone /> <span>Contact</span></Link></li>
+          <li><Link to="/#faq"><FaQuestionCircle /> <span>FAQ</span></Link></li>
+           
+
           <li>
             <button
               className="dark-toggle-btn"
@@ -49,6 +56,17 @@ export default function Navbar() {
             >
               {darkMode ? <FaSun /> : <FaMoon />}
             </button>
+          </li>
+          <li>
+            {isAuthenticated ? (
+              <button className="nav-auth-btn" onClick={logout}>
+                <HiOutlineUser />Logout
+              </button>
+            ) : (
+              <Link to="/login" className="nav-auth-btn">
+                <HiOutlineUser />Login
+              </Link>
+            )}
           </li>
         </ul>
       </nav>

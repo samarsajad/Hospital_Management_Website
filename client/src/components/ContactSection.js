@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ContactSection.module.css';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -21,24 +23,39 @@ const ContactSection = () => {
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    setStatus('sending');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
-      });
-      if (!res.ok) throw new Error();
-      setStatus('sent');
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5_000);
-    } catch {
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 5_000);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 0);
+      }
     }
-  };
+  }, [location]);
+
+  const handleSubmit = async e => {
+  e.preventDefault();
+  setStatus('sending');
+  try {
+    const res = await fetch('http://localhost:5000/api/contact', {  
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+    });
+    if (!res.ok) throw new Error();
+    setStatus('sent');
+    setForm({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setStatus('idle'), 5_000);
+  } catch {
+    setStatus('error');
+    setTimeout(() => setStatus('idle'), 5_000);
+  }
+};
+
 
   return (
     <section className={styles.contact} id="contact">

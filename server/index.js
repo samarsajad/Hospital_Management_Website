@@ -12,11 +12,19 @@ const Surgery = require("./models/surgery");
 const authRoutes = require("./routes/authRoutes");
 const medicineRoutes = require("./routes/medicineRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const contactRoutes = require('./routes/contactRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+const session = require("express-session");
+app.use(session({
+  secret: process.env.SESSION_SECRET || "midcity_session_secret",
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.get("/", (req, res) => {
   res.send("Backend is running successfully!");
@@ -37,7 +45,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes);
 app.use("/api/admin/medicines", medicineRoutes);
 app.use("/api/admin", adminRoutes);
-
+app.use('/api/contact', contactRoutes);
 app.get("/api/doctors", async (req, res) => {
   try {
     const doctors = await Doctor.find();
@@ -50,7 +58,7 @@ app.get("/api/doctors", async (req, res) => {
 
 app.post("/api/labs/book", async (req, res) => {
   try {
-    console.log("Booking data:", req.body); // ✅ Add this
+    console.log("Booking data:", req.body); 
     const newAppointment = new LabAppointment(req.body);
     await newAppointment.save();
     res.status(201).json({ message: "Appointment booked successfully!" });
