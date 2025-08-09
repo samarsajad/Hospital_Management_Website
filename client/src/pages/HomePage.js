@@ -9,7 +9,7 @@ import DoctorsSection from "../components/DoctorsSection";
 import AboutSection from "../components/AboutSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import ContactSection from "../components/ContactSection";
-import FAQ from "../components/FAQ";
+import FaqSection from "../components/FaqSection";
 
 
 const Homepage = ({ darkMode, setDarkMode }) => {
@@ -23,8 +23,10 @@ const Homepage = ({ darkMode, setDarkMode }) => {
       <DoctorsSection darkMode={darkMode} />
       <TestimonialsSection darkMode={darkMode} />
       <ContactSection darkMode={darkMode} />
+
       <FAQ darkMode={darkMode}/>
       <Footer />
+
     </div>
   );
 };
