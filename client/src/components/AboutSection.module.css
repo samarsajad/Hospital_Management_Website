@@ -135,3 +135,76 @@
   margin-right: 10px;
 }
 
+
+/* 🌙 Dark Mode Styles */
+:global(body.dark-mode) .aboutUs {
+  background-color: #121212;
+  box-shadow: none;
+}
+
+:global(body.dark-mode) .aboutContainer h1 {
+  background: #1e1e2f;
+  border: 1px solid #333;
+  color: #eef6f9;
+}
+
+:global(body.dark-mode) .text {
+  color: #ddd;
+}
+
+:global(body.dark-mode) .card {
+  background-color: #1e1e2f;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+:global(body.dark-mode) .card.expanded {
+  background-color: rgba(19, 179, 59, 0.1);
+}
+
+:global(body.dark-mode) .cardText {
+  color: #ccc;
+}
+
+:global(body.dark-mode) .readMoreButton {
+  background-color: #13b33b;
+  color: #fff;
+}
+
+:global(body.dark-mode) .readMoreButton:hover {
+  background-color: #0e902e;
+}
+
+:global(body.dark-mode) .readMoreButton.expanded {
+  background-color: #203394;
+}
+
+:global(body.dark-mode) .specialtiesHeading {
+  background: linear-gradient(to right, #1e1e2f, #2a2d4a);
+  color: #fff;
+}
+
+:global(body.dark-mode) .specialties {
+  background-color: transparent;
+}
+
+:global(body.dark-mode) .specialtyCard {
+  background-color: #1e1e2f;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+:global(body.dark-mode) .cardHeader {
+  background: linear-gradient(to right, #2a2d4a, #1e1e2f);
+  color: #fff;
+}
+
+:global(body.dark-mode) .cardBody {
+  color: #ddd;
+}
+
+:global(body.dark-mode) .icon {
+  filter: brightness(0) invert(1); 
+}
+
+:global(body.dark-mode) .cardHeader img {
+  filter: brightness(0) invert(1);
+}

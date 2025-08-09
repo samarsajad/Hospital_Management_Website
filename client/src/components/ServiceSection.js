@@ -1,22 +1,21 @@
-import React, {useRef, useEffect} from "react";
-import {Link} from "react-router-dom";
+import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./ServiceSection.module.css";
 
-import {FaCog} from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
 import {
   FaPrescriptionBottleMedical,
   FaVials,
   FaStethoscope,
 } from "react-icons/fa6";
-import {GiScalpel} from "react-icons/gi";
-import {ChevronLeft, ChevronRight} from "lucide-react";
+import { GiScalpel } from "react-icons/gi";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import pharmacy from "../assets/services/pharmacy.jpg";
 import labs from "../assets/services/labs.jpg";
 import checkup from "../assets/services/checkup.jpeg";
 import surgery from "../assets/services/surgery.jpeg";
 
-// Original Services Array
 const baseServices = [
   {
     title: "Pharmacy",
@@ -44,55 +43,84 @@ const baseServices = [
   },
   {
     title: "Surgery",
-    icon: <GiScalpel style={{marginLeft: "8px", fontSize: "20px"}} />,
+    icon: <GiScalpel style={{ marginLeft: "8px", fontSize: "20px" }} />,
     img: surgery,
     desc: "Advanced surgical care with expert surgeons and cutting-edge technology for safe outcomes.",
     btnText: "Book Now",
     link: "/services/surgery",
   },
+  {
+    title: "Physiotherapy",
+    icon: <FaStethoscope />,
+    img: checkup,
+    desc: "Expert rehabilitation services for better recovery and mobility.",
+    btnText: "Book Now",
+    link: "/services/physiotherapy",
+  },
+  {
+    title: "Surgery",
+    icon: <GiScalpel style={{ marginLeft: "8px", fontSize: "20px" }} />,
+    img: surgery,
+    desc: "Advanced surgical care with expert surgeons and cutting-edge technology for safe outcomes.",
+    btnText: "Book Now",
+    link: "/services/surgery",
+  },
+  {
+    title: "Pharmacy",
+    icon: <FaPrescriptionBottleMedical />,
+    img: pharmacy,
+    desc: "Comprehensive medicines and expert care to support your health—available at MidCity Hospital’s Pharmacy.",
+    btnText: "Order Now",
+    link: "/services/pharmacy",
+  },
+  {
+    title: "Health Check Up",
+    icon: <FaStethoscope />,
+    img: checkup,
+    desc: "Routine check-ups for early detection and better long-term health management.",
+    btnText: "Book Now",
+    link: "/services/checkup",
+  },
+  {
+    title: "Labs and Diagnostics",
+    icon: <FaVials />,
+    img: labs,
+    desc: "Accurate tests and timely results to diagnose and manage your health effectively.",
+    btnText: "Book Now",
+    link: "/services/labs-diagnostics",
+  },
 ];
 
-// Duplicated services: [clone][original][clone]
-const repeatedServices = [...baseServices, ...baseServices, ...baseServices];
-
-function ServiceSection({darkMode}) {
+function ServiceSection({ darkMode }) {
   const modeClass = darkMode ? styles.dark : "";
   const sliderRef = useRef(null);
-  const itemWidth = 300; // Estimate including margin
+
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
 
   useEffect(() => {
     const slider = sliderRef.current;
-    if (slider) {
-      // Scroll to middle set on mount
-      slider.scrollLeft = baseServices.length * itemWidth;
-    }
+    if (!slider) return;
 
     const handleScroll = () => {
-      if (!slider) return;
-
-      const scrollLeft = slider.scrollLeft;
-      const maxScroll = itemWidth * repeatedServices.length;
-
-      // Loop from start to center
-      if (scrollLeft < baseServices.length * itemWidth * 0.5) {
-        slider.scrollLeft += baseServices.length * itemWidth;
-      }
-
-      // Loop from end to center
-      if (scrollLeft > baseServices.length * itemWidth * 1.5) {
-        slider.scrollLeft -= baseServices.length * itemWidth;
-      }
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      setAtStart(slider.scrollLeft <= 0);
+      setAtEnd(slider.scrollLeft >= maxScroll - 5); // tolerance
     };
 
     slider.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial check
     return () => slider.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scroll = (dir) => {
-    if (sliderRef.current) {
-      const amount = dir === "left" ? -itemWidth : itemWidth;
-      sliderRef.current.scrollBy({left: amount, behavior: "smooth"});
-    }
+    if (!sliderRef.current) return;
+    const cardWidth =
+      sliderRef.current.querySelector(`.${styles.box}`).offsetWidth + 20; // gap
+    sliderRef.current.scrollBy({
+      left: dir === "left" ? -cardWidth : cardWidth,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -102,12 +130,16 @@ function ServiceSection({darkMode}) {
       </h1>
 
       <div className={styles.sliderWrapper}>
-        <button onClick={() => scroll("left")} className={styles.navButton}>
+        <button
+          onClick={() => scroll("left")}
+          className={styles.navButton}
+          disabled={atStart}
+        >
           <ChevronLeft />
         </button>
 
         <div className={styles.serviceSlider} ref={sliderRef}>
-          {repeatedServices.map((service, index) => (
+          {baseServices.map((service, index) => (
             <div key={index} className={`${styles.box} ${styles.fadeIn}`}>
               <div className={styles.image}>
                 <img src={service.img} alt={service.title} />
@@ -123,7 +155,11 @@ function ServiceSection({darkMode}) {
           ))}
         </div>
 
-        <button onClick={() => scroll("right")} className={styles.navButton}>
+        <button
+          onClick={() => scroll("right")}
+          className={styles.navButton}
+          disabled={atEnd}
+        >
           <ChevronRight />
         </button>
       </div>
