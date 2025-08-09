@@ -13,6 +13,7 @@ const authRoutes = require("./routes/authRoutes");
 const medicineRoutes = require("./routes/medicineRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const contactRoutes = require('./routes/contactRoutes');
+const emergencyRoutes = require('./routes/emergencyRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -46,6 +47,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/admin/medicines", medicineRoutes);
 app.use("/api/admin", adminRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api', emergencyRoutes);
 app.get("/api/doctors", async (req, res) => {
   try {
     const doctors = await Doctor.find();
