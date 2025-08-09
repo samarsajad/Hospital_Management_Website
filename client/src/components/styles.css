@@ -301,4 +301,6 @@ body.dark-mode .dark-toggle-btn{
   color: #FFD700;
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
