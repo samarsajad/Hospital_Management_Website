@@ -1,0 +1,33 @@
+/* Table container */
+.tableContainer {
+  margin: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filters row */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Status tags */
+.tagPending {
+  background-color: #faad14 !important; /* Ant Design orange-6 */
+}
+
+.tagApproved {
+  background-color: #52c41a !important; /* Ant Design green-6 */
+}
+
+.tagRejected {
+  background-color: #ff4d4f !important; /* Ant Design red-6 */
+}
+
+/* Action button */
+.actionButton {
+  margin-right: 8px;
+}

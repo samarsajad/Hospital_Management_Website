@@ -19,6 +19,13 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+const session = require("express-session");
+app.use(session({
+  secret: process.env.SESSION_SECRET || "midcity_session_secret",
+  resave: false,
+  saveUninitialized: false
+}));
+
 app.get("/", (req, res) => {
   res.send("Backend is running successfully!");
 });
@@ -39,7 +46,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/admin/medicines", medicineRoutes);
 app.use("/api/admin", adminRoutes);
 app.use('/api/contact', contactRoutes);
-
 app.get("/api/doctors", async (req, res) => {
   try {
     const doctors = await Doctor.find();
