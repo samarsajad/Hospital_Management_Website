@@ -22,8 +22,8 @@ import branchLeaves from './branch-leaves.png';
 // Medical Images
 import scalpel from './scalpel.png';
 import surgery from './surgery.png';
-import gyanaecology from './Gynaecology(2).png'
-import urology from './Urology.png'
+import gyanaecology from './Gynaecology(2).png';
+import urology from './Urology.png';
 import labscWebp from './labsc.webp';
 import labscJpg from './labsc.jpg';
 
