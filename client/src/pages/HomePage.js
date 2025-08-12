@@ -10,6 +10,7 @@ import AboutSection from "../components/AboutSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import ContactSection from "../components/ContactSection";
 import FAQ from "../components/FAQ";
+import ScrollToTop from "../components/ScrollToTop";
 
 
 const Homepage = ({ darkMode, setDarkMode }) => {
@@ -25,6 +26,7 @@ const Homepage = ({ darkMode, setDarkMode }) => {
       <ContactSection darkMode={darkMode} />
       <FAQ darkMode={darkMode}/>
       <Footer />
+      <ScrollToTop/>
     </div>
   );
 };
