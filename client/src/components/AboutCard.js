@@ -28,5 +28,3 @@ const AboutCard = ({ title, icon, shortText, fullText }) => {
 };
 
 export default AboutCard;
-
-
