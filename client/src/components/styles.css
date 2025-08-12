@@ -2,7 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -80,7 +80,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #2f4fcb; 
+  background-color: #2f4fcb;
   color: white !important;
   padding: 8px 16px; /* Adjusted padding */
   border: none;
@@ -88,7 +88,7 @@ body {
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  text-decoration: none; 
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -150,13 +150,13 @@ body {
 }
 
 body.dark-mode .nav-auth-btn {
-  background-color: #44e66d; 
+  background-color: #44e66d;
   color: white !important ;
 }
 
 body.dark-mode .nav-auth-btn:hover {
   background-color: #2f4fcb;
-  color: #e0e0e0 !important; 
+  color: #e0e0e0 !important;
 }
 
 .dark-toggle-btn {
@@ -194,7 +194,7 @@ body.dark-mode .dark-toggle-btn {
   .header_container {
     padding: 10px 20px;
   }
-  
+
   .nav_menu {
     display: none;
     flex-direction: column;
@@ -226,15 +226,15 @@ body.dark-mode .dark-toggle-btn {
     width: 100%;
     justify-content: center;
   }
-  
+
   .navbar__toggle {
     display: block;
   }
-  
+
   .logo-text {
     display: none;
   }
-  
+
   .dark-mode .nav_menu {
     background-color: #23272f;
   }
