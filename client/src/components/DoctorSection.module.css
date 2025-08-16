@@ -2,46 +2,34 @@
   text-align: center;
   padding: 50px 0;
   background-color: #fff;
-  overflow: hidden; /* To prevent horizontal scroll on some transitions */
+  
 }
 
 .doctorsSection h1 {
-  font-size: clamp(1.8em, 5vw, 2.5em); /* Responsive font size */
+  font-size: 2.5em;
   margin-bottom: 20px;
   border: 2px solid #e6f3e6;
-  color: #e6f3e6;
-  background-color: #203394;
+  color: #e6f3e6; 
+  background-color: #203394; 
   border-radius: 10px;
-  height: auto; /* Auto height for responsiveness */
-  padding: 20px 10px; /* Adjusted padding */
-  width: 90%; /* More fluid width */
-  max-width: 900px; /* Max width for larger screens */
-  margin: 5px auto 30px auto; /* Adjusted margin */
+  height: 100px;
+  padding-top: 30px;
+  width: 80%;
+  margin: 5px auto;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
 .doctorsContainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px; /* Increased gap for better spacing */
+  gap: 20px;
   padding: 20px;
-}
-
-.doctorWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%; /* Full width on small screens */
-  max-width: 280px; /* Max width for individual cards */
+  
 }
 
 .doctorCard {
-  width: 100%; /* Fill wrapper width */
+  width: 250px;
   height: 380px;
   perspective: 1000px;
 }
@@ -102,7 +90,7 @@
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
 
@@ -112,11 +100,11 @@
 
 .cardBack {
   transform: rotateY(180deg);
-  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Slightly refined gradient */
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
   color: #333;
   padding: 16px;
   border-radius: 10px;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Stronger inner shadow */
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -124,6 +112,8 @@
   overflow-y: auto;
   cursor: pointer;
 }
+
+
 
 .cardFront img {
   width: 100%;
@@ -148,17 +138,14 @@
   font-weight: 700;
   color: #0077b5;
   margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
-
 .cardBack hr {
   border: none;
   height: 1px;
   background-color: #eaeaea;
   margin: 8px 0;
 }
+
 
 .cardBack .bio {
   font-size: 13px;
@@ -184,6 +171,7 @@
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
+
 }
 
 .cardBack .socialIcons {
@@ -198,7 +186,6 @@
   color: #555;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .socialIcons a {
   background: #f2f2f2;
   padding: 8px;
@@ -210,95 +197,62 @@
   height: 36px;
 }
 
+
 .cardBack .socialIcons a:hover {
   color: #0077b5;
   transform: scale(1.2);
 }
 
-/* Book Now Button on Doctor Card */
-
-.bookNowContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px; 
-}
-
-
-.connectorLine {
-  width: 5px; 
-  height: 38px; 
-  background: linear-gradient(to bottom, #203394, #007bff);
-  margin-top: -1rem;
-  margin-bottom: 10px;
-  border-radius: 3px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-  transition: height 0.3s ease, box-shadow 0.3s ease;
-}
-
+/* Book Now Button */
 .bookNowBtn {
-  background: linear-gradient(135deg, #203394, #007bff);
-  color: #fff;
-  border: none;
-  padding: 14px 36px;
+  margin-top: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
   border-radius: 10px;
-  font-size: 1.15em;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
   position: relative;
   overflow: hidden;
-  margin-bottom: 3px;
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.6); /* initial glow */
+}
+
+/* Light mode */
+.bookNowBtn {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
 }
 
 .bookNowBtn:hover {
-  background: linear-gradient(135deg, #1a2a7a, #0056b3);
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(79, 172, 254, 0.9), 
+              0 0 40px rgba(0, 242, 254, 0.7); /* stronger glow */
 }
 
 
-.bookNowBtn:active {
-  transform: translateY(-1px) scale(0.99);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.bookNowBtn:focus-visible {
-  outline: 2px solid #7aa7ff;
-  outline-offset: 4px;
-}
-
-.bookNowIcon {
-  font-size: 1.3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* --- DARK MODE --- */
+  /* --- DARK MODE --- */
 :global(body.dark-mode) .doctorsSection {
   background-color: #121212;
   color: #fff;
 }
 
-:global(body.dark-mode) .doctorsSection h1 {
+:global(body.dark-mode) .doctorsSection h1{color: #e6f3e6; 
   color: #eef6f9;
   background-color: #1e1e2f;
-  border: 1px solid #2d3748; /* Darker border */
+  border: 1px solid #e2e8f0;
+  
 }
 
 :global(body.dark-mode) .cardFront {
   background-color: #1e1e2f;
   color: #eee;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Darker shadow */
 }
-
 :global(body.dark-mode) .cardBack {
   background: linear-gradient(180deg, #1e1e2f, #2a2d4a);
   color: #e6f3e6;
@@ -310,6 +264,7 @@
 :global(body.dark-mode) .cardFront p {
   color: #bbb;
 }
+
 
 :global(body.dark-mode) .cardBack h4 {
   color: #57d596;
@@ -350,6 +305,7 @@
   background: rgba(87, 213, 150, 0.15);
 }
 
+
 :global(body.dark-mode) .cardBack hr {
   border: none;
   height: 1px;
@@ -361,86 +317,6 @@
   background-color: #262a52;
 }
 
-<<<<<<< HEAD
-:global(body.dark-mode) .bookNowBtn {
-  background: linear-gradient(135deg, #00ff11, #22ff00); 
-  color: #000000;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
-
-:global(body.dark-mode) .bookNowBtn:hover {
-  background: linear-gradient(135deg, #d9ff00, #00ff00);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-:global(body.dark-mode) .connectorLine {
-  background: linear-gradient(to bottom, #66ff00, #00ff1a); 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-  .doctorsSection h1 {
-    font-size: clamp(1.5em, 8vw, 2em);
-    padding: 15px 10px;
-  }
-
-  .doctorsContainer {
-    gap: 25px; 
-    padding: 15px;
-  }
-
-  .doctorWrapper {
-    max-width: 260px;
-  }
-
-  .doctorCard {
-    height: 360px; 
-  }
-
-  .cardFront img {
-    height: 220px; 
-  }
-
-  .bookNowBtn {
-    padding: 10px 25px;
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 480px) {
-  .doctorsSection h1 {
-    font-size: clamp(1.3em, 10vw, 1.8em);
-    padding: 12px 8px;
-  }
-
-  .doctorsContainer {
-    gap: 20px;
-    padding: 10px;
-  }
-
-  .doctorWrapper {
-    max-width: 90%; 
-  }
-
-  .doctorCard {
-    height: 340px;
-  }
-
-  .cardFront img {
-    height: 200px;
-  }
-
-  .bookNowBtn {
-    padding: 8px 20px;
-    font-size: 0.9em;
-  }
-
-  .connectorLine {
-    height: 20px;
-    margin-bottom: 10px;
-  }
-}
-=======
 :global(body.dark-mode) .doctorName {
   color: #e6f3e6;
 }
@@ -455,4 +331,3 @@
   background-color: rgba(255, 255, 255, 0.08);
   color: #a4b4ff;
 }
->>>>>>> 1379db99cefc63c214de73755042b7a13a721835
