@@ -72,6 +72,19 @@ label {
 .login-form a:hover {
   text-decoration: underline;
 }
+/* Error messege */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 480px) {

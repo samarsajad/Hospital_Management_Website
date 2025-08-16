@@ -14,6 +14,16 @@ const Login = () => {
 
      const handleSubmit = async (e) => {
        e.preventDefault();
+    // Validate email and password
+       if (!email || !password) {
+    alert("Email and password are required!");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long!");
+    return;
+  }
 
      try {
       const res = await loginUser(email, password);

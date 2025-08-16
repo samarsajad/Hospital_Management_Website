@@ -13,6 +13,27 @@ const Register= () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+      
+     if (!username || !email || !password) {
+    alert("All fields are required!");
+    return;
+  }
+
+  if (username.length < 3) {
+    alert("Name must be at least 3 characters long!");
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address!");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long!");
+    return;
+  }
 
     try {
       const res = await registerUser(username, email, password);
@@ -43,7 +64,7 @@ const Register= () => {
             className="input"
           />
 
-          <label>Email</label>
+          <label>Emai  l</label>
           <input
             type="email"
             name="email"
