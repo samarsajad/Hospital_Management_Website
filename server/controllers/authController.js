@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
-    return res.json({ success: false, message: "Please fill all the fields" });
+    return res.json({ success: false, message: "All fields are required" });
   }
   try {
     const existingUser = await userModel.findOne({ email });
@@ -46,7 +46,7 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return res.json({ success: false, message: "Please fill all the fields" });
+    return res.json({ success: false, message: "All fields are required" });
   }
   try {
     const user = await userModel.findOne({ email });
