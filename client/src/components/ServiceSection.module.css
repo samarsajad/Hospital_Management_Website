@@ -248,8 +248,9 @@
 
 .box {
   flex: 0 0 auto;
-  min-width: 280px;
+  flex: 0 0 calc((100% - 80px) / 5); /* 5 cards, 4 gaps of 20px */
   scroll-snap-align: start;
+
 }
 
 .sliderWrapper {
@@ -264,7 +265,7 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 20px;
-  padding: 10px 0;
+  padding: 10px 20px 10px 0;
   width: 100%;
   scrollbar-width: none;
 }

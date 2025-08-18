@@ -2,34 +2,50 @@
 .siteFooter {
   background-color: #203394;
   color: #E6F7F1;
-  box-shadow: 0 4px 24px #727773;
-
+  padding: 40px 20px 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 .footerInner {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 auto 30px;
+  gap: 30px;
   max-width: 1200px;
-  padding: 10px;
-  
+  margin: auto;
 }
 
+.leftContent,
 .quickLinks,
-.legalInfo {
+.legalInfo,
+.newsletter {
   flex: 1;
-  min-width: 200px;
-  margin: 5px;
-
+  min-width: 220px;
 }
 
-.quickLinks h2,
-.legalInfo h2 {
+.leftContent{
+  color: #13b33b;
+   display: flex;             
+  flex-direction: column;    
+  align-items: center;        
+  justify-content: center;    
+  text-align: center;
+}
+
+.footerInner img {
+  max-width: 60px; 
+  height: 60px;
+  display: block;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+}
+.quickLinks h2,
+.legalInfo h2,
+.newsletter h2 {
+  font-size: 1.3rem;
+  color: #13b33b;
   font-weight: 600;
-  color: #E6F7F1;
+  margin-bottom: 10px;
+
 }
 
 .quickLinks ul,
@@ -41,53 +57,80 @@
 
 .quickLinks li,
 .legalInfo li {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .quickLinks a,
 .legalInfo a {
-  color: #FDFDFD;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 1.1em;
   color: #E6F7F1;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .quickLinks a:hover,
 .legalInfo a:hover {
-  color: #E6F7F1;
-  text-decoration: underline;
   color: #13b33b;
 }
 
-.divider {
-  border: none;
-  border-top: 1px solid #64748B;
-  margin: 0 0 5px;
+/* Newsletter */
+.newsletter p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
 }
 
+.newsletter form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  flex: 1;
+  min-width: 180px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+.newsletter button {
+  width: 100%;
+ background-color: 13b33b;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #0e8f2c;
+}
+
+/* Bottom */
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 20px 0;
+}
 .copyright {
-  background-color:  #203394;
-  padding: 5px;
+  background-color: #203394;
+  padding: 10px;
   text-align: center;
 }
 
+
 .socialIcons {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .socialIcons a {
   color: #E6F7F1;
-  font-size: 28px;
-  margin: 0 15px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-
+  font-size: 22px;
+  margin: 0 10px;
 }
 
 .socialIcons a:hover {
-  color: #FDFDFD;
-  transform: translateY(-3px);
+  color: #13b33b;
 }
 
 @media (max-width: 768px) {
@@ -96,18 +139,71 @@
     text-align: center;
   }
 
-  .quickLinks, 
-  .legalInfo {
-    margin: 20px 0;
+  .newsletter form {
+    flex-direction: column;
   }
 
-  .socialIcons a {
-    margin: 0 10px;
-    font-size: 24px;
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
   }
 }
+
 .translateContainer {
   display: flex;
   justify-content: flex-start; /* Push to the left */
   padding: 10px 10px 0;
+
+
+:global(.dark-mode) .siteFooter {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+  box-shadow: none !important;
+}
+
+:global(.dark-mode) .siteFooter .leftContent,
+:global(.dark-mode) .siteFooter .quickLinks h2,
+:global(.dark-mode) .siteFooter .legalInfo h2,
+:global(.dark-mode) .siteFooter .newsletter h2 {
+  color: #13b33b !important;
+}
+
+
+:global(.dark-mode) .siteFooter a {
+  color: #bbbbbb !important;
+}
+:global(.dark-mode) .siteFooter a:hover {
+  color: #13b33b !important;
+}
+
+:global(.dark-mode) .siteFooter .newsletter input {
+  background-color: #2a2d33 !important;
+  color: #ffffff !important;
+  border: 1px solid #444 !important;
+}
+:global(.dark-mode) .siteFooter .newsletter input::placeholder {
+  color: #bbbbbb !important;
+}
+:global(.dark-mode) .siteFooter .newsletter button {
+  background-color: #13b33b !important;
+  color: #fff !important;
+}
+:global(.dark-mode) .siteFooter .newsletter button:hover {
+  background-color: #0e8f2c !important;
+}
+
+
+:global(.dark-mode) .siteFooter hr {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+:global(.dark-mode) .siteFooter .copyright {
+  background-color: #121212 !important;
+  color: #bbbbbb !important;
+}
+:global(.dark-mode) .siteFooter .socialIcons a {
+  color: #bbbbbb !important;
+}
+:global(.dark-mode) .siteFooter .socialIcons a:hover {
+  color: #13b33b !important;
+
 }

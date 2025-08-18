@@ -64,7 +64,8 @@ const ContactSection = () => {
         <aside className={styles.info}>
           <h2>Contact&nbsp;Us</h2>
           <p className={styles.tagline}>
-            We’d love to hear from you. Reach us any way you like.
+            We’d love to hear from you. 
+            Reach us any way you like.
           </p>
 
           <div className={styles.row}>
