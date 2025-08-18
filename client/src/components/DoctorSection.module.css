@@ -43,6 +43,42 @@
   transform-style: preserve-3d;
 }
 
+.frontInfo {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.specialty {
+  background-color: #e6f3e6;
+  color: #13b33b;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.experience {
+  background-color: #e6f0ff;
+  color: #203394;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.doctorName {
+  font-size: 1.2rem !important;
+  font-weight: 500;
+  color: #203394;
+  margin: 8px 0 4px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+
 .doctorCard:hover .cardInner {
   transform: rotateY(180deg);
 }
@@ -167,6 +203,39 @@
   transform: scale(1.2);
 }
 
+/* Book Now Button */
+.bookNowBtn {
+  margin-top: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.6); /* initial glow */
+}
+
+/* Light mode */
+.bookNowBtn {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+}
+
+.bookNowBtn:hover {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(79, 172, 254, 0.9), 
+              0 0 40px rgba(0, 242, 254, 0.7); /* stronger glow */
+}
+
+
   /* --- DARK MODE --- */
 :global(body.dark-mode) .doctorsSection {
   background-color: #121212;
@@ -248,3 +317,17 @@
   background-color: #262a52;
 }
 
+:global(body.dark-mode) .doctorName {
+  color: #e6f3e6;
+}
+
+
+:global(body.dark-mode) .specialty {
+  background-color: rgba(87, 213, 150, 0.15);
+  color: #57d596;
+}
+
+:global(body.dark-mode) .experience {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #a4b4ff;
+}
