@@ -49,7 +49,7 @@ function Footer() {
           <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
           <a href="#" aria-label="Instagram"><FaInstagram /></a>
         </div>
-        <p>&copy; 2024 MidCity Hospital. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()}MidCity Hospital. All rights reserved.</p>
       </div>
     </footer>
   );
