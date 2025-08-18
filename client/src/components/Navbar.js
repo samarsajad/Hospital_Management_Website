@@ -56,16 +56,6 @@ export default function Navbar() {
            
           <li>
             <button
-              className="emergency-btn"
-              onClick={toggleEmergencyPanel}
-              aria-label="Emergency contacts"
-            >
-              🚨 Emergency
-            </button>
-          </li>
-
-          <li>
-            <button
               className="dark-toggle-btn"
               onClick={toggleDarkMode}
               aria-label="Toggle dark mode"

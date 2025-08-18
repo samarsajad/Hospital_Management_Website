@@ -79,6 +79,7 @@ const emergencyContacts = [
 
 // GET /emergency-contacts
 router.get('/emergency-contacts', (req, res) => {
+
   res.json(emergencyContacts);
 });
 
