@@ -15,16 +15,18 @@ const specialties = [
   { title: 'Oncology', image: images.Oncology },
   { title: 'Orthopaedics', image: images.Orthopaedics },
   { title: 'Paediatrics', image: images.Paediatrics },
-  {title: 'Ophthalmology',image: images.Ophthalmology},
+  { title: 'Ophthalmology', image: images.Ophthalmology },
 ];
-
 
 function AboutUs() {
   return (
     <section className={styles.aboutUs}>
       <div className={styles.aboutContainer}>
         <h1>
-          <i className="bi bi-house-door-fill" style={{ fontSize: '50px', padding: '10px' }}></i>
+          <i
+            className="bi bi-house-door-fill"
+            style={{ fontSize: "50px", padding: "10px" }}
+          ></i>
           About Us
         </h1>
         <p className={styles.text}>
@@ -36,7 +38,7 @@ function AboutUs() {
       </div>
 
       <div className={styles.historyVisionMission}>
-        <div className={styles.history} style = {{padding: '30px 0'}}>
+        <div className={styles.history} style={{ padding: '30px 0' }}>
           <h2>
             Our History{' '}
             <img
@@ -54,7 +56,7 @@ function AboutUs() {
             multifaceted healthcare provider, expanding our services to meet the evolving needs of our
             patients.
           </p>
-            <span className={styles.readMore}>Read More</span>
+          <span className={styles.readMore}>Read More</span>
         </div>
 
         <div className={styles.vision}>
@@ -98,51 +100,48 @@ function AboutUs() {
       </div>
 
       <h2 className={styles.specialtyHeading}>Our Specialties</h2>
-<div className={styles.specialtyGrid}>
-  {specialties.map((item, idx) => (
-    <div className={styles.specialtyCard} key={idx}>
-      <img src={item.image} alt={item.title} />
-      <h3>{item.title}</h3>
-      <p>
-        {item.title === 'Cardiology' &&
-          'Our cardiology team offers expert heart care, from diagnostics to treatment for various cardiovascular conditions.'}
-        {item.title === 'Orthopaedics' &&
-          'We specialize in treating bone, joint, and muscle issues, helping you regain mobility and live pain-free.'}
-        {item.title === 'Paediatrics' &&
-          'Our paediatric department provides compassionate care for infants, children, and adolescents with a focus on wellness.'}
-        {item.title === 'Neurology' &&
-          'Expert neurologists provide diagnosis and management of brain and nervous system disorders.'}
-        {item.title === 'Dermatology' &&
-          'Offering advanced skincare solutions for acne, eczema, allergies, and aesthetic treatments.'}
-        {item.title === 'Oncology' &&
-          'Comprehensive cancer care from screening and diagnosis to chemotherapy and support services.'}
-        {item.title === 'ENT' &&
-          'Treating conditions related to ear, nose, and throat with precision and personalized care.'}
-        {item.title === 'Gastroenterology' &&
-          'From digestive disorders to liver care, our experts ensure optimal gastrointestinal health.'}
-          {item.title === 'Ophthalmology' && 'Our ophthalmology department provides expert eye care, from routine checkups to advanced treatments for vision and eye health.'}
+      <div className={styles.specialtyGrid}>
+        {specialties.map((item, idx) => (
+          <div className={styles.specialtyCard} key={idx}>
+            <img src={item.image} alt={item.title} />
+            <h3>{item.title}</h3>
+            <p>
+              {item.title === 'Cardiology' &&
+                'Our cardiology team offers expert heart care, from diagnostics to treatment for various cardiovascular conditions.'}
+              {item.title === 'Orthopaedics' &&
+                'We specialize in treating bone, joint, and muscle issues, helping you regain mobility and live pain-free.'}
+              {item.title === 'Paediatrics' &&
+                'Our paediatric department provides compassionate care for infants, children, and adolescents with a focus on wellness.'}
+              {item.title === 'Neurology' &&
+                'Expert neurologists provide diagnosis and management of brain and nervous system disorders.'}
+              {item.title === 'Dermatology' &&
+                'Offering advanced skincare solutions for acne, eczema, allergies, and aesthetic treatments.'}
+              {item.title === 'Oncology' &&
+                'Comprehensive cancer care from screening and diagnosis to chemotherapy and support services.'}
+              {item.title === 'ENT' &&
+                'Treating conditions related to ear, nose, and throat with precision and personalized care.'}
+              {item.title === 'Gastroenterology' &&
+                'From digestive disorders to liver care, our experts ensure optimal gastrointestinal health.'}
+              {item.title === 'Ophthalmology' &&
+                'Our ophthalmology department provides expert eye care, from routine checkups to advanced treatments for vision and eye health.'}
 
-        {/* Fallback in case title is new or custom */}
-        {![
-          'Cardiology',
-          'Orthopaedics',
-          'Paediatrics',
-          'Neurology',
-          'Dermatology',
-          'Oncology',
-          'ENT',
-          'Gastroenterology',
-          'Ophthalmology',
-        ].includes(item.title) &&
-          'Expert specialists providing high-quality medical care tailored to individual needs.'}
-      </p>
-    </div>
-  ))}
-</div>
-
-
-        
-      
+              {/* Fallback in case title is new or custom */}
+              {![
+                'Cardiology',
+                'Orthopaedics',
+                'Paediatrics',
+                'Neurology',
+                'Dermatology',
+                'Oncology',
+                'ENT',
+                'Gastroenterology',
+                'Ophthalmology',
+              ].includes(item.title) &&
+                'Expert specialists providing high-quality medical care tailored to individual needs.'}
+            </p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

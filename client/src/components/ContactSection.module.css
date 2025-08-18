@@ -6,7 +6,7 @@
   --bg-card:      #ffffff;
   --bg-input:     #ffffff;
   --text-primary: #333333;
-  --text-muted:   #666666;
+  --text-muted:   #777272;
   --border:       #e3e6ee;
 }
 
@@ -73,7 +73,7 @@
 
 .group label {
   position: absolute;
-  top: 22px;
+  top: 12px;
   left: 18px;
   padding: 0 4px;
   background: var(--bg-input);

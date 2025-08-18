@@ -7,7 +7,6 @@ import Slider from "../components/Slider";
 import ServiceSection from "../components/ServiceSection";
 import DoctorsSection from "../components/DoctorsSection";
 import AboutSection from "../components/AboutSection";
-import TestimonialsSection from "../components/TestimonialsSection";
 import ContactSection from "../components/ContactSection";
 import FaqSection from "../components/FaqSection";
 
@@ -21,7 +20,6 @@ const Homepage = ({ darkMode, setDarkMode }) => {
       {/* <HeroSection darkMode={darkMode} /> */}
       <ServiceSection darkMode={darkMode} />
       <DoctorsSection darkMode={darkMode} />
-      <TestimonialsSection darkMode={darkMode} />
       <ContactSection darkMode={darkMode} />
 
       <FAQ darkMode={darkMode}/>
