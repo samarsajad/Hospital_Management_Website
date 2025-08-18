@@ -7,7 +7,7 @@ import LabsPage from "./pages/LabsPage";
 import CheckupPage from "./pages/CheckupPage";
 import SurgeryPage from "./pages/SurgeryPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import Login  from "./pages/Login";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 import EmergencyPanel from "./components/EmergencyPanel";
 
@@ -28,8 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path='register' element={<Register/>}/>
-
+        <Route path="register" element={<Register />} />
         <Route path="/services/pharmacy" element={<PharmacyPage />} />
         <Route path="/services/labs-diagnostics" element={<LabsPage />} />
         <Route path="/services/checkup" element={<CheckupPage />} />
@@ -46,12 +45,12 @@ function App() {
         🚨 Emergency
       </button>
 
-      <EmergencyPanel 
-        isOpen={isEmergencyOpen} 
-        onClose={() => setIsEmergencyOpen(false)} 
+      <EmergencyPanel
+        isOpen={isEmergencyOpen}
+        onClose={() => setIsEmergencyOpen(false)}
       />
     </>
-  );  
+  );
 }
 
 export default App;

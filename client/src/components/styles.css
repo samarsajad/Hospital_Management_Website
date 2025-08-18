@@ -226,8 +226,8 @@ body.dark-mode .nav-auth-btn {
 body.dark-mode .nav-auth-btn:hover {
   background-color: #2f4fcb;
   color: #e0e0e0 !important; 
-  
 }
+
 /* Dark mode form inputs */
 body.dark-mode input,
 body.dark-mode textarea,
