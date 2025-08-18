@@ -1,3 +1,4 @@
+
 .siteFooter {
   background-color: #203394;
   color: #E6F7F1;
@@ -148,6 +149,12 @@ hr {
   }
 }
 
+.translateContainer {
+  display: flex;
+  justify-content: flex-start; /* Push to the left */
+  padding: 10px 10px 0;
+
+
 :global(.dark-mode) .siteFooter {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
@@ -198,4 +205,5 @@ hr {
 }
 :global(.dark-mode) .siteFooter .socialIcons a:hover {
   color: #13b33b !important;
+
 }

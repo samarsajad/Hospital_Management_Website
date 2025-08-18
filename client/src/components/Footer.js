@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './Footer.module.css';
+
+import Translate from "./Translate";
+
 import Logo from "..//assets/logo.png";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaPaperPlane } from 'react-icons/fa';
+
 
 function Footer() {
   return (
@@ -44,12 +48,26 @@ function Footer() {
 
       <div className={styles.copyright}>
         <div className={styles.socialIcons}>
+h
+          <a href="#"><i className="fa-brands fa-facebook"></i></a>
+          <a href="#"><i className="fa-brands fa-square-twitter"></i></a>
+          <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i className="fa-brands fa-square-instagram"></i></a>
+       <div className={styles.translateContainer}>
+  <Translate />
+</div>
+
+        </div>
+
+        <p>&copy; 2024 MidCity Hospital. All rights reserved.</p>
+
           <a href="#" aria-label="Facebook"><FaFacebook /></a>
           <a href="#" aria-label="Twitter"><FaTwitter /></a>
           <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
           <a href="#" aria-label="Instagram"><FaInstagram /></a>
         </div>
         <p>&copy; {new Date().getFullYear()}MidCity Hospital. All rights reserved.</p>
+
       </div>
     </footer>
   );
