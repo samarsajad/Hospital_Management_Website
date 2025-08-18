@@ -203,6 +203,39 @@
   transform: scale(1.2);
 }
 
+/* Book Now Button */
+.bookNowBtn {
+  margin-top: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.6); /* initial glow */
+}
+
+/* Light mode */
+.bookNowBtn {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+}
+
+.bookNowBtn:hover {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(79, 172, 254, 0.9), 
+              0 0 40px rgba(0, 242, 254, 0.7); /* stronger glow */
+}
+
+
   /* --- DARK MODE --- */
 :global(body.dark-mode) .doctorsSection {
   background-color: #121212;
