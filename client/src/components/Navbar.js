@@ -4,6 +4,7 @@ import logoLight from '../assets/logo-web.jpg';
 import logoDark from '../assets/logo-dark-mode.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../context/AuthContext";
+import EmergencyPanel from './EmergencyPanel';
 import {
   FaHome,
   FaInfoCircle,
@@ -12,17 +13,26 @@ import {
   FaPhone,
   FaMoon,
   FaSun,
+
   FaBars,
   FaTimes
 
   FaQuestionCircle
+
+
+  FaQuestionCircle,
+  FaBell
 
 } from 'react-icons/fa';
 import { HiOutlineUser } from "react-icons/hi";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
+
   const [menuActive, setMenuActive] = useState(false);
+
+  const [isEmergencyOpen, setIsEmergencyOpen] = useState(false);
+
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   useEffect(() => {
@@ -33,8 +43,13 @@ export default function Navbar() {
     setDarkMode((prev) => !prev);
   };
 
+
   const toggleMenu = () => {
     setMenuActive(!menuActive);
+
+  const toggleEmergencyPanel = () => {
+    setIsEmergencyOpen(!isEmergencyOpen);
+
   };
 
   return (
@@ -60,7 +75,6 @@ export default function Navbar() {
           <li><Link to="/#contact"><FaPhone /> <span>Contact</span></Link></li>
           <li><Link to="/#faq"><FaQuestionCircle /> <span>FAQ</span></Link></li>
            
-
           <li>
             <button
               className="dark-toggle-btn"
@@ -83,6 +97,10 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
+      <EmergencyPanel 
+        isOpen={isEmergencyOpen} 
+        onClose={() => setIsEmergencyOpen(false)} 
+      />
     </header>
   );
 }
