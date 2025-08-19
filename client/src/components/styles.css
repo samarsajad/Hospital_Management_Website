@@ -1,5 +1,6 @@
+/* General Body and Universal Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Using the modern font from styles.css */
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -12,12 +13,13 @@ body {
   padding: 0;
 }
 
+/* Header and Navigation Styles */
 .header_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 40px;
-  height: 90px; /* Reduced navbar height */
+  height: 90px; /* Using height from styles.css for consistency */
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -27,6 +29,7 @@ body {
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
+/* Logo Styles */
 .logo-container {
   display: flex;
   align-items: center;
@@ -41,7 +44,7 @@ body {
 }
 
 .logo-img {
-  width: 70px; /* Adjusted logo size */
+  width: 70px;
   height: 70px;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -70,21 +73,48 @@ body {
   margin-top: -5px;
 }
 
+/* Navigation Menu Styles */
 .nav_menu {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
 }
 
+.nav_link {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* Using spacing from styles.css */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_link li a {
+  text-decoration: none;
+  color: #203394;
+  font-weight: 500;
+  font-size: 1.1rem; /* Using font size from styles.css */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav_link li a:hover {
+  color: #13b33b;
+  transform: translateY(-2px); /* Using hover effect from styles.css */
+}
+
+/* Buttons */
 .nav-auth-btn {
   display: flex;
   align-items: center;
   gap: 6px;
   background-color: #2f4fcb;
   color: white !important;
-  padding: 8px 16px; /* Adjusted padding */
+  padding: 8px 16px;
   border: none;
-  border-radius: 25px; /* More rounded */
+  border-radius: 25px; /* More rounded style from styles.css */
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -95,37 +125,47 @@ body {
 .nav-auth-btn:hover {
   background-color: #13b33b;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced hover from styles.css */
 }
 
-.nav_link {
-  list-style: none;
-  display: flex;
-  gap: 25px; /* Adjusted spacing */
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-.nav_link li a {
-  text-decoration: none;
-  color: #203394;
-  font-weight: 500;
-  font-size: 1.1rem; /* Slightly larger font */
+.emergency-btn { /* Unique style from styles2.css */
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.nav_link li a:hover {
-  color: #13b33b;
-  transform: translateY(-2px);
+  padding: 0;
+  transition: color 0.3s ease;
 }
 
-/* Dark mode overrides */
+.emergency-btn:hover {
+  color: #a71d2a;
+  text-decoration: underline;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle-btn {
+  background: none;
+  border: none;
+  color: #203394;
+  font-size: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-toggle-btn:hover {
+  transform: rotate(30deg);
+}
+
+/* Dark Mode Styles */
 .dark-mode {
   background-color: #181a1b !important;
   color: #e0e0e0 !important;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Optional: different font for dark mode */
 }
 
 .dark-mode .header_container {
@@ -151,7 +191,7 @@ body {
 
 body.dark-mode .nav-auth-btn {
   background-color: #44e66d;
-  color: white !important ;
+  color: white !important;
 }
 
 body.dark-mode .nav-auth-btn:hover {
@@ -159,24 +199,25 @@ body.dark-mode .nav-auth-btn:hover {
   color: #e0e0e0 !important;
 }
 
-.dark-toggle-btn {
-  background: none;
-  border: none;
-  color: #203394;
-  font-size: 25px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
 body.dark-mode .dark-toggle-btn {
   color: #FFD700;
 }
 
-.dark-toggle-btn:hover {
-  transform: rotate(30deg);
+/* Dark mode styles for form inputs from styles2.css */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #2a2d33 !important; 
+  color: #ffffff !important; 
+  border: 1px solid #555 !important;
 }
 
-/* New Mobile Menu Styles */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbbbbb !important; 
+}
+
+/* Mobile Menu Toggle */
 .navbar__toggle {
   display: none;
   font-size: 1.8rem;
@@ -190,6 +231,38 @@ body.dark-mode .dark-toggle-btn {
   color: #e0e0e0;
 }
 
+/* Fixed Emergency Button (from styles2.css) */
+.fixed-emergency-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+  z-index: 1001;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fixed-emergency-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 53, 69, 0.6);
+}
+
+.fixed-emergency-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Media Queries */
 @media (max-width: 992px) {
   .header_container {
     padding: 10px 20px;
@@ -213,7 +286,7 @@ body.dark-mode .dark-toggle-btn {
 
   .nav_menu.active {
     display: flex;
-    max-height: 500px; /* Arbitrary value, should be enough to show all links */
+    max-height: 500px; /* Should be enough to show all links */
   }
 
   .nav_link {
@@ -232,10 +305,28 @@ body.dark-mode .dark-toggle-btn {
   }
 
   .logo-text {
-    display: none;
+    display: none; /* Hides company name/tagline on mobile for a cleaner look */
   }
 
   .dark-mode .nav_menu {
     background-color: #23272f;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-emergency-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fixed-emergency-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 18px;
+    font-size: 13px;
   }
 }
