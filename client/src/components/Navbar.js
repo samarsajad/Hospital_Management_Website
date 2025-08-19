@@ -13,14 +13,26 @@ import {
   FaPhone,
   FaMoon,
   FaSun,
+
+  FaBars,
+  FaTimes
+
+  FaQuestionCircle
+
+
   FaQuestionCircle,
   FaBell
+
 } from 'react-icons/fa';
 import { HiOutlineUser } from "react-icons/hi";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
+
+  const [menuActive, setMenuActive] = useState(false);
+
   const [isEmergencyOpen, setIsEmergencyOpen] = useState(false);
+
   const { isAuthenticated, logout } = useContext(AuthContext);
 
   useEffect(() => {
@@ -31,8 +43,13 @@ export default function Navbar() {
     setDarkMode((prev) => !prev);
   };
 
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+
   const toggleEmergencyPanel = () => {
     setIsEmergencyOpen(!isEmergencyOpen);
+
   };
 
   return (
@@ -45,7 +62,11 @@ export default function Navbar() {
         />
       </div>
 
-      <nav className="nav_menu">
+      <div className="navbar__toggle" onClick={toggleMenu} aria-label="Toggle menu">
+        {menuActive ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <nav className={`nav_menu ${menuActive ? 'active' : ''}`}>
         <ul className="nav_link">
           <li><Link to="/#home"><FaHome /> <span>Home</span></Link></li>
           <li><Link to="/#about"><FaInfoCircle /> <span>About</span></Link></li>
