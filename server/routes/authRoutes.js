@@ -8,6 +8,7 @@ const {
   isAuthenticated,
   sendResetOtp,
   resetPassword,
+  googleLogin,
 } = require("../controllers/authController");
 const userAuth = require("../middleware/isAuthenticated");
 const passport = require("passport");
@@ -22,6 +23,7 @@ authRouter.post("/verify-otp", userAuth, verifyOtp);
 authRouter.get("/is-auth", userAuth, isAuthenticated);
 authRouter.post("/send-reset-otp", sendResetOtp);
 authRouter.post("/reset-password", resetPassword);
+authRouter.post("/google-login", googleLogin);
 
 authRouter.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 authRouter.get(
