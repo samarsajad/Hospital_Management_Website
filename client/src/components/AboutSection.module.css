@@ -1,77 +1,87 @@
-.cardGrid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 .aboutUs {
-  padding: 60px 40px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 24px #f6f5f7;
-  margin: 30px auto;
+  padding: 80px 40px;
+  background-color: #f8f9fa;
+  margin: 40px auto;
   border-radius: 12px;
   max-width: 1400px;
 }
+
 .aboutContainer {
   max-width: 1200px;
   margin: auto;
-  border-radius: 12px;
+  text-align: center;
 }
+
 .aboutContainer h1 {
   font-size: 2.8em;
-  color: #eef6f9; 
-  text-align: center;
-  margin-bottom: 30px;
-  background: #203394;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  
+  color: #203394;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .text {
   font-size: 1.2em;
-  color: #1c2733; 
+  color: #343a40;
   line-height: 1.7;
-  margin-bottom: 25px;
-  text-align: justify;
-  font-weight: 400;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.cardGrid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
 .card {
-  background-color: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: #ffffff;
+  padding: 25px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card.expanded {
   background-color: #e6f0ff;
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(32, 51, 148, 0.15);
 }
 
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
+}
+
+.cardHeader h3 {
+  font-size: 1.5em;
+  color: #203394;
+  margin: 0;
 }
 
 .cardText {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #333;
+  font-size: 1.1em;
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 15px;
 }
 
 .readMoreButton {
-  margin-top: 10px;
-  padding: 8px 14px;
+  padding: 10px 18px;
   background-color: #13b33b;
   color: white;
   border: none;
@@ -88,34 +98,46 @@
 .readMoreButton.expanded {
   background-color: #203394;
 }
+
 .specialtiesHeading {
   text-align: center;
   font-size: 2.5rem;
-  color: white;
-  background: linear-gradient(to right, #132d85, #1d44c4);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 40px 0 20px 0;
+  color: #203394;
+  margin: 60px 0 30px 0;
+  font-weight: 700;
 }
 
 .specialties {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0 1rem;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .specialtyCard {
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  width: 45%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cardHeader {
-  background: linear-gradient(to right, #5b9bd5, #1e3c72);
+.specialtyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.specialtyCard .cardHeader {
+  background: linear-gradient(to right, #203394, #13b33b);
   color: white;
-  padding: 15px 20px;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.specialtyCard .cardHeader h3 {
+  color: white;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -123,88 +145,15 @@
 }
 
 .cardBody {
-  padding: 20px;
-  font-size: 1rem;
-  color: #333;
+  padding: 25px;
+  font-size: 1.1em;
+  color: #334155;
+  line-height: 1.7;
 }
 
 .icon {
   width: 40px;
   height: 40px;
   object-fit: contain;
-  margin-right: 10px;
-}
 
-
-/* 🌙 Dark Mode Styles */
-:global(body.dark-mode) .aboutUs {
-  background-color: #121212;
-  box-shadow: none;
-}
-
-:global(body.dark-mode) .aboutContainer h1 {
-  background: #1e1e2f;
-  border: 1px solid #333;
-  color: #eef6f9;
-}
-
-:global(body.dark-mode) .text {
-  color: #ddd;
-}
-
-:global(body.dark-mode) .card {
-  background-color: #1e1e2f;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-:global(body.dark-mode) .card.expanded {
-  background-color: rgba(19, 179, 59, 0.1);
-}
-
-:global(body.dark-mode) .cardText {
-  color: #ccc;
-}
-
-:global(body.dark-mode) .readMoreButton {
-  background-color: #13b33b;
-  color: #fff;
-}
-
-:global(body.dark-mode) .readMoreButton:hover {
-  background-color: #0e902e;
-}
-
-:global(body.dark-mode) .readMoreButton.expanded {
-  background-color: #203394;
-}
-
-:global(body.dark-mode) .specialtiesHeading {
-  background: linear-gradient(to right, #1e1e2f, #2a2d4a);
-  color: #fff;
-}
-
-:global(body.dark-mode) .specialties {
-  background-color: transparent;
-}
-
-:global(body.dark-mode) .specialtyCard {
-  background-color: #1e1e2f;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-:global(body.dark-mode) .cardHeader {
-  background: linear-gradient(to right, #2a2d4a, #1e1e2f);
-  color: #fff;
-}
-
-:global(body.dark-mode) .cardBody {
-  color: #ddd;
-}
-
-:global(body.dark-mode) .icon {
-  filter: brightness(0) invert(1); 
-}
-
-:global(body.dark-mode) .cardHeader img {
-  filter: brightness(0) invert(1);
 }
