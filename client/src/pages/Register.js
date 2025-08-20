@@ -64,7 +64,7 @@ const Register= () => {
             className="input"
           />
 
-          <label>Emai  l</label>
+          <label>Email</label>
           <input
             type="email"
             name="email"
