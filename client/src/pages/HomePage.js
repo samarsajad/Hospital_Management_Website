@@ -16,11 +16,23 @@ const Homepage = ({ darkMode, setDarkMode }) => {
     <div className={darkMode ? "dark-mode" : ""} id="home">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Slider darkMode={darkMode} />
-      <AboutSection darkMode={darkMode} />
-      {/* <HeroSection darkMode={darkMode} /> */}
-      <ServiceSection darkMode={darkMode} />
-      <DoctorsSection darkMode={darkMode} />
-      <ContactSection darkMode={darkMode} />
+
+      <div id="about">
+        <AboutSection darkMode = {darkMode} />
+      </div>
+      <div id="services">
+        <ServiceSection darkMode={darkMode} />
+      </div>
+      <div id="doctors">
+        <DoctorsSection darkMode={darkMode} />
+      </div>
+      <div id="testimonials">
+        <TestimonialsSection darkMode={darkMode} />
+      </div>
+      <div id="contact">
+        <ContactSection darkMode={darkMode} />
+      </div>
+
       <FAQ darkMode={darkMode}/>
       <Footer />
     </div>

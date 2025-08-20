@@ -14,11 +14,13 @@ function Footer() {
         <div className={styles.quickLinks}>
           <h2>Quick Links</h2>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#doctors">Doctors</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#doctors">Doctors</a></li>
+            <li><a href="/#contact">Contact Us</a></li>
+              
           </ul>
         </div>
 
@@ -49,7 +51,9 @@ function Footer() {
           <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
           <a href="#" aria-label="Instagram"><FaInstagram /></a>
         </div>
-        <p>&copy; {new Date().getFullYear()}MidCity Hospital. All rights reserved.</p>
+
+        <p>&copy; {new Date().getFullYear()} MidCity Hospital. All rights reserved.</p>
+
       </div>
     </footer>
   );
