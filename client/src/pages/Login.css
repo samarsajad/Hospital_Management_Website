@@ -17,7 +17,7 @@
   margin-bottom: 0.5rem;
 }
 
-.login-form p {
+.login-form p.description {
   text-align: center;
   color: #718096;
   font-size: 0.95rem;
@@ -71,6 +71,13 @@ label {
 
 .login-form a:hover {
   text-decoration: underline;
+}
+
+.forgotpassword {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #2b6cb0;
 }
 /* Error messege */
 .error-message {

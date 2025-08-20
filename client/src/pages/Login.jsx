@@ -14,10 +14,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
 
-
-    const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,7 +53,7 @@ const Login = () => {
         </div>
         <h2>Hey there!👋</h2>
         <GoogleLogin onSuccess={googleLogin} />
-        <p>Enter your email and password to Login</p>
+        <p className="description">Enter your email and password to Login</p>
         <div>
           <label>Email</label>
           <input
@@ -75,6 +74,10 @@ const Login = () => {
             placeholder="Enter your password"
             className="input"
           />
+
+          <p className="forgotpassword">
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </p>
 
           <button type="submit" className="login-btn">
             Sign IN

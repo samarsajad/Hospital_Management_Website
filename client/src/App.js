@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import EmergencyPanel from "./components/EmergencyPanel";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/services/checkup" element={<CheckupPage />} />
         <Route path="/services/surgery" element={<SurgeryPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
 
       {/* Fixed Emergency Button */}
