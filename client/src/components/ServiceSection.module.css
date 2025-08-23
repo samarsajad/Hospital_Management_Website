@@ -28,6 +28,7 @@
 
 .serviceContainer {
   padding-top: 5px;
+  width: 500px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -35,29 +36,20 @@
   background-color: whitesmoke;
 }
 
-.box {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  width: 270px;
-  overflow: hidden;
+ .box {
+  flex: 0 0 55%;        /* width 55%, flex-shrink: 0, no grow */
+  min-width: 300px;      /* ensures it doesn't shrink too much */
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-
-  width: 23%;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s forwards;
-  transition: transform 0.3s ease;
-  border-radius: 10px;
-
-  /* gap: 10px; */
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 310px;
+  scroll-snap-align: start; 
 }
+
 
 .box:hover {
       transform:scale(1.05) !important;

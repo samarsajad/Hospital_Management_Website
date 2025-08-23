@@ -41,14 +41,14 @@ const baseServices = [
     btnText: "Book Now",
     link: "/services/checkup",
   },
-  {
+   {
     title: "Surgery",
     icon: <GiScalpel style={{ marginLeft: "8px", fontSize: "20px" }} />,
     img: surgery,
     desc: "Advanced surgical care with expert surgeons and cutting-edge technology for safe outcomes.",
     btnText: "Book Now",
     link: "/services/surgery",
-  },
+  }, 
   {
     title: "Physiotherapy",
     icon: <FaStethoscope />,
@@ -57,38 +57,7 @@ const baseServices = [
     btnText: "Book Now",
     link: "/services/physiotherapy",
   },
-  {
-    title: "Surgery",
-    icon: <GiScalpel style={{ marginLeft: "8px", fontSize: "20px" }} />,
-    img: surgery,
-    desc: "Advanced surgical care with expert surgeons and cutting-edge technology for safe outcomes.",
-    btnText: "Book Now",
-    link: "/services/surgery",
-  },
-  {
-    title: "Pharmacy",
-    icon: <FaPrescriptionBottleMedical />,
-    img: pharmacy,
-    desc: "Comprehensive medicines and expert care to support your health—available at MidCity Hospital’s Pharmacy.",
-    btnText: "Order Now",
-    link: "/services/pharmacy",
-  },
-  {
-    title: "Health Check Up",
-    icon: <FaStethoscope />,
-    img: checkup,
-    desc: "Routine check-ups for early detection and better long-term health management.",
-    btnText: "Book Now",
-    link: "/services/checkup",
-  },
-  {
-    title: "Labs and Diagnostics",
-    icon: <FaVials />,
-    img: labs,
-    desc: "Accurate tests and timely results to diagnose and manage your health effectively.",
-    btnText: "Book Now",
-    link: "/services/labs-diagnostics",
-  },
+  
 ];
 
 function ServiceSection({ darkMode }) {
