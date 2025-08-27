@@ -18,7 +18,7 @@ function CheckupPage() {
   }, []);
 
   const handleInputChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -53,21 +53,56 @@ function CheckupPage() {
             className={`${styles.doctorCard} ${selectedDoctor?._id === doc._id ? styles.selected : ''}`}
             onClick={() => setSelectedDoctor(doc)}
           >
-            <img src={doc.image} alt={doc.name} />
+            <img src={doc.photoUrl} alt={doc.name} />
             <h3>{doc.name}</h3>
             <p><strong>Specialization:</strong> {doc.specialization}</p>
-            <p><strong>Experience:</strong> {doc.experience}</p>
-            <p><strong>Available:</strong> {doc.availableDays?.join(', ') || 'Not Available'}</p>
+            <p><strong>Experience:</strong> {doc.Experience}</p>
+            <p><strong>Available:</strong> {doc.availability || 'Not Available'}</p>
 
           </div>
         ))}
       </div>
 
-      <h2>Book Appointment</h2>
+      <h2 >Book Your Appointment</h2>
       <form className={styles.appointmentForm} onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} required />
-        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleInputChange} required />
-        <input type="date" name="date" value={formData.date} onChange={handleInputChange} required />
+        <div className={styles.formGroup}>
+          <label htmlFor="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div className={styles.formGroup}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div className={styles.formGroup}>
+          <label htmlFor="date">Appointment Date</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
         <button type="submit">Book</button>
       </form>
     </div>

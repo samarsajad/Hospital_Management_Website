@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const Medicine = require("./models/medicines");
 const LabAppointment = require("./models/lab");
-const Doctor = require("./models/checkup");
+const Doctor = require("./models/doctor");
 const CheckupAppointment = require("./models/checkup");
 const multer = require("multer");
 const path = require("path");
