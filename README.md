@@ -58,7 +58,7 @@ NOTE: Use your own MongoDB URI. You can get it from [MongoDB Atlas](https://www.
 ```bash
 node index.js
 ```
-The backend should now be running at [http://localhost:5000](http://localhost:5000)  
+The backend should now be running at [https://hospital-management-website-1-vbg7.onrender.com](https://hospital-management-website-1-vbg7.onrender.com)  
 
 5. Start the backend server:
    Open a new terminal and navigate to the "client" folder:

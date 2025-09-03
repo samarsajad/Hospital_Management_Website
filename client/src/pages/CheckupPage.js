@@ -12,7 +12,7 @@ function CheckupPage() {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/doctors')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/doctors`)
       .then(res => setDoctors(res.data))
       .catch(err => console.error('Error fetching doctors:', err));
   }, []);
@@ -34,7 +34,7 @@ function CheckupPage() {
       doctor: selectedDoctor.name,
     };
 
-    axios.post('http://localhost:5000/api/checkup/book', appointmentData)
+    axios.post(`${process.env.REACT_APP_API_URL}/api/checkup/book`, appointmentData)
       .then(() => {
         alert('Appointment booked successfully!');
         setFormData({ name: '', email: '', date: '' });

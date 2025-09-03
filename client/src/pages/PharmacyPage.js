@@ -6,7 +6,7 @@ function PharmacyPage() {
   const [medicines, setMedicines] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/medicines')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/medicines`)
       .then((res) => setMedicines(res.data))
       .catch((err) => console.error('Error fetching medicines:', err));
   }, []);
