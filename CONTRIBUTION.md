@@ -1,4 +1,4 @@
-# 🤝 Contributing to Hospital_Management_Website
+🤝 Contributing to Hospital_Management_Website
 
 Thank you for your interest in contributing to the **Hospital_Management_Website**! 🚑  
 We’re excited to collaborate with contributors through **GirlScript Summer of Code 2025 (GSSoC '25)** and beyond.
