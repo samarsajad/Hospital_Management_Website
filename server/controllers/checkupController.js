@@ -1,8 +1,8 @@
 // controllers/checkupController.js
-const Checkup = require('../models/checkup');
+import Checkup from '../models/checkup.js';
 
 // Get all checkups (filter by type/status)
-exports.getAllCheckups = async (req, res) => {
+export const getAllCheckups = async (req, res) => {
   try {
     const { type, status } = req.query;
     const filters = {};
@@ -21,7 +21,7 @@ exports.getAllCheckups = async (req, res) => {
 };
 
 // Update checkup status
-exports.updateCheckupStatus = async (req, res) => {
+export const updateCheckupStatus = async (req, res) => {
   try {
     const { id } = req.params;
     const { status, notes } = req.body;
@@ -43,7 +43,7 @@ exports.updateCheckupStatus = async (req, res) => {
 };
 
 // Delete checkup
-exports.deleteCheckup = async (req, res) => {
+export const deleteCheckup = async (req, res) => {
   try {
     const { id } = req.params;
     await Checkup.findByIdAndDelete(id);

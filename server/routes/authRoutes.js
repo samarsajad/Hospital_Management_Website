@@ -1,5 +1,5 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   register,
   login,
   logout,
@@ -9,12 +9,13 @@ const {
   sendResetOtp,
   resetPassword,
   googleLogin,
-} = require("../controllers/authController");
-const userAuth = require("../middleware/isAuthenticated");
-const passport = require("passport");
+} from "../controllers/authController.js"; // remove parentheses
+import userAuth from "../middleware/isAuthenticated.js"; // remove parentheses
+import passport from "passport";
 
 const authRouter = express.Router();
 
+// Auth routes
 authRouter.post("/register", register);
 authRouter.post("/login", login);
 authRouter.post("/logout", logout);
@@ -25,6 +26,7 @@ authRouter.post("/send-reset-otp", sendResetOtp);
 authRouter.post("/reset-password", resetPassword);
 authRouter.post("/google-login", googleLogin);
 
+// Google OAuth routes
 authRouter.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 authRouter.get(
   "/google/callback",
@@ -34,4 +36,4 @@ authRouter.get(
   })
 );
 
-module.exports = authRouter;
+export default authRouter;

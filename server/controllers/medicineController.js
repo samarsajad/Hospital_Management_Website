@@ -1,7 +1,7 @@
-const Medicine = require("../models/medicines.js");
+import Medicine from "../models/medicines.js";
 
 // CREATE a new medicine
-exports.createMedicine = async (req, res) => {
+export const createMedicine = async (req, res) => {
   try {
     const { name, brand, composition, price, imageUrl } = req.body;
 
@@ -19,7 +19,7 @@ exports.createMedicine = async (req, res) => {
 };
 
 // READ all medicines
-exports.getAllMedicines = async (req, res) => {
+export const getAllMedicines = async (req, res) => {
   try {
     const medicines = await Medicine.find();
     res.json(medicines);
@@ -29,7 +29,7 @@ exports.getAllMedicines = async (req, res) => {
 };
 
 // UPDATE a medicine by ID
-exports.updateMedicine = async (req, res) => {
+export const updateMedicine = async (req, res) => {
   try {
     const { id } = req.params;
     const updated = await Medicine.findByIdAndUpdate(id, req.body, { new: true });
@@ -45,7 +45,7 @@ exports.updateMedicine = async (req, res) => {
 };
 
 // DELETE a medicine by ID
-exports.deleteMedicine = async (req, res) => {
+export const deleteMedicine = async (req, res) => {
   try {
     const { id } = req.params;
     const deleted = await Medicine.findByIdAndDelete(id);

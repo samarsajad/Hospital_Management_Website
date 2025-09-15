@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const medicineSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -8,4 +8,4 @@ const medicineSchema = new mongoose.Schema({
   imageUrl: { type: String, required: true }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Medicine', medicineSchema);
+export default mongoose.model('Medicine', medicineSchema);

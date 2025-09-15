@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@react-oauth/google": "^0.12.2",
     "bcryptjs": "^3.0.2",
