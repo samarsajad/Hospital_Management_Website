@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const labAppointmentSchema = new mongoose.Schema(
   {
@@ -31,4 +31,4 @@ const labAppointmentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("LabAppointment", labAppointmentSchema);
+export default mongoose.model("LabAppointment", labAppointmentSchema);

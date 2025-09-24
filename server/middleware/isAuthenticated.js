@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-const userAuth = async (req, res, next) => {
+const isAuthenticated = async (req, res, next) => {
   const { token } = req.cookies;
   if (!token) {
     return res.json({ success: false, message: "Unauthorized" });
@@ -10,6 +10,7 @@ const userAuth = async (req, res, next) => {
     const tokenDecode = jwt.verify(token, process.env.JWT_SECRET);
     if (tokenDecode.id) {
       req.userId = tokenDecode.id;
+      req.userRole = tokenDecode.role; // optional if you want role
       next();
     } else {
       return res.json({ success: false, message: "Unauthorized" });
@@ -20,4 +21,4 @@ const userAuth = async (req, res, next) => {
   }
 };
 
-module.exports = userAuth;
+export default isAuthenticated;

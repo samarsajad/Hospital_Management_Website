@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const checkupSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  date: String,
-  doctor: String,
-});
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  date: { type: String, required: true },
+  doctor: { type: String, required: true },
+}, { timestamps: true });
 
-module.exports = mongoose.model('CheckupAppointment', checkupSchema);
+export default mongoose.model("CheckupAppointment", checkupSchema);

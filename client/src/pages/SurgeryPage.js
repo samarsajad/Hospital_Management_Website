@@ -31,7 +31,7 @@ function SurgeryPage() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/surgery/book', submissionData, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/surgery/book`, submissionData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('Surgery appointment booked!');

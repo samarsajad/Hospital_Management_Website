@@ -49,7 +49,7 @@ function LabsPage() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/labs/book", formData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/labs/book`, formData);
       alert("Appointment booked successfully!");
       setFormData({ name: "", email: "", phone: "", date: "", test: "" });
     } catch (error) {

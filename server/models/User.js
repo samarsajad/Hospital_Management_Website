@@ -1,16 +1,38 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: [true,"Name is required"],trim: true,minLength:[3,"Name must be at least 3 characters long"]  },
-  email: { type: String, required: [true,"email is required" ],unique: true,trim:true,lowercase: true,match: [/^\S+@\S+\.\S+$/, "Please enter a valid email address"] },
-  password: { type: String, required: [true,"Password is required"],minLength: [6, "Password must be at least 6 characters long"] },
-  verifyOtp: { type: String, default: "" },
-  verifyOtpExpiry: { type: Number, default: 0 },
-  isAccountVerified: { type: Boolean, default: false },
-  resetOtp: { type: String, default: "" },
-  resetOtpExpiry: { type: Number, default: 0 },
-  googleId: { type: String }
+const userSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String }, 
+    role: { type: String, enum: ["user", "admin"], default: "user" },
+
+    // account verification
+    isAccountVerified: { type: Boolean, default: false },
+    verifyOtp: { type: String },
+    verifyOtpExpiry: { type: Number },
+
+    // password reset
+    resetOtp: { type: String },
+    resetOtpExpiry: { type: Number },
+  },
+  { timestamps: true }
+);
+
+// Hash password before saving (only if modified and exists)
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password") || !this.password) return next();
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
 });
 
-const userModel = mongoose.models.user || mongoose.model("users", userSchema);
-module.exports = userModel;
+// Compare passwords
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  if (!this.password) return false;
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+// Create model and export once
+const User = mongoose.model("User", userSchema);
+export default User;

@@ -1,36 +1,51 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-require("dotenv").config();
-const Medicine = require("./models/medicines");
-const LabAppointment = require("./models/lab");
-const Doctor = require("./models/doctor");
-const CheckupAppointment = require("./models/checkup");
-const multer = require("multer");
-const path = require("path");
-const Surgery = require("./models/surgery");
-const authRoutes = require("./routes/authRoutes");
-const medicineRoutes = require("./routes/medicineRoutes");
-const adminRoutes = require("./routes/adminRoutes");
-const contactRoutes = require('./routes/contactRoutes');
-const emergencyRoutes = require('./routes/emergencyRoutes');
+// server/index.js
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+import session from "express-session";
+import multer from "multer";
+
+import Medicine from "./models/medicines.js";
+import LabAppointment from "./models/lab.js";
+import Doctor from "./models/checkup.js";
+import CheckupAppointment from "./models/checkup.js";
+import Surgery from "./models/surgery.js";
+
+import authRoutes from "./routes/authRoutes.js";
+import medicineRoutes from "./routes/medicineRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
+import emergencyRoutes from "./routes/emergencyRoutes.js";
+
+dotenv.config();
+ main
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// for __dirname in ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
 
-const session = require("express-session");
-app.use(session({
-  secret: process.env.SESSION_SECRET || "midcity_session_secret",
-  resave: false,
-  saveUninitialized: false
-}));
+// Express session
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "midcity_session_secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Backend is running successfully!");
 });
 
+// MongoDB connection
 const mongoURI = process.env.MONGO_URI;
 console.log("Connecting to MongoDB URI:", mongoURI);
 
@@ -42,12 +57,17 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error(" MongoDB Error:", err));
 
+// Static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/admin/medicines", medicineRoutes);
 app.use("/api/admin", adminRoutes);
-app.use('/api/contact', contactRoutes);
-app.use('/api', emergencyRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/api", emergencyRoutes);
+
+// Doctors
 app.get("/api/doctors", async (req, res) => {
   try {
     const doctors = await Doctor.find();
@@ -58,9 +78,10 @@ app.get("/api/doctors", async (req, res) => {
   }
 });
 
+// Lab booking
 app.post("/api/labs/book", async (req, res) => {
   try {
-    console.log("Booking data:", req.body); 
+    console.log("Booking data:", req.body);
     const newAppointment = new LabAppointment(req.body);
     await newAppointment.save();
     res.status(201).json({ message: "Appointment booked successfully!" });
@@ -70,6 +91,7 @@ app.post("/api/labs/book", async (req, res) => {
   }
 });
 
+// Checkup booking
 app.post("/api/checkup/book", async (req, res) => {
   try {
     const newAppointment = new CheckupAppointment(req.body);
@@ -81,6 +103,7 @@ app.post("/api/checkup/book", async (req, res) => {
   }
 });
 
+// Surgery booking
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -91,35 +114,30 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-app.post(
-  "/api/surgery/book",
-  upload.single("prescription"),
-  async (req, res) => {
-    try {
-      const { name, email, phone, doctor, surgeryType, date } = req.body;
-      const prescriptionFileName = req.file?.filename || null;
+app.post("/api/surgery/book", upload.single("prescription"), async (req, res) => {
+  try {
+    const { name, email, phone, doctor, surgeryType, date } = req.body;
+    const prescriptionFileName = req.file?.filename || null;
 
-      const newSurgery = new Surgery({
-        name,
-        email,
-        phone,
-        doctor,
-        surgeryType,
-        date,
-        prescriptionFileName,
-      });
+    const newSurgery = new Surgery({
+      name,
+      email,
+      phone,
+      doctor,
+      surgeryType,
+      date,
+      prescriptionFileName,
+    });
 
-      await newSurgery.save();
-      res
-        .status(201)
-        .json({ message: "Surgery appointment booked successfully" });
-    } catch (err) {
-      console.error("Error booking surgery:", err);
-      res.status(500).json({ error: "Server error" });
-    }
+    await newSurgery.save();
+    res.status(201).json({ message: "Surgery appointment booked successfully" });
+  } catch (err) {
+    console.error("Error booking surgery:", err);
+    res.status(500).json({ error: "Server error" });
   }
-);
+});
 
+// Start server
 app.listen(PORT, () => {
-  console.log(` Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

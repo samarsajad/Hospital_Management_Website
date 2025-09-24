@@ -1,19 +1,19 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const {
+import {
   createMedicine,
   getAllMedicines,
   updateMedicine,
   deleteMedicine
-} = require("../controllers/medicineController");
+} from "../controllers/medicineController.js";
 
-const isAuthenticated = require("../middleware/isAuthenticated");
-const isAdmin = require("../middleware/isAdmin");
+import isAuthenticated from "../middleware/isAuthenticated.js";
+import isAdmin from "../middleware/isAdmin.js";
 
 router.post("/", isAuthenticated, isAdmin, createMedicine);
 router.get("/", isAuthenticated, isAdmin, getAllMedicines);
 router.put("/:id", isAuthenticated, isAdmin, updateMedicine);
 router.delete("/:id", isAuthenticated, isAdmin, deleteMedicine);
 
-module.exports = router;
+export default router;
