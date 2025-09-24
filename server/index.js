@@ -21,7 +21,7 @@ import contactRoutes from "./routes/contactRoutes.js";
 import emergencyRoutes from "./routes/emergencyRoutes.js";
 
 dotenv.config();
-
+ main
 const app = express();
 const PORT = process.env.PORT || 5000;
 
