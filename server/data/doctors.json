@@ -1,20 +1,35 @@
 [
   {
     "id": 1,
-    "name": "Dr. Ayesha Khan",
-    "specialty": "General Physician",
-    "image": "/images/doctor1.jpg"
+    "name": "Dr. Rahul Mishra",
+    "specialization": "Cardiologist",
+    "Experience": "15+ years of clinical experience",
+    "availability": "Mon - Fri: 9 AM - 5 PM",
+    "photoUrl": "/images/doc1.jpg"
   },
-  {
+   {
     "id": 2,
-    "name": "Dr. Rahul Mehta",
-    "specialty": "Cardiologist",
-    "image": "/images/doctor2.jpg"
+    "name": "Dr. Zahoor Ahmed Gilkar",
+    "specialization":  "Urologist",
+    "Experience":"12+ years of medical practice",
+    "availability": "Mon - Sat: 10 AM - 6 PM",
+    "photoUrl": "/images/docmale.jpg"
   },
   {
     "id": 3,
-    "name": "Dr. Priya Sharma",
-    "specialty": "Dermatologist",
-    "image": "/images/doctor3.jpg"
+    "name": "Dr. Shahida Kounsar",
+    "specialization": "Gynaecologist",
+    "Experience":"10+ years of gynecological practice",
+    "availability": "Tue - Sat: 8 AM - 4 PM",
+    "photoUrl": "/images/doc2.avif"
+  },
+  {
+   "id":4,
+   "name": "Dr. Ridhi Gupta",
+   "specialization": "Orthopedic Surgeon",
+   "Experience":"14+ years in orthopedic surgery",
+   "availability": "Mon - Fri: 10 AM - 7 PM",
+   "photoUrl": "/images/pic5.webp"
   }
+  
 ]

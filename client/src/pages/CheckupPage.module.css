@@ -4,47 +4,114 @@
   margin: auto;
 }
 
+.checkupContainer h1{
+  color: #203394;
+}
+
 .doctorGrid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 30px;
+   justify-content: center; 
 }
 
 .doctorCard {
   background: #f9f9f9;
-  border: 2px solid transparent;
+  border: 2px solid #203394;
   border-radius: 10px;
   padding: 15px;
   width: 280px;
   text-align: center;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.doctorCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #203394;
 }
 
 .doctorCard.selected {
-  border-color: #13b33b;
-  background-color: #e03636;
+  border-color:  #203394;
+  background-color:  #13b33b;
 }
 
 .doctorCard img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  
+}
+.doctorCard h3 {
+  font-size: 1.2rem; 
+  color: #203394;
+  margin: 10px 0 5px;
 }
 
+.doctorCard p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #203394;
+}
+
+.doctorCard p strong {
+  color: #203394;
+}
+
+h2{
+  text-align: center !important;
+}
 .appointmentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+ .appointmentForm {
+  max-width: 400px;
+  margin: 0 auto; 
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.appointmentForm input,
-.appointmentForm button {
-  padding: 10px;
-  font-size: 1em;
+.formGroup {
+  display: flex;
+  flex-direction: column;
 }
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #203394 !important;
+}
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+ 
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
 
 :global(.dark-mode) .checkupContainer {
   background-color: #23272f !important;
@@ -52,19 +119,42 @@
 }
 
 :global(.dark-mode) .doctorCard {
-  background-color: #181a1b !important;
-  color: #e0e0e0 !important;
-  border-color: #FFD700 !important;
+  background-color: #1e1e2f !important;
+/*   color: #e0e0e0 !important; */
+  border-color: #e2e8f0!important;
 }
 
 :global(.dark-mode) .doctorCard.selected {
-  background-color: #23272f !important;
-  border-color: #FFD700 !important;
+  background-color:  #0c0c1c !important;
+  border-color: #e2e8f0 !important;
 }
 
 :global(.dark-mode) .appointmentForm input,
 :global(.dark-mode) .appointmentForm button {
-  background-color: #181a1b !important;
-  color: #FFD700 !important;
-  border-color: #FFD700 !important;
+  background-color: #181a1b ;
+  color: #e2e8f0 !important;
+  border-color: #e2e8f0 !important;
+}
+
+:global(.dark-mode) h2{
+  color:#13b33b;
+}
+
+:global(.dark-mode) h1{
+  color:#13b33b;
+}
+
+:global(.dark-mode) .appointmentForm button {
+  background-color: #13b33b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+:global(.dark-mode).appointmentForm button:hover {
+  background-color: #76de90 !important;
+}
+
+:global(.dark-mode) label{
+  color:#13b33b !important;
 }
