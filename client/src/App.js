@@ -12,8 +12,8 @@ import Register from "./pages/Register";
 import EmergencyPanel from "./components/EmergencyPanel";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProtectedRoute from "./components/ProtectedRoute";
-import AdminDashboardPage from './pages/AdminDashboardPage';
-
+import AdminDashboardPage from "./pages/AdminDashboardPage";
+import MedicineListing from "./pages/Medicine"; // <-- import the medicine page
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,12 +34,20 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="/services/pharmacy" element={<PharmacyPage />} />
+        <Route path="/services/pharmacy/medicines" element={<MedicineListing />} /> {/* new route */}
         <Route path="/services/labs-diagnostics" element={<LabsPage />} />
         <Route path="/services/checkup" element={<CheckupPage />} />
         <Route path="/services/surgery" element={<SurgeryPage />} />
-        <Route path="*" element={<NotFoundPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/admin" element={<ProtectedRoute adminOnly={true}><AdminDashboardPage /></ProtectedRoute>}/>
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <AdminDashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       {/* Fixed Emergency Button */}
