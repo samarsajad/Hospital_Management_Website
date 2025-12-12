@@ -1,0 +1,268 @@
+/* Main Container */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+/* Login Card */
+.loginCard {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+.loginHeader {
+  margin-bottom: 30px;
+}
+
+.loginIcon {
+  font-size: 2.5rem;
+  color: #4a6cf7;
+  margin-bottom: 15px;
+}
+
+.loginHeader h2 {
+  color: #2d3748;
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.loginHeader p {
+  color: #718096;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Form Elements */
+.loginForm {
+  text-align: left;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 1rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #4a6cf7;
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+  background-color: white;
+}
+
+/* Forgot Password Link */
+.forgotPassword {
+  text-align: right;
+  margin: -10px 0 20px;
+}
+
+.forgotLink {
+  color: #4a6cf7;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgotLink:hover {
+  color: #3a56d4;
+  text-decoration: underline;
+}
+
+/* Login Button */
+.loginButton {
+  width: 100%;
+  padding: 14px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.loginButton:hover {
+  background: #3a56d4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 108, 247, 0.3);
+}
+
+.loginButton:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+  padding: 0 15px;
+}
+
+/* Social Login */
+.socialLogin {
+  margin-bottom: 20px;
+}
+
+.googleButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.googleButton:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* Sign Up Link */
+.signupLink {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.signupText {
+  color: #4a6cf7;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.2s;
+}
+
+.signupText:hover {
+  color: #3a56d4;
+  text-decoration: underline;
+}
+
+/* Error Message */
+.errorMessage {
+  background: #fff5f5;
+  color: #e53e3e;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border-left: 4px solid #e53e3e;
+  text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .loginCard {
+    padding: 30px 20px;
+  }
+  
+  .loginHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .inputField {
+    padding: 12px 15px 12px 40px;
+  }
+}
+
+/* Dark Mode */
+.dark-mode .loginCard {
+  background: #1a202c;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .loginHeader h2 {
+  color: #f7fafc;
+}
+
+.dark-mode .loginHeader p {
+  color: #a0aec0;
+}
+
+.dark-mode .inputField {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-mode .inputField:focus {
+  background-color: #2d3748;
+  border-color: #4a6cf7;
+}
+
+.dark-mode .divider::before,
+.dark-mode .divider::after {
+  border-bottom-color: #4a5568;
+}
+
+.dark-mode .googleButton {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-mode .googleButton:hover {
+  background: #374151;
+  border-color: #6b7280;
+}
+
+.dark-mode .signupLink {
+  color: #a0aec0;
+}
