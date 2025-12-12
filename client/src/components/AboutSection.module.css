@@ -1,59 +1,8 @@
-.cardGrid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+/* Base Styles */
 .aboutUs {
-  padding: 60px 40px;
+  padding: 100px 5%;
   background-color: #ffffff;
-  box-shadow: 0 8px 24px #f6f5f7;
-  margin: 30px auto;
-  border-radius: 12px;
-  max-width: 1400px;
-}
-.aboutContainer {
-  max-width: 1200px;
-  margin: auto;
-  border-radius: 12px;
-}
-.aboutContainer h1 {
-  font-size: 2.8em;
-  color: #eef6f9; 
-  text-align: center;
-  margin-bottom: 30px;
-  background: #203394;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  
-}
-
-.text {
-  font-size: 1.2em;
-  color: #1c2733; 
-  line-height: 1.7;
-  margin-bottom: 25px;
-  text-align: justify;
-  font-weight: 400;
-}
-.card {
-  background-color: white;
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.card.expanded {
-  background-color: #e6f0ff;
+  position: relative;
   transform: scale(1.05);
 }
 
