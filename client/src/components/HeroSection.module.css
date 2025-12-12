@@ -4,6 +4,36 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Skeleton loader styles */
+.skeletonImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Dark mode support */
+.dark .skeletonImage {
+  background: linear-gradient(90deg, #2d3748 25%, #4a5568 50%, #2d3748 75%);
 }
 
 .heroContainer,
@@ -26,8 +56,29 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+.heroImage {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
 
-.heroImage img,
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.heroImage img.loaded {
+  opacity: 1;
+}
+
 .messageImage img {
   width: 100%;
   max-width: 450px;
@@ -35,7 +86,6 @@
   object-fit: cover;
   border-radius: 12px;
 }
-
 
 .heroText,
 .messageText {
@@ -53,11 +103,11 @@
   font-weight: 500;
   margin: 0;
 }
+
 .highlight {
   color: #0f4613;
   font-weight: bold;
 }
-
 
 @media (max-width: 1024px) {
   .heroContainer,
@@ -67,8 +117,25 @@
     padding: 20px;
   }
 
+  .heroImage {
+    max-width: 100%;
+    height: 250px;
+    margin: 0 auto;
+  }
+
   .heroImage img,
   .messageImage img {
     max-width: 100%;
   }
+}
+
+/* Animation for image load */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Dark mode styles */
+.dark .heroImage {
+  background: #2d3748;
 }
