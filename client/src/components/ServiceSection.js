@@ -1,15 +1,19 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./ServiceSection.module.css";
+import React, { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import styles from './ServiceSection.module.css';
 
-import { FaCog } from "react-icons/fa";
-import {
-  FaPrescriptionBottleMedical,
-  FaVials,
-  FaStethoscope,
-} from "react-icons/fa6";
-import { GiScalpel } from "react-icons/gi";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+// Icons
+import { FaCog, FaArrowRight } from 'react-icons/fa';
+import { FaPrescriptionBottleMedical, FaVials, FaStethoscope } from 'react-icons/fa6';
+import { GiScalpel } from 'react-icons/gi';
+import { IoIosArrowForward } from 'react-icons/io';
+
+// Images
+import pharmacy from '../assets/services/pharmacy.jpg';
+import labs from '../assets/services/labs.jpg';
+import checkup from '../assets/services/checkup.jpeg';
+import surgery from '../assets/services/surgery.jpeg';
 
 import pharmacy from "../assets/services/pharmacy.jpg";
 import labs from "../assets/services/labs.jpg";
@@ -41,7 +45,7 @@ const baseServices = [
     btnText: "Book Now",
     link: "/services/checkup",
   },
-   {
+  {
     title: "Surgery",
     icon: <GiScalpel style={{ marginLeft: "8px", fontSize: "20px" }} />,
     img: surgery,
@@ -57,10 +61,69 @@ const baseServices = [
     btnText: "Book Now",
     link: "/services/physiotherapy",
   },
-  
 ];
 
-function ServiceSection({ darkMode }) {
+const ServiceSection = ({ darkMode }) => {
+  const [activeTab, setActiveTab] = useState(0);
+  const [isHovered, setIsHovered] = useState(null);
+  const containerRef = useRef(null);
+
+  const serviceCategories = [
+    {
+      name: 'All Services',
+      filter: 'all',
+    },
+    {
+      name: 'Medical',
+      filter: 'medical',
+    },
+    {
+      name: 'Diagnostics',
+      filter: 'diagnostics',
+    },
+    {
+      name: 'Specialized',
+      filter: 'specialized',
+    },
+  ];
+
+  const services = baseServices.map((service, index) => ({
+    ...service,
+    category: index % 2 === 0 ? 'medical' : index % 3 === 0 ? 'diagnostics' : 'specialized',
+  }));
+
+  const filteredServices = activeTab === 0 
+    ? services 
+    : services.filter(service => service.category === serviceCategories[activeTab].filter);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+    hover: {
+      y: -10,
+      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+      transition: { duration: 0.3 },
+    },
+  };
+
   const modeClass = darkMode ? styles.dark : "";
   const sliderRef = useRef(null);
 
