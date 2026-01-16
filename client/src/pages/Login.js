@@ -3,13 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { GoogleLogin } from "@react-oauth/google";
 import { AuthContext } from "../context/AuthContext";
+import { FaUserMd, FaLock, FaGoogle, FaEnvelope } from "react-icons/fa";
+import styles from "./Login.module.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // Use AuthContext
-
+  const { login } = useContext(AuthContext);
+  
   const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
   // ---------- Email/Password Login ----------
@@ -65,41 +69,93 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>MidCity Hospital</h2>
-        <h3>Welcome Back 👋</h3>
+    <div className={styles.loginContainer}>
+      <div className={styles.loginCard}>
+        <div className={styles.loginHeader}>
+          <FaUserMd className={styles.loginIcon} />
+          <h2>Welcome Back</h2>
+          <p>Sign in to access your account</p>
+        </div>
 
-        <GoogleLogin onSuccess={handleGoogleLogin} />
+        {error && <div className={styles.errorMessage}>{error}</div>}
 
-        <p>Or login with email and password:</p>
+        <form onSubmit={handleSubmit} className={styles.loginForm}>
+          <div className={styles.formGroup}>
+            <div className={styles.inputGroup}>
+              <FaEnvelope className={styles.inputIcon} />
+              <input
+                type="email"
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setError("");
+                }}
+                required
+                className={styles.inputField}
+              />
+            </div>
+          </div>
 
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-        />
+          <div className={styles.formGroup}>
+            <div className={styles.inputGroup}>
+              <FaLock className={styles.inputIcon} />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setError("");
+                }}
+                required
+                className={styles.inputField}
+              />
+            </div>
+          </div>
 
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-        />
+          <div className={styles.forgotPassword}>
+            <Link to="/forgot-password" className={styles.forgotLink}>
+              Forgot Password?
+            </Link>
+          </div>
 
-        <p>
-          <Link to="/forgot-password">Forgot Password?</Link>
-        </p>
+          <button 
+            type="submit" 
+            className={styles.loginButton}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Signing in...' : 'Sign In'}
+          </button>
 
-        <button type="submit">Sign In</button>
+          <div className={styles.divider}>
+            <span>OR</span>
+          </div>
 
-        <p>
-          Don't have an account? <Link to="/register">Register</Link>
-        </p>
-      </form>
+          <div className={styles.socialLogin}>
+            <GoogleLogin
+              onSuccess={handleGoogleLogin}
+              onError={() => {
+                setError("Google login failed. Please try again.");
+              }}
+              useOneTap
+              theme="filled_blue"
+              size="large"
+              text="signin_with"
+              shape="rectangular"
+              width="100%"
+              className={styles.googleButton}
+            />
+          </div>
+        </form>
+
+        <div className={styles.signupLink}>
+          Don't have an account?{' '}
+          <Link to="/register" className={styles.signupText}>
+            Create Account
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
