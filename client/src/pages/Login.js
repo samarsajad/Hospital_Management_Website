@@ -68,7 +68,7 @@ const Login = () => {
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>MidCity Hospital</h2>
-        <h3>Welcome Back 👋</h3>
+        <h3></h3>
 
         <GoogleLogin onSuccess={handleGoogleLogin} />
 

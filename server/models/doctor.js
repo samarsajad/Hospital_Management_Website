@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const doctorSchema = new mongoose.Schema({
-   id: {
-     type: Number,
-     required: true,
-     unique: true 
-  },
   name: {
     type: String,
     required: true,
@@ -14,18 +9,26 @@ const doctorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Experience:{
-    type:String,
-    required:true,
+  experience: {
+    type: Number,
+    required: false,
   },
-  availability: {
+  qualifications: {
+    type: [String],
+    required: false,
+  },
+  availableSlots: {
+    type: [String],
+    required: false,
+  },
+  contact: {
+    type: Object,
+    required: false,
+  },
+  hospital: {
     type: String,
-    required: true,
+    required: false,
   },
-  photoUrl: {
-    type: String,
-    required: true,
-  },
-});
+}, { collection: 'doctors' });
 
 export default mongoose.model('Doctor', doctorSchema);

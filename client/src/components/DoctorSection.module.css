@@ -1,3 +1,54 @@
+.slider {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 0 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0 12px;
+}
+
+.track::-webkit-scrollbar { display: none; }
+.track { -ms-overflow-style: none; scrollbar-width: none; }
+
+.slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 270px;
+}
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  color: #203394;
+}
+
+.navLeft { left: 6px; }
+.navRight { right: 6px; }
+
+.navButton:hover { background: #fff; }
+:global(body.dark-mode) .navButton {
+  background: rgba(30,30,47,0.9);
+  border: 1px solid rgba(226,232,240,0.15);
+  color: #a4b4ff;
+}
 .doctorsSection {
   text-align: center;
   padding: 50px 0;
@@ -25,7 +76,6 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  
 }
 
 .doctorCard {
@@ -60,13 +110,31 @@
   font-weight: 600;
 }
 
-.experience {
+.timeChip {
   background-color: #e6f0ff;
   color: #203394;
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contactChip {
+  background-color: #f2f2f2;
+  color: #0f172a;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.chipIcon {
+  margin-right: 6px;
+  font-size: 0.9em;
 }
 
 .doctorName {
@@ -219,21 +287,40 @@
   border: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(79, 172, 254, 0.6); /* initial glow */
+  
 }
 
 /* Light mode */
 .bookNowBtn {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background-color: #13b33b;
   color: #fff;
 }
 
 .bookNowBtn:hover {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: #203394;
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 25px rgba(79, 172, 254, 0.9), 
-              0 0 40px rgba(0, 242, 254, 0.7); /* stronger glow */
+
 }
+
+.filterBar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px auto 0;
+}
+
+.filterChip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #203394;
+  cursor: pointer;
+  font-weight: 600;
+}
+.filterChip:hover { background: #f8fafc; }
+.filterChip.active { background: #e6f0ff; border-color: #c7d2fe; color: #203394; }
 
 
   /* --- DARK MODE --- */
@@ -326,8 +413,13 @@
   background-color: rgba(87, 213, 150, 0.15);
   color: #57d596;
 }
-
-:global(body.dark-mode) .experience {
+:global(body.dark-mode) .timeChip {
   background-color: rgba(255, 255, 255, 0.08);
   color: #a4b4ff;
 }
+:global(body.dark-mode) .contactChip {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+:global(body.dark-mode) .filterChip { background: #1e1e2f; border-color: rgba(226,232,240,0.15); color: #e6f3e6; }
+:global(body.dark-mode) .filterChip.active { background: rgba(164,180,255,0.15); color: #a4b4ff; }

@@ -13,54 +13,38 @@ import {
   FaGraduationCap,
   FaAward,
   FaClock,
+  FaPhone,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa";
 
 function DoctorsSection() {
   const navigate = useNavigate();
+  const [doctors, setDoctors] = React.useState([]);
+  const [specializations, setSpecializations] = React.useState([]);
+  const [activeSpec, setActiveSpec] = React.useState("All");
+  const trackRef = React.useRef(null);
 
-  const doctors = [
-    {
-      name: "Dr. Rahul Mishra",
-      specialty: "Cardiologist",
-      img: doc1,
-      bio: "Expert in interventional cardiology with a passion for preventive heart care.",
-      experience: "15+ years of clinical experience",
-      qualification: "MBBS, MD (Cardiology), FACC",
-      achievement:
-        "Awarded Best Cardiologist 2023 - Indian Medical Association",
-      timing: "Mon - Fri: 9 AM - 5 PM",
-    },
-    {
-      name: "Dr. Zahoor Ahmed Gilkar",
-      specialty: "Urologist",
-      img: doc3,
-      bio: "Specializes in kidney health, urinary tract treatments, and minimally invasive surgeries.",
-      experience: "12+ years of medical practice",
-      qualification: "MBBS, MS (Urology), Fellowship in Laparoscopic Surgery",
-      achievement: "Recognized for excellence in laparoscopic urology surgeries",
-      timing: "Mon - Sat: 10 AM - 6 PM",
-    },
-    {
-      name: "Dr. Shahida Kounsar",
-      specialty: "Gynaecologist",
-      img: doc2,
-      bio: "Dedicated to women’s health, prenatal care, and reproductive wellness.",
-      experience: "10+ years of gynecological practice",
-      qualification: "MBBS, MD (Obstetrics & Gynaecology)",
-      achievement: "Women’s Health Excellence Award 2022",
-      timing: "Tue - Sat: 8 AM - 4 PM",
-    },
-    {
-      name: "Dr. Ridhi Gupta",
-      specialty: "Orthopedic Surgeon",
-      img: doctorImg,
-      bio: "Expert in joint replacement, sports injuries, and advanced orthopedic procedures.",
-      experience: "14+ years in orthopedic surgery",
-      qualification: "MBBS, MS (Orthopedics), Fellowship in Joint Replacement",
-      achievement: "Best Orthopedic Surgeon Award 2021 - National Medical Forum",
-      timing: "Mon - Fri: 10 AM - 7 PM",
-    },
-  ];
+  const scrollByAmount = (direction) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const first = el.firstElementChild;
+    const gap = 16;
+    const delta = first ? first.getBoundingClientRect().width + gap : 320;
+    el.scrollBy({ left: direction * delta, behavior: "smooth" });
+  };
+
+  React.useEffect(() => {
+    // Fetch doctors from backend
+    fetch(`${process.env.REACT_APP_API_URL}/api/doctors`)
+      .then((res) => res.json())
+      .then((data) => {
+        setDoctors(data);
+        const specs = Array.from(new Set((data || []).map((d) => d.specialization).filter(Boolean)));
+        setSpecializations(["All", ...specs]);
+      })
+      .catch((err) => console.error("Error fetching doctors:", err));
+  }, []);
 
   return (
     <section className={styles.doctorsSection} id="doctors">
@@ -71,83 +55,107 @@ function DoctorsSection() {
         ></i>
         Meet Our Doctors
       </h1>
-      <div className={styles.doctorsContainer}>
-        {doctors.map((doc, index) => (
-          <div className={styles.doctorWrapper} key={index}>
-            {/* Doctor Card */}
-            <div className={styles.doctorCard}>
-              <div className={styles.cardInner}>
-                <div className={styles.cardFront}>
-                  <img src={doc.img} alt={doc.name} />
-                  <h2 className={styles.doctorName}>{doc.name}</h2>
-                  <div className={styles.frontInfo}>
-                    <span className={styles.specialty}>{doc.specialty}</span>
-                    <span className={styles.experience}>{doc.experience}</span>
-                  </div>
-                </div>
-                <div className={styles.cardBack}>
-                  <div>
-                    <h4>
-                      <FaUserMd /> Bio
-                    </h4>
-                    <p className={styles.bio}>{doc.bio}</p>
-                    <hr />
-                    <h4>
-                      <FaGraduationCap />
-                      Qualification
-                    </h4>
-                    <p className={styles.details}>{doc.qualification}</p>
-                    <hr />
-                    <h4>
-                      <FaAward />
-                      Achievements
-                    </h4>
-                    <p className={styles.details}>{doc.achievement}</p>
-                    <hr />
-                    <h4>
-                      <FaClock />
-                      Timings
-                    </h4>
-                    <p className={styles.timing}>{doc.timing}</p>
-                    <hr />
-                    <div className={styles.socialIcons}>
-                      <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+      {doctors.length === 0 ? (
+        <p>No doctors available.</p>
+      ) : (
+        <>
+          {/* Filter Tabs */}
+          <div className={styles.filterBar}>
+            {specializations.map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setActiveSpec(s)}
+                className={`${styles.filterChip} ${activeSpec === s ? styles.active : ""}`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+
+          {/* Carousel of filtered doctors */}
+          <div className={styles.slider}>
+            <button
+              className={`${styles.navButton} ${styles.navLeft}`}
+              aria-label="Previous"
+              onClick={() => scrollByAmount(-1)}
+              type="button"
+            >
+              <FaChevronLeft />
+            </button>
+            <div className={styles.track} ref={trackRef}>
+              {doctors
+                .filter((d) => activeSpec === "All" || d.specialization === activeSpec)
+                .map((doc) => (
+                  <div className={styles.slide} key={doc._id}>
+                    <div className={styles.doctorWrapper}>
+                      <div className={styles.doctorCard}>
+                        <div className={styles.cardInner}>
+                          <div className={styles.cardFront}>
+                            <img src={doctorImg} alt={doc.name} />
+                            <h2 className={styles.doctorName}>{doc.name}</h2>
+                            <div className={styles.frontInfo}>
+                              <span className={styles.specialty}>{doc.specialization}</span>
+                              <span className={styles.timeChip}>
+                                <FaClock className={styles.chipIcon} />
+                                {Array.isArray(doc.availableSlots) && doc.availableSlots.length > 0
+                                  ? doc.availableSlots[0]
+                                  : "N/A"}
+                              </span>
+                              <span className={styles.contactChip}>
+                                <FaPhone className={styles.chipIcon} />
+                                {doc?.contact?.phone || doc?.contact?.mobile || doc?.contact?.number || "N/A"}
+                              </span>
+                            </div>
+                          </div>
+                          <div className={styles.cardBack}>
+                            <div>
+                              <h4>
+                                <FaGraduationCap /> Qualifications
+                              </h4>
+                              <p className={styles.details}>{doc.qualifications ? doc.qualifications.join(", ") : "N/A"}</p>
+                              <hr />
+                              <h4>
+                                <FaAward /> Hospital
+                              </h4>
+                              <p className={styles.details}>{doc.hospital || "N/A"}</p>
+                              <hr />
+                              <div className={styles.socialIcons}>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                  <FaLinkedin />
+                                </a>
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                  <FaInstagram />
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                  <FaTwitter />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={styles.bookNowBtn}
+                        onClick={() => navigate("/services/checkup")}
                       >
-                        <FaLinkedin />
-                      </a>
-                      <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaInstagram />
-                      </a>
-                      <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaTwitter />
-                      </a>
+                        Book Now
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                ))}
             </div>
-
-            {/* Book Now Button BELOW Card */}
-            <div
-              className={styles.bookNowBtn}
-              onClick={() => navigate("/services/checkup")}
+            <button
+              className={`${styles.navButton} ${styles.navRight}`}
+              aria-label="Next"
+              onClick={() => scrollByAmount(1)}
+              type="button"
             >
-              Book Now
-            </div>
+              <FaChevronRight />
+            </button>
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </section>
   );
 }

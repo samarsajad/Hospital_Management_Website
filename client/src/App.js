@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./components/styles.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import CartPage from "./pages/CartPage";
 import PharmacyPage from "./pages/PharmacyPage";
 import LabsPage from "./pages/LabsPage";
 import CheckupPage from "./pages/CheckupPage";
@@ -10,6 +11,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import EmergencyPanel from "./components/EmergencyPanel";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
@@ -26,29 +29,34 @@ function App() {
   const toggleEmergencyPanel = () => {
     setIsEmergencyOpen(!isEmergencyOpen);
   };
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="/services/pharmacy" element={<PharmacyPage />} />
-        <Route path="/services/pharmacy/medicines" element={<MedicineListing />} /> {/* new route */}
-        <Route path="/services/labs-diagnostics" element={<LabsPage />} />
-        <Route path="/services/checkup" element={<CheckupPage />} />
-        <Route path="/services/surgery" element={<SurgeryPage />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute adminOnly={true}>
-              <AdminDashboardPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Navbar />
+      <main className={`app-content ${isHome ? "home" : ""}`}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="/services/pharmacy" element={<PharmacyPage />} />
+          <Route path="/services/pharmacy/medicines" element={<MedicineListing />} /> {/* new route */}
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/services/labs-diagnostics" element={<LabsPage />} />
+          <Route path="/services/checkup" element={<CheckupPage />} />
+          <Route path="/services/surgery" element={<SurgeryPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <AdminDashboardPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
 
       {/* Fixed Emergency Button */}
       <button
@@ -59,10 +67,12 @@ function App() {
         🚨 Emergency
       </button>
 
-      <EmergencyPanel
-        isOpen={isEmergencyOpen}
-        onClose={() => setIsEmergencyOpen(false)}
-      />
+        <EmergencyPanel
+          isOpen={isEmergencyOpen}
+          onClose={() => setIsEmergencyOpen(false)}
+        />
+      </main>
+      <Footer />
     </>
   );
 }

@@ -2,13 +2,10 @@ import React from "react";
 import styles from "./NotFoundPage.module.css";
 import { FaStethoscope } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 
 function NotFoundPage() {
   return (
     <>
-      <Navbar />
-
       <div className={styles.notFound}>
         <div className={styles.content}>
           <FaStethoscope className={styles.icon} />

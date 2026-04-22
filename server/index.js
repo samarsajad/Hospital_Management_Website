@@ -10,15 +10,20 @@ import multer from "multer";
 
 import Medicine from "./models/medicines.js";
 import LabAppointment from "./models/lab.js";
-import Doctor from "./models/checkup.js";
+import Doctor from "./models/doctor.js";
 import CheckupAppointment from "./models/checkup.js";
 import Surgery from "./models/surgery.js";
 
 import authRoutes from "./routes/authRoutes.js";
 import medicineRoutes from "./routes/medicineRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import emergencyRoutes from "./routes/emergencyRoutes.js";
+
+import cookieParser from "cookie-parser";
+
 
 dotenv.config();
 const app = express();
@@ -30,6 +35,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 // Express session
 app.use(
@@ -48,6 +54,14 @@ app.get("/", (req, res) => {
 const mongoURI = process.env.MONGO_URI;
 console.log("Connecting to MongoDB URI:", mongoURI);
 
+// Extract and print database name for confirmation
+try {
+  const dbName = mongoURI.split('/').pop().split('?')[0];
+  console.log("Connecting to database:", dbName);
+} catch (e) {
+  console.log("Could not parse database name from URI");
+}
+
 mongoose
   .connect(mongoURI, {
     useNewUrlParser: true,
@@ -62,6 +76,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/admin/medicines", medicineRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payments", paymentRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api", emergencyRoutes);
@@ -70,6 +86,7 @@ app.use("/api", emergencyRoutes);
 app.get("/api/doctors", async (req, res) => {
   try {
     const doctors = await Doctor.find();
+    console.log("Fetched doctors:", doctors); // Debug log
     res.json(doctors);
   } catch (err) {
     console.error("Failed to fetch doctors:", err);

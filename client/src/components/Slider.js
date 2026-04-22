@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './slider.module.css';
-import pic1 from '../assets/pic5.webp';
-import pic2 from '../assets/pic.webp';
-import pic3 from '../assets/pic5.webp';
-import pic4 from '../assets/pic.webp';
+import pic1 from '../assets/h1 (1).jpg';
+import pic2 from '../assets/h1 (2).jpg';
+import pic3 from '../assets/h4 (1).jpg';
+import pic4 from '../assets/h4 (2).jpg';
 
 const images = [pic1, pic2, pic3, pic4];
 

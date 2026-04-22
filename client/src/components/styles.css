@@ -5,6 +5,14 @@ body {
   scroll-behavior: smooth; 
 }
 
+
+.app-content {
+  padding-top: 20px;
+}
+.app-content.home {
+  padding-top: 80px;
+}
+
 .header_container {
   display: flex;
   width: 100vw;
@@ -55,6 +63,8 @@ body {
   padding: 0;
   color: #203394; ;
 }
+
+.nav_spacer { flex: 1; }
 
 .nav_link li {
   display: inline;
@@ -164,8 +174,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #2f4fcb; 
-  color: white !important;
+  color: #2f4fcb; 
   padding: 6px 14px;
   border: none;
   border-radius: 20px;
@@ -176,7 +185,7 @@ body {
 }
 
 .nav-auth-btn:hover {
-  background-color: green;
+  color: green;
   transform: translateY(-1px);
 }
 
@@ -219,12 +228,12 @@ body {
 }
 
 body.dark-mode .nav-auth-btn {
-  background-color: #44e66d; 
+  
   color: white !important ;
 }
 
 body.dark-mode .nav-auth-btn:hover {
-  background-color: #2f4fcb;
+  
   color: #e0e0e0 !important; 
 }
 
@@ -243,7 +252,7 @@ body.dark-mode textarea::placeholder {
 }
 body.dark-mode .login-btn,
 body.dark-mode .register-btn {
-  background-color: #13b33b !important;
+  
   color: white !important;
   border: none !important;
 }
@@ -266,7 +275,6 @@ body.dark-mode .register-btn:hover {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #333;
   transition: color 0.3s;
   z-index: 999;
   position: relative;
@@ -297,6 +305,13 @@ body.dark-mode .nav_link a {
   margin-left: 15px;
   cursor: pointer;
 }
+.dark-toggle-btn:hover{
+  color: #13b33b !important;
+  background: none !important;
+
+}
+
+
 body.dark-mode .dark-toggle-btn{
   color: #FFD700;
 }

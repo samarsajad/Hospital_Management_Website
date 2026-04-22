@@ -4,17 +4,18 @@ import styles from './CheckupPage.module.css';
 
 function CheckupPage() {
   const [doctors, setDoctors] = useState([]);
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     date: '',
+    doctorId: '',
   });
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/doctors`)
-      .then(res => setDoctors(res.data))
-      .catch(err => console.error('Error fetching doctors:', err));
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/doctors`)
+      .then((res) => setDoctors(res.data))
+      .catch((err) => console.error('Error fetching doctors:', err));
   }, []);
 
   const handleInputChange = (e) => {
@@ -24,47 +25,55 @@ function CheckupPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!selectedDoctor) {
+    if (!formData.doctorId) {
       alert('Please select a doctor!');
       return;
     }
 
+    const selectedDoctor = doctors.find(
+      (doc) => doc._id === formData.doctorId
+    );
+
+    if (!selectedDoctor) {
+      alert('Selected doctor not found');
+      return;
+    }
+
     const appointmentData = {
-      ...formData,
-      doctor: selectedDoctor.name,
+      name: formData.name,
+      email: formData.email,
+      date: formData.date,
+      doctor: selectedDoctor.name, // backend-required field
     };
 
-    axios.post(`${process.env.REACT_APP_API_URL}/api/checkup/book`, appointmentData)
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/api/checkup/book`,
+        appointmentData
+      )
       .then(() => {
         alert('Appointment booked successfully!');
-        setFormData({ name: '', email: '', date: '' });
-        setSelectedDoctor(null);
+        setFormData({
+          name: '',
+          email: '',
+          date: '',
+          doctorId: '',
+        });
       })
-      .catch(() => alert('Failed to book appointment'));
+      .catch((err) => {
+        console.error('Booking error:', err);
+        alert('Failed to book appointment');
+      });
   };
 
   return (
     <div className={styles.checkupContainer}>
-      <h1>Our Doctors</h1>
-      <div className={styles.doctorGrid}>
-        {doctors.map((doc) => (
-          <div
-            key={doc._id}
-            className={`${styles.doctorCard} ${selectedDoctor?._id === doc._id ? styles.selected : ''}`}
-            onClick={() => setSelectedDoctor(doc)}
-          >
-            <img src={doc.photoUrl} alt={doc.name} />
-            <h3>{doc.name}</h3>
-            <p><strong>Specialization:</strong> {doc.specialization}</p>
-            <p><strong>Experience:</strong> {doc.Experience}</p>
-            <p><strong>Available:</strong> {doc.availability || 'Not Available'}</p>
+      <h1>Book Doctor Appointment</h1>
 
-          </div>
-        ))}
-      </div>
-
-      <h2 >Book Your Appointment</h2>
       <form className={styles.appointmentForm} onSubmit={handleSubmit}>
+        
+
+        {/* Name */}
         <div className={styles.formGroup}>
           <label htmlFor="name">Your Name</label>
           <input
@@ -78,6 +87,7 @@ function CheckupPage() {
           />
         </div>
 
+        {/* Email */}
         <div className={styles.formGroup}>
           <label htmlFor="email">Email</label>
           <input
@@ -90,7 +100,26 @@ function CheckupPage() {
             required
           />
         </div>
+        {/* Doctor Dropdown */}
+        <div className={styles.formGroup}>
+          <label htmlFor="doctorId">Select Doctor</label>
+          <select
+            id="doctorId"
+            name="doctorId"
+            value={formData.doctorId}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">-- Select a Doctor --</option>
+            {doctors.map((doc) => (
+              <option key={doc._id} value={doc._id}>
+                {doc.name} — {doc.specialization}
+              </option>
+            ))}
+          </select>
+        </div>
 
+        {/* Date */}
         <div className={styles.formGroup}>
           <label htmlFor="date">Appointment Date</label>
           <input
@@ -103,7 +132,7 @@ function CheckupPage() {
           />
         </div>
 
-        <button type="submit">Book</button>
+        <button type="submit">Book Appointment</button>
       </form>
     </div>
   );

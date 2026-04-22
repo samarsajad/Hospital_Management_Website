@@ -1,5 +1,5 @@
 .checkupContainer {
-  padding: 40px;
+  padding: 150px;
   max-width: 1200px;
   margin: auto;
 }
@@ -98,6 +98,24 @@ input {
   border-radius: 5px;
  
 }
+
+select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  color: #9c9da3;
+  background-color: white;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23203394' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+}
+
 
 button {
   padding: 10px;

@@ -1,4 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
+// import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from '../context/CartContext';
 import './styles.css';
 import logoLight from '../assets/logo-web.jpg';
 import logoDark from '../assets/logo-dark-mode.png';
@@ -19,6 +22,7 @@ import {
 import { HiOutlineUser } from "react-icons/hi";
 
 export default function Navbar() {
+  const { cart } = useCart();
   const [darkMode, setDarkMode] = useState(false);
   const [isEmergencyOpen, setIsEmergencyOpen] = useState(false);
   const { isAuthenticated, logout } = useContext(AuthContext);
@@ -54,6 +58,19 @@ export default function Navbar() {
           <li><Link to="/#contact"><FaPhone /> <span>Contact</span></Link></li>
           <li><Link to="/#faq"><FaQuestionCircle /> <span>FAQ</span></Link></li>
            
+          
+          <li>
+            {isAuthenticated ? (
+              <a href="#" onClick={(e) => { e.preventDefault(); logout(); }}>
+                <HiOutlineUser /> <span>Logout</span>
+              </a>
+            ) : (
+              <Link to="/login">
+                <HiOutlineUser /> <span>Login</span>
+              </Link>
+            )}
+          </li>
+          <li className="nav_spacer" />
           <li>
             <button
               className="dark-toggle-btn"
@@ -63,16 +80,24 @@ export default function Navbar() {
               {darkMode ? <FaSun /> : <FaMoon />}
             </button>
           </li>
-          <li>
-            {isAuthenticated ? (
-              <button className="nav-auth-btn" onClick={logout}>
-                <HiOutlineUser />Logout
-              </button>
-            ) : (
-              <Link to="/login" className="nav-auth-btn">
-                <HiOutlineUser />Login
-              </Link>
-            )}
+          <li style={{ position: 'relative' }}>
+            <Link to="/cart" className="cart-icon-link" aria-label="View cart">
+              <FaShoppingCart size={26} />
+              {cart && cart.length > 0 && (
+                <span style={{
+                  position: 'absolute',
+                  top: '-8px',
+                  right: '-8px',
+                  background: '#13b33b',
+                  color: 'white',
+                  borderRadius: '50%',
+                  padding: '2px 7px',
+                  fontSize: '13px',
+                  fontWeight: 'bold',
+                  zIndex: 2
+                }}>{cart.length}</span>
+              )}
+            </Link>
           </li>
         </ul>
       </nav>

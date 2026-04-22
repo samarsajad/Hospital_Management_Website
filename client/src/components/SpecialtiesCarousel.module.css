@@ -1,0 +1,121 @@
+.carouselWrapper {
+  margin: 24px auto 8px;
+  max-width: 1200px;
+  position: relative;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #203394;
+}
+
+.controls { display: none; }
+
+.headerCta {
+  background: #13b33b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 280px;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar { display: none; }
+
+/* Side overlay navigation */
+.sideBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #203394;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+.leftBtn { left: -10px; }
+.rightBtn { right: -10px; }
+
+@media (max-width: 640px) {
+  .leftBtn, .rightBtn { display: none; }
+}
+
+.card {
+  scroll-snap-align: start;
+  background: #ffffff;
+  border: 1px solid #e6eef7;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  border-color: #cfe3fe;
+}
+
+.thumb {
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f6f8fb;
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  background: linear-gradient(90deg, #203394, #4c6ef5);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.name {
+  font-size: 1.05rem;
+  color: #0f172a;
+  margin: 0;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
+}
+
+/* removed per-card CTA in favor of single header CTA */
+
+:global(body.dark-mode) .title { color: #e2e8f0; }
+:global(body.dark-mode) .card { background: #0b1220; border-color: #1e293b; box-shadow: none; }
+:global(body.dark-mode) .card:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.25); border-color: #334155; }
+:global(body.dark-mode) .desc { color: #94a3b8; }
+:global(body.dark-mode) .name { color: #e2e8f0; }
+:global(body.dark-mode) .sideBtn { background: rgba(30,41,59,0.9); color: #e2e8f0; border-color: #334155; }

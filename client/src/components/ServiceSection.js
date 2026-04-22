@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ServiceSection.module.css";
 
@@ -9,12 +9,12 @@ import {
   FaStethoscope,
 } from "react-icons/fa6";
 import { GiScalpel } from "react-icons/gi";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import pharmacy from "../assets/services/pharmacy.jpg";
 import labs from "../assets/services/labs.jpg";
-import checkup from "../assets/services/checkup.jpeg";
-import surgery from "../assets/services/surgery.jpeg";
+import checkup from "../assets/services/physio.webp";
+import surgery from "../assets/surgery.webp";
+import physio  from "../assets/services/check.webp";
 
 const baseServices = [
   {
@@ -36,7 +36,7 @@ const baseServices = [
   {
     title: "Health Check Up",
     icon: <FaStethoscope />,
-    img: checkup,
+    img: physio,
     desc: "Routine check-ups for early detection and better long-term health management.",
     btnText: "Book Now",
     link: "/services/checkup",
@@ -62,35 +62,6 @@ const baseServices = [
 
 function ServiceSection({ darkMode }) {
   const modeClass = darkMode ? styles.dark : "";
-  const sliderRef = useRef(null);
-
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const handleScroll = () => {
-      const maxScroll = slider.scrollWidth - slider.clientWidth;
-      setAtStart(slider.scrollLeft <= 0);
-      setAtEnd(slider.scrollLeft >= maxScroll - 5); // tolerance
-    };
-
-    slider.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial check
-    return () => slider.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scroll = (dir) => {
-    if (!sliderRef.current) return;
-    const cardWidth =
-      sliderRef.current.querySelector(`.${styles.box}`).offsetWidth + 20; // gap
-    sliderRef.current.scrollBy({
-      left: dir === "left" ? -cardWidth : cardWidth,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section className={`${styles.serviceSection} ${modeClass}`} id="services">
@@ -98,39 +69,21 @@ function ServiceSection({ darkMode }) {
         Services <FaCog />
       </h1>
 
-      <div className={styles.sliderWrapper}>
-        <button
-          onClick={() => scroll("left")}
-          className={styles.navButton}
-          disabled={atStart}
-        >
-          <ChevronLeft />
-        </button>
-
-        <div className={styles.serviceSlider} ref={sliderRef}>
-          {baseServices.map((service, index) => (
-            <div key={index} className={`${styles.box} ${styles.fadeIn}`}>
-              <div className={styles.image}>
-                <img src={service.img} alt={service.title} />
-              </div>
-              <div className={styles.text}>
-                {service.title} {service.icon}
-              </div>
-              <p className={styles.description}>{service.desc}</p>
-              <Link to={service.link} className={styles.bookButton}>
+      <div className={styles.features}>
+        {baseServices.map((service, index) => (
+          <div key={index} className={`${styles.featureRow} ${index % 2 ? styles.rowAlt : ""}`}>
+            <div className={styles.featureImage}>
+              <img src={service.img} alt={service.title} />
+            </div>
+            <div className={styles.featureContent}>
+              <div className={styles.featureTitle}>{service.icon} {service.title}</div>
+              <p className={styles.featureDesc}>{service.desc}</p>
+              <Link to={service.link} className={styles.featureCta}>
                 {service.btnText}
               </Link>
             </div>
-          ))}
-        </div>
-
-        <button
-          onClick={() => scroll("right")}
-          className={styles.navButton}
-          disabled={atEnd}
-        >
-          <ChevronRight />
-        </button>
+          </div>
+        ))}
       </div>
     </section>
   );

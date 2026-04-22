@@ -12,7 +12,7 @@ import isAuthenticated from "../middleware/isAuthenticated.js";
 import isAdmin from "../middleware/isAdmin.js";
 
 router.post("/", isAuthenticated, isAdmin, createMedicine);
-router.get("/", isAuthenticated, isAdmin, getAllMedicines);
+router.get("/", getAllMedicines);
 router.put("/:id", isAuthenticated, isAdmin, updateMedicine);
 router.delete("/:id", isAuthenticated, isAdmin, deleteMedicine);
 
