@@ -9,7 +9,7 @@ const ForgotPassword = () => {
   const [error, setError] = useState("");
 
   // You'll need to replace this with your actual backend URL
-  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5001";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

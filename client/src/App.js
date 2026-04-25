@@ -15,8 +15,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProtectedRoute from "./components/ProtectedRoute";
-import AdminDashboardPage from "./pages/AdminDashboardPage";
 import MedicineListing from "./pages/Medicine"; // <-- import the medicine page
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -51,10 +51,11 @@ function App() {
             path="/admin"
             element={
               <ProtectedRoute adminOnly={true}>
-                <AdminDashboardPage />
+                <AdminDashboard />
               </ProtectedRoute>
             }
           />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
