@@ -19,7 +19,7 @@ import AdminDashboardPage from "./pages/AdminDashboardPage";
 import MedicineListing from "./pages/Medicine"; // <-- import the medicine page
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = useState(false);
   const [isEmergencyOpen, setIsEmergencyOpen] = useState(false);
 
   useEffect(() => {

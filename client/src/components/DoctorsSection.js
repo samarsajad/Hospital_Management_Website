@@ -2,14 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./DoctorSection.module.css";
 import doctorImg from "../assets/pic5.webp";
-import doc1 from "../assets/doctors/doc1.jpg";
-import doc2 from "../assets/doctors/doc2.avif";
-import doc3 from "../assets/doctors/docmale.jpg";
 import {
   FaLinkedin,
   FaInstagram,
   FaTwitter,
-  FaUserMd,
   FaGraduationCap,
   FaAward,
   FaClock,

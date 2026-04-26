@@ -17,7 +17,6 @@ import {
   FaMoon,
   FaSun,
   FaQuestionCircle,
-  FaBell
 } from 'react-icons/fa';
 import { HiOutlineUser } from "react-icons/hi";
 
@@ -61,9 +60,9 @@ export default function Navbar() {
           
           <li>
             {isAuthenticated ? (
-              <a href="#" onClick={(e) => { e.preventDefault(); logout(); }}>
+              <button type="button" onClick={logout} className="nav-link-button">
                 <HiOutlineUser /> <span>Logout</span>
-              </a>
+              </button>
             ) : (
               <Link to="/login">
                 <HiOutlineUser /> <span>Login</span>
@@ -78,6 +77,16 @@ export default function Navbar() {
               aria-label="Toggle dark mode"
             >
               {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
+          </li>
+          <li>
+            <button
+              className="nav-link-button"
+              type="button"
+              onClick={toggleEmergencyPanel}
+              aria-label="Emergency contacts"
+            >
+              <span>Emergency</span>
             </button>
           </li>
           <li style={{ position: 'relative' }}>

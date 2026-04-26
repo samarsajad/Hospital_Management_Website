@@ -4,8 +4,6 @@ import styles from "./AboutSection.module.css";
 import historyImg from "../assets/history.png";
 import visionImg from "../assets/vision.png";
 import missionImg from "../assets/mission.png";
-import urologyImg from "../assets/urology.png";
-import gynaeImg from "../assets/gyanaecology.png";
 import SpecialtiesCarousel from "./SpecialtiesCarousel";
 
 const ReadMoreSection = ({

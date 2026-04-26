@@ -29,7 +29,7 @@ const AdminDashboardPage = () => {
     fetchData("lab", setLabs);
     fetchData("surgery", setSurgeries);
     fetchData("all-doctors", setDoctors);
-  }, [token]);
+  }, [token, url]);
 
   return (
     <div style={{ padding: "20px" }}>

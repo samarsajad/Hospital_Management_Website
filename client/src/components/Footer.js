@@ -25,9 +25,9 @@ function Footer() {
         <div className={styles.legalInfo}>
           <h2>Legal</h2>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Accessibility</a></li>
+            <li><button type="button" className={styles.linkButton}>Privacy Policy</button></li>
+            <li><button type="button" className={styles.linkButton}>Terms of Use</button></li>
+            <li><button type="button" className={styles.linkButton}>Accessibility</button></li>
           </ul>
         </div>
         <div className={styles.newsletter}>
@@ -44,18 +44,15 @@ function Footer() {
 
       <div className={styles.copyright}>
         <div className={styles.socialIcons}>
-          <a href="#" aria-label="Facebook"><FaFacebook /></a>
-          <a href="#" aria-label="Twitter"><FaTwitter /></a>
-          <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-          <a href="#" aria-label="Instagram"><FaInstagram /></a>
+          <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
+          <a href="https://twitter.com" aria-label="Twitter"><FaTwitter /></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn"><FaLinkedin /></a>
+          <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
         </div>
         <p>&copy; {new Date().getFullYear()}MidCity Hospital. All rights reserved.</p>
       </div>
     </footer>
   );
 }
-
-
-document.body.classList.toggle("dark-mode");
 
 export default Footer;
