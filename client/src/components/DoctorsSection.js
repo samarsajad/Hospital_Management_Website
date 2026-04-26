@@ -32,7 +32,7 @@ function DoctorsSection() {
 
   React.useEffect(() => {
     // Fetch doctors from backend
-    fetch(`${process.env.REACT_APP_API_URL}/api/doctors`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/doctors`)
       .then((res) => res.json())
       .then((data) => {
         setDoctors(data);

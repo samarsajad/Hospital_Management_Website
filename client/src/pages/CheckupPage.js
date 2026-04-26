@@ -13,7 +13,7 @@ function CheckupPage() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/doctors`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/api/doctors`)
       .then((res) => setDoctors(res.data))
       .catch((err) => console.error('Error fetching doctors:', err));
   }, []);
@@ -48,7 +48,7 @@ function CheckupPage() {
 
     axios
       .post(
-        `${process.env.REACT_APP_API_URL}/api/checkup/book`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/checkup/book`,
         appointmentData
       )
       .then(() => {

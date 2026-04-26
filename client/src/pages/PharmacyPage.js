@@ -9,7 +9,7 @@ function PharmacyPage() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/admin/medicines`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/admin/medicines`)
       .then((res) => setMedicines(res.data))
       .catch((err) => console.error('Error fetching medicines:', err));
   }, []);
