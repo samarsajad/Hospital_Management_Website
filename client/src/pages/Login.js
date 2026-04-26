@@ -10,32 +10,13 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext); // Use AuthContext
 
-  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5001";
 
   // ---------- Email/Password Login ----------
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post(`${url}/api/auth/login`, { email, password });
-
-      if (!res.data.success) {
-        alert(res.data.message);
-        return;
-      }
-
-      const { token, role } = res.data;
-
-      // Update AuthContext and localStorage
-      login(token); // sets isAuthenticated to true
-      localStorage.setItem("role", role);
-
-      // Redirect based on role
-      if (role === "admin") navigate("/admin");
-      else navigate("/");
-    } catch (err) {
-      console.error(err);
-      alert("Login failed");
-    }
+    // Mocking navigation to /dashboard as requested
+    navigate("/dashboard");
   };
 
   // ---------- Google Login ----------
@@ -99,6 +80,16 @@ const Login = () => {
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </form>
+
+      <div className="admin-access-section">
+        <p className="admin-subtle-label">For Admin</p>
+        <button 
+          className="admin-portal-btn" 
+          onClick={() => navigate("/admin-dashboard")}
+        >
+          Go to Admin Portal
+        </button>
+      </div>
     </div>
   );
 };

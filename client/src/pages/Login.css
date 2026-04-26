@@ -100,3 +100,82 @@ label {
     padding: 1.5rem;
   }
 }
+
+/* Admin Access Section */
+.admin-access-section {
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.admin-subtle-label {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.admin-portal-btn {
+  width: 100%;
+  background-color: #ffffff;
+  color: #4a5568;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-portal-btn:hover {
+  background-color: #f7fafc;
+  border-color: #a0aec0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Overrides for Login */
+body.dark-mode .login-form {
+  background-color: #23272f;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .login-form h2,
+body.dark-mode label {
+  color: #e0e0e0;
+}
+
+body.dark-mode .login-form p {
+  color: #a0aec0;
+}
+
+body.dark-mode .admin-subtle-label {
+  color: #a0aec0;
+}
+
+body.dark-mode .admin-portal-btn {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+body.dark-mode .admin-portal-btn:hover {
+  background-color: #4a5568;
+  border-color: #718096;
+}
+
+body.dark-mode .login-form a {
+  color: #63b3ed;
+}
+
+body.dark-mode .login-form a:hover {
+  color: #90cdf4;
+}

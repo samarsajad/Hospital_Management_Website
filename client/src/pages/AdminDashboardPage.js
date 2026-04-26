@@ -8,7 +8,7 @@ const AdminDashboardPage = () => {
   const [surgeries, setSurgeries] = useState([]);
   const [doctors, setDoctors] = useState([]);
 
-  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:5001";
   const token = localStorage.getItem("token");
 
   useEffect(() => {

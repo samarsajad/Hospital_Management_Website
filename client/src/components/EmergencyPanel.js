@@ -14,7 +14,7 @@ export default function EmergencyPanel({ isOpen, onClose }) {
 
   const fetchEmergencyContacts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/emergency-contacts');
+      const response = await fetch('http://localhost:5001/api/emergency-contacts');
       if (!response.ok) {
         throw new Error('Failed to fetch emergency contacts');
       }
