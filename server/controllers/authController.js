@@ -5,7 +5,9 @@ import { OAuth2Client } from "google-auth-library";
 import User from "../models/User.js";
 import transporter from "../config/nodemailer.js";
 
-const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
+const googleClientId =
+  process.env.GOOGLE_CLIENT_ID || process.env.REACT_APP_GOOGLE_CLIENT_ID;
+const client = new OAuth2Client(googleClientId);
 
 export const isAuthenticated = (req, res) => {
   return res.json({ success: true, message: "User is authenticated" });
@@ -89,12 +91,18 @@ export const login = async (req, res) => {
 // ----------------- GOOGLE LOGIN -----------------
 export const googleLogin = async (req, res) => {
   try {
+    if (!googleClientId) {
+      return res
+        .status(500)
+        .json({ success: false, message: "Google OAuth is not configured on the server" });
+    }
+
     const { credential } = req.body;
     if (!credential) return res.json({ success: false, message: "Google token is required" });
 
     const ticket = await client.verifyIdToken({
       idToken: credential,
-      audience: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+      audience: googleClientId,
     });
 
     const { email, name } = ticket.getPayload();
